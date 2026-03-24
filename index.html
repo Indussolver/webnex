@@ -1,252 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>NovaCloud – AI-Powered SaaS</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Webnex by Indus</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
-  <!-- Animated gradient background -->
-  <div class="bg-gradient"></div>
-  <div class="bg-orbit bg-orbit-1"></div>
-  <div class="bg-orbit bg-orbit-2"></div>
 
-  <header class="nav">
-    <div class="nav-inner">
-      <a href="#" class="logo">
-        <span class="logo-mark"></span>
-        <span class="logo-text">NovaCloud</span>
-      </a>
-      <nav class="nav-links">
-        <a href="#features" class="nav-link scroll-link">Features</a>
-        <a href="#pricing" class="nav-link scroll-link">Pricing</a>
-        <a href="#about" class="nav-link scroll-link">About</a>
-      </nav>
-      <div class="nav-cta">
-        <a href="#pricing" class="btn btn-ghost">Sign in</a>
-        <a href="#hero" class="btn btn-primary">Get started</a>
-      </div>
-      <button class="nav-toggle" aria-label="Toggle navigation">
-        <span></span><span></span>
-      </button>
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="logo">Webnex</div>
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Websites that grow your business</h1>
+  <p>Launch your business online in 48 hours with a modern website</p>
+
+  <div class="hero-buttons">
+    <a href="#contact" class="btn primary">Get Started</a>
+    <a href="#pricing" class="btn outline">View Pricing</a>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="section">
+  <h2>Services</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <h3>Starter Website</h3>
+      <p>Simple one-page website for local businesses</p>
+      <span>₹999</span>
     </div>
-  </header>
 
-  <main>
-    <!-- HERO -->
-    <section id="hero" class="section hero">
-      <div class="hero-content fade-in">
-        <p class="eyebrow">AI-native infrastructure for teams</p>
-        <h1 class="hero-title">
-          Ship faster with a<br />
-          <span class="gradient-text">glass-smooth workflow</span>
-        </h1>
-        <p class="hero-subtitle">
-          NovaCloud automates deployment, monitoring, and insights so your team
-          can focus on building, not babysitting servers.
-        </p>
-        <div class="hero-actions">
-          <a href="#pricing" class="btn btn-primary">Start free trial</a>
-          <button class="btn btn-ghost" data-scroll="#features">
-            View live demo
-          </button>
-        </div>
-        <div class="hero-meta">
-          <span>⚡ 5 min setup</span>
-          <span>✓ No credit card</span>
-          <span>✨ Built for 2026+</span>
-        </div>
-      </div>
-
-      <div class="hero-panel fade-in delay-1">
-        <div class="glass-panel hero-dashboard">
-          <div class="dash-header">
-            <span class="dot"></span><span class="dot"></span
-            ><span class="dot"></span>
-            <span class="dash-title">Realtime Overview</span>
-          </div>
-          <div class="dash-body">
-            <div class="metric">
-              <span class="metric-label">Deploy latency</span>
-              <span class="metric-value">18s</span>
-              <span class="metric-tag metric-tag-good">-37%</span>
-            </div>
-            <div class="metric">
-              <span class="metric-label">Error rate</span>
-              <span class="metric-value">0.09%</span>
-              <span class="metric-tag metric-tag-good">Stable</span>
-            </div>
-            <div class="sparkline">
-              <span class="sparkline-pill">AI autoscaling</span>
-              <span class="sparkline-pill pill-soft">Traffic spike handled</span>
-            </div>
-            <div class="pill-row">
-              <div class="status-pill">
-                <span class="status-dot"></span>
-                12 Services healthy
-              </div>
-              <div class="status-pill glow-soft">
-                <span class="status-dot status-dot-glow"></span>
-                Predictive alerts on
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FEATURES -->
-    <section id="features" class="section section-tight">
-      <div class="section-header fade-in">
-        <h2>Designed for focused teams</h2>
-        <p>
-          A single control surface for deploys, logs, incidents, and insights,
-          layered with a clear glass interface that never gets in your way.
-        </p>
-      </div>
-      <div class="features-grid">
-        <article class="feature-card glass-panel fade-in">
-          <div class="feature-icon">🚀</div>
-          <h3>Zero-friction deploys</h3>
-          <p>
-            Push to main and watch NovaCloud orchestrate blue‑green deploys,
-            rollbacks, and health checks in seconds.
-          </p>
-        </article>
-        <article class="feature-card glass-panel fade-in delay-1">
-          <div class="feature-icon">🧠</div>
-          <h3>AI incident co-pilot</h3>
-          <p>
-            Let our AI summarize impact, suggest remediation, and draft
-            postmortems automatically.
-          </p>
-        </article>
-        <article class="feature-card glass-panel fade-in delay-2">
-          <div class="feature-icon">🌌</div>
-          <h3>Unified observability</h3>
-          <p>
-            Logs, metrics, and traces in one dark, high‑contrast canvas that
-            stays readable, day or night.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <!-- PRICING -->
-    <section id="pricing" class="section">
-      <div class="section-header fade-in">
-        <h2>Pick your trajectory</h2>
-        <p>Transparent plans that scale from side projects to global scale.</p>
-      </div>
-      <div class="billing-toggle fade-in">
-        <span class="billing-label billing-label-active" data-billing="monthly">
-          Monthly
-        </span>
-        <button class="toggle" id="billingToggle">
-          <span class="toggle-pill"></span>
-        </button>
-        <span class="billing-label" data-billing="yearly">
-          Yearly <span class="badge">Save 20%</span>
-        </span>
-      </div>
-      <div class="pricing-grid">
-        <article class="pricing-card glass-panel fade-in">
-          <div class="pricing-header">
-            <h3>Starter</h3>
-            <p>Perfect for founders and small teams.</p>
-          </div>
-          <div class="pricing-price">
-            <span class="price" data-monthly="$19" data-yearly="$15">$19</span>
-            <span class="price-period">/seat</span>
-          </div>
-          <ul class="pricing-features">
-            <li>Up to 5 services</li>
-            <li>Basic AI deploy suggestions</li>
-            <li>Email support</li>
-          </ul>
-          <button class="btn btn-ghost full-width">Start free</button>
-        </article>
-
-        <article class="pricing-card pricing-card-featured glass-panel fade-in delay-1">
-          <div class="pricing-badge">Most popular</div>
-          <div class="pricing-header">
-            <h3>Growth</h3>
-            <p>For teams shipping every day.</p>
-          </div>
-          <div class="pricing-price">
-            <span class="price" data-monthly="$49" data-yearly="$39">$49</span>
-            <span class="price-period">/seat</span>
-          </div>
-          <ul class="pricing-features">
-            <li>Unlimited services</li>
-            <li>Advanced AI incident co‑pilot</li>
-            <li>Slack & PagerDuty sync</li>
-          </ul>
-          <button class="btn btn-primary full-width">Start 14‑day trial</button>
-        </article>
-
-        <article class="pricing-card glass-panel fade-in delay-2">
-          <div class="pricing-header">
-            <h3>Enterprise</h3>
-            <p>Global scale, dedicated support.</p>
-          </div>
-          <div class="pricing-price">
-            <span class="price" data-monthly="Custom" data-yearly="Custom">
-              Custom
-            </span>
-          </div>
-          <ul class="pricing-features">
-            <li>SOC2, SSO, audit logs</li>
-            <li>On‑prem & air‑gapped options</li>
-            <li>24/7 dedicated team</li>
-          </ul>
-          <button class="btn btn-ghost full-width">Talk to sales</button>
-        </article>
-      </div>
-    </section>
-
-    <!-- ABOUT / FOOTER CTA -->
-    <section id="about" class="section section-tight">
-      <div class="about-grid">
-        <div class="about-copy fade-in">
-          <h2>Built for the next decade of SaaS</h2>
-          <p>
-            NovaCloud blends a focused, minimal interface with deep automation,
-            so your stack stays fast while your UI stays calm.
-          </p>
-          <p>
-            Crafted with glassmorphism, dark gradients, and motion tuned for
-            clarity, every screen feels premium without feeling loud.
-          </p>
-        </div>
-        <div class="about-cta glass-panel fade-in delay-1">
-          <h3>Ready when you are</h3>
-          <p>Spin up your first environment in under five minutes.</p>
-          <ul>
-            <li>Guided onboarding for your stack</li>
-            <li>Sample projects for fast evaluation</li>
-            <li>Cancel anytime, export everything</li>
-          </ul>
-          <a href="#hero" class="btn btn-primary full-width">
-            Launch NovaCloud
-          </a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="footer-inner">
-      <span>© 2026 NovaCloud Inc.</span>
-      <span class="footer-links">
-        <a href="#">Status</a>
-        <a href="#">Security</a>
-        <a href="#">Documentation</a>
-      </span>
+    <div class="card">
+      <h3>Business Website</h3>
+      <p>Multi-section modern website</p>
+      <span>₹1999</span>
     </div>
-  </footer>
 
-  <script src="main.js"></script>
+    <div class="card">
+      <h3>Premium Website</h3>
+      <p>Advanced design with custom features</p>
+      <span>₹3999</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="section alt">
+  <h2>Why Webnex</h2>
+
+  <div class="grid small">
+    <div>Fast Delivery (48 hrs)</div>
+    <div>Mobile Optimized</div>
+    <div>Affordable Pricing</div>
+    <div>Direct Support</div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" class="section">
+  <h2>Pricing</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <h3>Basic</h3>
+      <p class="price">₹999</p>
+      <p>1 Page Website</p>
+    </div>
+
+    <div class="card highlight">
+      <h3>Standard</h3>
+      <p class="price">₹1999</p>
+      <p>3 Pages + Better Design</p>
+    </div>
+
+    <div class="card">
+      <h3>Premium</h3>
+      <p class="price">₹3999</p>
+      <p>Full Custom Website</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section alt">
+  <h2>Start Your Website</h2>
+  <p>Message us instantly on WhatsApp</p>
+
+  <a href="#" class="btn primary" id="whatsappBtn">Chat on WhatsApp</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Webnex by Indus</p>
+</footer>
+
+<script src="js/main.js"></script>
 </body>
 </html>
