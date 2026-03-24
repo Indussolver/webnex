@@ -4,3 +4,12 @@ document.getElementById("whatsappBtn").addEventListener("click", function () {
   let url = `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
   window.open(url, "_blank");
 });
+// smooth scroll
+document.querySelectorAll("a[href^='#']").forEach(anchor => {
+  anchor.addEventListener("click", function(e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute("href")).scrollIntoView({
+      behavior: "smooth"
+    });
+  });
+});
