@@ -1,0 +1,160 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: #020617;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* BACKGROUND GLOW */
+.bg {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.bg::before,
+.bg::after {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  filter: blur(120px);
+  animation: float 10s infinite alternate;
+}
+
+.bg::before {
+  background: #6366f1;
+  top: -150px;
+  left: -150px;
+}
+
+.bg::after {
+  background: #06b6d4;
+  bottom: -150px;
+  right: -150px;
+}
+
+@keyframes float {
+  0% { transform: translate(0,0); }
+  100% { transform: translate(80px,80px); }
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  backdrop-filter: blur(10px);
+}
+
+.navbar a {
+  color: #cbd5f5;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 120px 20px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  background: linear-gradient(90deg, #6366f1, #06b6d4);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.hero p {
+  margin-top: 10px;
+  color: #94a3b8;
+}
+
+/* SECTION */
+.section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+.section p {
+  max-width: 700px;
+  margin: auto;
+  color: #cbd5f5;
+  font-size: 1.1rem;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap: 20px;
+  margin-top: 40px;
+}
+
+/* CARDS */
+.card {
+  background: rgba(255,255,255,0.05);
+  padding: 30px;
+  border-radius: 16px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 30px rgba(99,102,241,0.3);
+}
+
+/* HIGHLIGHT */
+.highlight {
+  border: 1px solid #6366f1;
+}
+
+/* TESTIMONIALS */
+.scroll-wrap {
+  overflow: hidden;
+  margin-top: 40px;
+}
+
+.scroll {
+  display: flex;
+  gap: 20px;
+  animation: slide 20s linear infinite;
+}
+
+.review {
+  min-width: 280px;
+  padding: 20px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.05);
+}
+
+@keyframes slide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* BUTTON */
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 30px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #6366f1, #06b6d4);
+  color: white;
+  text-decoration: none;
+}
