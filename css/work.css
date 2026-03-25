@@ -1,0 +1,195 @@
+/* ========================================= */
+/* WORK & ABOUT PAGE SPECIFIC STYLES         */
+/* ========================================= */
+
+.text-center-hero {
+  display: flex; flex-direction: column; align-items: center; text-align: center; padding-top: 80px;
+}
+.full-width { width: 100%; max-width: 800px; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+.pt-0 { padding-top: 0; }
+
+.highlight-text {
+  background: linear-gradient(135deg, #7C5CFF, #30D5FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Vision Cards */
+.vision-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.vision-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 40px;
+  backdrop-filter: blur(15px);
+  transition: transform 0.3s ease;
+}
+.vision-card:hover { transform: translateY(-5px); border-color: rgba(124, 92, 255, 0.3); }
+.vision-icon { font-size: 2.5rem; margin-bottom: 20px; }
+.vision-card h3 { font-size: 1.5rem; margin-bottom: 15px; }
+.vision-card p { color: var(--muted); line-height: 1.8; }
+
+/* Ecosystem Cards */
+.ecosystem-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr; /* App card slightly smaller */
+  gap: 24px;
+  max-width: 1000px;
+  margin: 40px auto 0;
+}
+.eco-card {
+  position: relative;
+  padding: 40px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+.social-card {
+  background: radial-gradient(circle at top right, rgba(225, 48, 108, 0.15), rgba(5, 8, 22, 0.8));
+  border-color: rgba(225, 48, 108, 0.3);
+}
+.social-tags {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+.social-tags span {
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  font-size: 0.85rem;
+  color: #fff;
+}
+.app-card {
+  background: radial-gradient(circle at bottom left, rgba(48, 213, 255, 0.15), rgba(5, 8, 22, 0.8));
+  border-color: rgba(48, 213, 255, 0.3);
+}
+.coming-soon-badge {
+  display: inline-block;
+  padding: 6px 14px;
+  background: linear-gradient(135deg, #30D5FF, #7C5CFF);
+  color: white;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  box-shadow: 0 5px 15px rgba(48, 213, 255, 0.4);
+}
+.eco-card h3 { font-size: 1.6rem; margin-bottom: 15px; }
+.eco-card p { color: var(--muted); line-height: 1.8; }
+
+/* Founder Message Card */
+.founder-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.founder-card {
+  position: relative;
+  background: linear-gradient(135deg, rgba(124, 92, 255, 0.1), rgba(5, 8, 22, 0.6));
+  border: 1px solid rgba(124, 92, 255, 0.3);
+  padding: 50px;
+  border-radius: 30px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+}
+.quote-mark {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  font-size: 6rem;
+  color: rgba(124, 92, 255, 0.2);
+  line-height: 1;
+  font-family: serif;
+}
+.founder-title {
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 1;
+}
+.founder-message p {
+  color: #DCD5FF; /* Soft purple-white for readability */
+  line-height: 1.9;
+  margin-bottom: 20px;
+  font-size: 1.05rem;
+  position: relative;
+  z-index: 1;
+}
+.founder-signature {
+  margin-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 20px;
+}
+.founder-signature strong {
+  display: block;
+  font-size: 1.3rem;
+  color: white;
+}
+.founder-signature span {
+  color: var(--primary-2);
+  font-size: 0.9rem;
+}
+
+/* Infinite Marquee for Testimonials */
+.marquee-container {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 40px;
+  overflow: hidden;
+  padding: 20px 0;
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: scroll-marquee 25s linear infinite;
+}
+.marquee-track:hover {
+  animation-play-state: paused; /* Pause on hover so client can read */
+}
+.review-card {
+  width: 350px;
+  margin: 0 15px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 30px;
+  white-space: normal;
+  transition: background 0.3s;
+}
+.review-card:hover {
+  background: rgba(255,255,255,0.08);
+}
+.stars {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+.review-card p {
+  color: var(--text);
+  line-height: 1.6;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+.review-card strong {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+@keyframes scroll-marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* Scrolls half the width (the duplicate set) */
+}
+
+/* Responsive Rules */
+@media (max-width: 768px) {
+  .vision-grid, .ecosystem-grid { grid-template-columns: 1fr; }
+  .founder-card { padding: 30px; }
+}
