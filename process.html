@@ -18,19 +18,26 @@
   <div class="grid-overlay"></div>
 
   <header class="site-header">
-    <a class="brand" href="index.html">
+    <a class="brand" href="index.html" aria-label="Webnex by Indus home">
       <span class="brand-mark">W</span>
       <span class="brand-text">
         <strong>Webnex</strong>
         <small>by Indus</small>
       </span>
     </a>
-    <button class="menu-btn" id="menuBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
+
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="siteNav">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
     <nav class="site-nav" id="siteNav">
-      <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
-      <a href="process.html" style="color: var(--text);">Process</a>
-      <a href="pricing.html">Pricing</a>
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="process.html" class="nav-link">Process</a>
+      <a href="work.html" class="nav-link">About Us</a>
+      <a href="pricing.html" class="nav-link">Pricing</a>
       <a href="#contact" class="nav-cta">Start Project</a>
     </nav>
   </header>
