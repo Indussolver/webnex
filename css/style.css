@@ -634,3 +634,133 @@ img{max-width:100%;display:block}
   .timeline-item{grid-template-columns:1fr}
   .floating-whatsapp{right:14px;bottom:14px}
 }
+/* ========================================= */
+/* NEW CTA CONTACT OPTIONS STYLES            */
+/* ========================================= */
+
+.cta-text {
+  max-width: 600px;
+  margin: 12px auto 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* Wrapper to handle layout and mobile stacking */
+.contact-options-wrapper {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+/* The Grid holding the icons */
+.contact-options-grid {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap; /* Important for smaller mobile screens */
+}
+
+/* Base style for each icon button */
+.contact-icon-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 120px;
+  padding: 20px;
+  border-radius: var(--radius); /* Rounded squares */
+  
+  /* Glassmorphism look (translucent) */
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.01));
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(15px);
+  
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* General Hover effect: Lift up */
+.contact-icon-btn:hover {
+  transform: translateY(-8px);
+}
+
+/* SVG Icon styles */
+.contact-icon-btn .icon-svg {
+  width: 36px;
+  height: 36px;
+  fill: var(--text); /* Base state text color (whiteish) */
+  transition: fill 0.3s ease;
+  margin-bottom: 12px;
+}
+
+/* Text label styles inside button */
+.contact-icon-btn .icon-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--muted);
+  transition: color 0.3s ease;
+}
+
+/* ========================================= */
+/* PLATFORM SPECIFIC GLOWS ON HOVER          */
+/* ========================================= */
+
+/* WhatsApp: Cyan glow from theme */
+.contact-icon-btn.whatsapp-btn:hover {
+  border-color: rgba(48, 213, 255, 0.5);
+  box-shadow: 0 15px 40px rgba(48, 213, 255, 0.25);
+}
+.contact-icon-btn.whatsapp-btn:hover .icon-svg { fill: #30D5FF; }
+.contact-icon-btn.whatsapp-btn:hover .icon-label { color: #fff; }
+
+/* Email: Purple glow from theme */
+.contact-icon-btn.email-btn:hover {
+  border-color: rgba(124, 92, 255, 0.6);
+  box-shadow: 0 15px 40px rgba(124, 92, 255, 0.3);
+}
+.contact-icon-btn.email-btn:hover .icon-svg { fill: #7C5CFF; }
+.contact-icon-btn.email-btn:hover .icon-label { color: #fff; }
+
+/* Instagram: Pinkish glow */
+.contact-icon-btn.insta-btn:hover {
+  border-color: rgba(225, 48, 108, 0.5);
+  box-shadow: 0 15px 40px rgba(225, 48, 108, 0.25);
+}
+.contact-icon-btn.insta-btn:hover .icon-svg { fill: #E1306C; }
+.contact-icon-btn.insta-btn:hover .icon-label { color: #fff; }
+
+/* Twitter: Blue glow */
+.contact-icon-btn.twitter-btn:hover {
+  border-color: rgba(29, 161, 242, 0.5);
+  box-shadow: 0 15px 40px rgba(29, 161, 242, 0.25);
+}
+.contact-icon-btn.twitter-btn:hover .icon-svg { fill: #1DA1F2; }
+.contact-icon-btn.twitter-btn:hover .icon-label { color: #fff; }
+
+/* Helpers */
+.justify-center { justify-content: center; }
+.mt-40 { margin-top: 40px; }
+
+/* Responsive adjustments for mobile */
+@media (max-width: 560px) {
+  .contact-options-grid {
+    gap: 12px;
+  }
+  .contact-icon-btn {
+    width: calc(50% - 6px); /* 2 per row on very small screens */
+    height: 100px;
+    padding: 15px;
+  }
+  .contact-icon-btn .icon-svg {
+    width: 28px;
+    height: 28px;
+    margin-bottom: 8px;
+  }
+  .contact-icon-btn .icon-label {
+    font-size: 0.8rem;
+  }
+}
