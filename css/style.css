@@ -859,76 +859,97 @@ img{max-width:100%;display:block}
   }
 }
 /* ========================================= */
-/* SCRATCH CARD MODAL & GLOBAL BANNER        */
+/* VIP SCRATCH CARD & GLOBAL BANNER STYLES   */
 /* ========================================= */
 
 .scratch-modal-overlay {
   position: fixed; inset: 0; z-index: 10000;
-  background: rgba(5, 8, 22, 0.85);
-  backdrop-filter: blur(10px);
+  background: rgba(2, 6, 23, 0.9);
+  backdrop-filter: blur(15px);
   display: flex; align-items: center; justify-content: center;
   visibility: hidden; opacity: 0;
-  transition: all 0.4s ease;
+  transition: all 0.5s ease;
 }
 .scratch-modal-overlay.active { visibility: visible; opacity: 1; }
 
-.scratch-modal-box {
-  background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+/* The Glass Box */
+.premium-glass {
+  background: linear-gradient(145deg, rgba(30, 30, 45, 0.9), rgba(10, 10, 20, 0.95));
   border: 1px solid rgba(124, 92, 255, 0.4);
-  padding: 40px 30px; border-radius: 24px;
-  max-width: 400px; width: 90%;
-  text-align: center; position: relative;
-  box-shadow: 0 30px 80px rgba(0,0,0,0.8), 0 0 40px rgba(124, 92, 255, 0.2);
-  transform: translateY(30px) scale(0.95); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  padding: 40px 30px; border-radius: 28px;
+  max-width: 420px; width: 90%; text-align: center; position: relative;
+  box-shadow: 0 40px 100px rgba(0,0,0,0.9), inset 0 0 20px rgba(124, 92, 255, 0.1);
+  transform: translateY(40px) scale(0.9); 
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-.scratch-modal-overlay.active .scratch-modal-box { transform: translateY(0) scale(1); }
+.scratch-modal-overlay.active .premium-glass { transform: translateY(0) scale(1); }
+
+.modal-header { display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 10px; }
+.gradient-text { background: linear-gradient(90deg, #FFD700, #FFA500); -webkit-background-clip: text; color: transparent; font-weight: 800; letter-spacing: 2px; }
+.modal-title { font-size: 1.8rem; color: #fff; margin-bottom: 12px; }
+.modal-subtitle { color: var(--muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 25px; }
 
 .close-modal {
   position: absolute; top: 15px; right: 20px;
   background: none; border: none; color: var(--muted);
-  font-size: 1.8rem; cursor: pointer; transition: 0.3s;
+  font-size: 2rem; cursor: pointer; transition: 0.3s;
 }
-.close-modal:hover { color: white; transform: scale(1.1); }
+.close-modal:hover { color: #fff; transform: rotate(90deg); }
 
-.scratch-container {
-  position: relative; width: 100%; height: 160px;
-  margin-top: 20px; border-radius: 16px; overflow: hidden;
-  background: rgba(0,0,0,0.4);
-  border: 1px solid rgba(255,255,255,0.1);
-  /* Make sure canvas stays inside radius */
-  mask-image: radial-gradient(white, black);
-  -webkit-mask-image: -webkit-radial-gradient(white, black);
+/* The VIP Ticket Design */
+.premium-ticket {
+  position: relative; width: 100%; height: 180px;
+  border-radius: 16px; overflow: hidden;
+  background: #000;
+  border: 2px dashed rgba(255, 215, 0, 0.4); /* Golden dashed border */
+  padding: 6px;
+  box-shadow: 0 10px 30px rgba(255, 215, 0, 0.1);
 }
 
-.hidden-offer {
-  position: absolute; inset: 0;
+.ticket-content {
+  position: absolute; inset: 6px; border-radius: 10px;
   display: flex; flex-direction: column; align-items: center; justify-content: center;
-  background: linear-gradient(135deg, rgba(36, 211, 102, 0.1), rgba(5, 8, 22, 0.8));
+  background: radial-gradient(circle at center, rgba(36, 211, 102, 0.15), rgba(5, 8, 22, 1));
+  border: 1px solid rgba(36, 211, 102, 0.3);
 }
 
-.discount-price { display: flex; align-items: center; gap: 10px; justify-content: center; }
-.new-price { font-size: 1.6rem; font-weight: 800; color: white; }
-.old-price { font-size: 1rem; color: #fca5a5; text-decoration: line-through; }
+.glow-text-green { color: #24D366; text-shadow: 0 0 15px rgba(36, 211, 102, 0.5); }
+.success-text { font-size: 1.4rem; margin-bottom: 5px; }
+.offer-label { color: var(--muted); font-size: 0.9rem; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 1px; }
+
+.discount-price { display: flex; align-items: center; gap: 12px; margin-bottom: 15px; }
+.new-price { font-size: 2.2rem; font-weight: 800; line-height: 1; }
+.old-price { font-size: 1.1rem; color: #fca5a5; text-decoration: line-through; opacity: 0.8; }
+.claim-btn { padding: 10px 24px; font-size: 0.9rem; border-radius: 99px; }
 
 #scratchCanvas {
   position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-  z-index: 2; cursor: crosshair;
-  transition: opacity 0.5s ease;
+  z-index: 2; cursor: crosshair; transition: opacity 0.6s ease;
+  border-radius: 12px;
 }
 
-.offer-timer-container {
-  margin-top: 15px; font-size: 0.95rem; color: #fca5a5; font-weight: 600;
-  display: none; /* Shows after scratch */
-}
+.offer-timer-container { margin-top: 20px; font-size: 1rem; color: #fca5a5; font-weight: 600; display: none; }
+.timer-pulse { animation: pulse-red 1.5s infinite; display: inline-block; }
+@keyframes pulse-red { 0%, 100% { opacity: 1; text-shadow: 0 0 10px rgba(252, 165, 165, 0.5); } 50% { opacity: 0.6; } }
 
-/* Global Sticky Banner at bottom */
+/* Global Banner Upgrades */
 .global-offer-banner {
   position: fixed; bottom: -100px; left: 0; width: 100%; z-index: 9900;
-  background: linear-gradient(90deg, #7C5CFF, #30D5FF);
-  color: white; text-align: center; padding: 12px 20px;
-  font-size: 0.95rem; font-weight: 500;
-  transition: bottom 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-  box-shadow: 0 -10px 30px rgba(124, 92, 255, 0.3);
+  background: rgba(10, 10, 20, 0.95);
+  border-top: 1px solid rgba(124, 92, 255, 0.5);
+  backdrop-filter: blur(15px); color: white;
+  transition: bottom 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 -15px 40px rgba(0, 0, 0, 0.5);
 }
 .global-offer-banner.show { bottom: 0; }
-@media (max-width: 560px) { .global-offer-banner { font-size: 0.8rem; padding: 10px; } }
+.banner-content {
+  max-width: 1000px; margin: 0 auto; padding: 12px 20px;
+  display: flex; align-items: center; justify-content: center; gap: 15px; flex-wrap: wrap; text-align: center;
+}
+.pulse-dot { width: 10px; height: 10px; background: #24D366; border-radius: 50%; box-shadow: 0 0 10px #24D366; animation: pulse-dot 1.5s infinite; }
+.timer-highlight { color: #fca5a5; font-weight: 800; font-size: 1.1rem; margin-left: 5px; }
+.banner-btn { background: #24D366; color: #fff; padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 700; text-decoration: none; transition: 0.3s; }
+.banner-btn:hover { background: #12b861; transform: scale(1.05); }
+
+@keyframes pulse-dot { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.5); opacity: 0.5; } }
+@media (max-width: 560px) { .banner-content { padding: 10px; font-size: 0.85rem; gap: 8px; flex-direction: column; } .timer-highlight{font-size: 1rem;} }
