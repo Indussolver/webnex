@@ -139,21 +139,28 @@
 /* Infinite Marquee for Testimonials */
 .marquee-container {
   width: 100vw;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
+  /* Yeh line problem solve karegi bina kisi animation conflict ke */
+  margin-left: calc(50% - 50vw);
   margin-top: 40px;
   overflow: hidden;
   padding: 20px 0;
+  
+  /* Fade effect dono side me (Premium look ke liye) */
+  -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
 }
+
 .marquee-track {
   display: flex;
   width: max-content;
-  animation: scroll-marquee 25s linear infinite;
+  /* Thoda slow kiya hai (30s) padhne me aasan ho */
+  animation: scroll-marquee 30s linear infinite;
 }
+
 .marquee-track:hover {
-  animation-play-state: paused; /* Pause on hover so client can read */
+  animation-play-state: paused;
 }
+
 .review-card {
   width: 350px;
   margin: 0 15px;
@@ -164,13 +171,16 @@
   white-space: normal;
   transition: background 0.3s;
 }
+
 .review-card:hover {
   background: rgba(255,255,255,0.08);
 }
+
 .stars {
   font-size: 1.2rem;
   margin-bottom: 15px;
 }
+
 .review-card p {
   color: var(--text);
   line-height: 1.6;
@@ -178,6 +188,7 @@
   margin-bottom: 20px;
   font-style: italic;
 }
+
 .review-card strong {
   color: var(--muted);
   font-size: 0.9rem;
@@ -185,7 +196,7 @@
 
 @keyframes scroll-marquee {
   0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); } /* Scrolls half the width (the duplicate set) */
+  100% { transform: translateX(-50%); } 
 }
 
 /* Responsive Rules */
