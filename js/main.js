@@ -50,3 +50,60 @@ const observer = new IntersectionObserver(
 );
 
 revealItems.forEach((item) => observer.observe(item));
+// ========================================= //
+// PREMIUM CTA CELEBRATION (CONFETTI EFFECT) //
+// ========================================= //
+
+// Sabhi primary buttons par apply karenge
+document.querySelectorAll('.nav-cta, .btn-primary').forEach(button => {
+  button.addEventListener('click', function(e) {
+    
+    // Exact click coordinate nikalna (Jahan mouse click hua wahi se animation niklegi)
+    const rect = this.getBoundingClientRect();
+    const x = e.clientX || rect.left + rect.width / 2;
+    const y = e.clientY || rect.top + rect.height / 2;
+
+    // 25 chote-chote minimal particles create karenge
+    const particlesCount = 25;
+    
+    // Website ki premium theme colors: Green, Purple, Cyan, Pink, White
+    const colors = ['#24D366', '#7C5CFF', '#30D5FF', '#FF5C8D', '#ffffff'];
+
+    for (let i = 0; i < particlesCount; i++) {
+      createParticle(x, y, colors[Math.floor(Math.random() * colors.length)]);
+    }
+  });
+});
+
+function createParticle(x, y, color) {
+  const particle = document.createElement('div');
+  particle.classList.add('confetti-particle');
+  document.body.appendChild(particle);
+
+  // Random size from 4px to 10px (Minimal look)
+  const size = Math.random() * 6 + 4; 
+  particle.style.width = `${size}px`;
+  particle.style.height = `${size}px`;
+  particle.style.background = color;
+  
+  // Starting position exactly at cursor
+  particle.style.left = `${x}px`;
+  particle.style.top = `${y}px`;
+
+  // Randomize math physics (kahan girenge particles)
+  const angle = Math.random() * Math.PI * 2;
+  const velocity = 40 + Math.random() * 80; // Distance
+  
+  // X aur Y axis ki trajectory calculate karna
+  const tx = Math.cos(angle) * velocity;
+  const ty = Math.sin(angle) * velocity;
+
+  // Custom CSS variables mein value pass karna
+  particle.style.setProperty('--tx', `${tx}px`);
+  particle.style.setProperty('--ty', `${ty}px`);
+
+  // Memory bachaane ke liye animation ke baad particles ko DOM se hata dena
+  setTimeout(() => {
+    particle.remove();
+  }, 800);
+}
