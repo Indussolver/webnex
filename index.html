@@ -321,33 +321,44 @@
 
   <script src="js/main.js"></script>
   <div id="scratchModal" class="scratch-modal-overlay">
-    <div class="scratch-modal-box">
+    <div class="scratch-modal-box premium-glass">
       <button class="close-modal" id="closeScratch">&times;</button>
-      <span class="eyebrow" style="color: #30D5FF;">Exclusive Welcome Gift</span>
-      <h2>Scratch to Reveal!</h2>
-      <p>As a thank you for visiting Webnex, scratch the card below to unlock a special, time-sensitive offer for your business.</p>
+      
+      <div class="modal-header">
+        <span class="sparkle-icon">✨</span>
+        <span class="eyebrow gradient-text">Exclusive Visitor Gift</span>
+      </div>
+      
+      <h2 class="modal-title">Unlock Your Surprise</h2>
+      <p class="modal-subtitle">We have a special, time-sensitive pricing offer hidden below. Scratch the card to claim it!</p>
 
-      <div class="scratch-container" id="scratchContainer">
-        <div class="hidden-offer">
-          <h3 style="color: #24D366; margin-bottom: 5px;">🎉 Offer Unlocked!</h3>
-          <p style="margin-bottom: 10px; font-size: 0.9rem;">Business Plan Special Price</p>
+      <div class="scratch-container premium-ticket" id="scratchContainer">
+        <div class="hidden-offer ticket-content">
+          <div class="confetti-bg"></div>
+          <h3 class="success-text glow-text-green">🎉 Offer Unlocked!</h3>
+          <p class="offer-label">Business Plan Special</p>
           <div class="discount-price">
-            <span class="new-price">₹1499 / $15</span>
-            <span class="old-price">₹1999 / $19</span>
+            <span class="new-price glow-text-green">₹1499 <small style="font-size:1rem; opacity:0.8; font-weight:500;">/ $15</small></span>
+            <span class="old-price">₹1999</span>
           </div>
-          <a href="pricing.html" class="btn btn-primary" style="padding: 8px 20px; font-size: 0.9rem; margin-top: 10px;">Claim Now</a>
+          <a href="pricing.html" class="btn btn-primary claim-btn">Claim Offer Now</a>
         </div>
+        
         <canvas id="scratchCanvas"></canvas>
       </div>
       
       <div id="offerTimerContainer" class="offer-timer-container">
-        Offer expires in: <span id="offerTimerText">10:00</span>
+        Offer expires in: <span id="offerTimerText" class="timer-pulse">10:00</span>
       </div>
     </div>
   </div>
 
   <div id="globalOfferBanner" class="global-offer-banner">
-    🎉 <strong>Business Plan Discount Unlocked!</strong> Claim for ₹1499 before time runs out: <span id="globalTimerText">10:00</span>
+    <div class="banner-content">
+      <span class="pulse-dot"></span>
+      <span><strong>🎉 Special Discount Unlocked!</strong> Claim Business Plan for ₹1499 before time runs out: <span id="globalTimerText" class="timer-highlight">10:00</span></span>
+      <a href="pricing.html" class="banner-btn">Claim Now</a>
+    </div>
   </div>
 </body>
 </html>
