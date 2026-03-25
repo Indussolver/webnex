@@ -64,23 +64,6 @@ img{max-width:100%;display:block}
   padding:92px 0;
 }
 
-.site-header{
-  width:min(1180px, calc(100% - 32px));
-  margin:18px auto 0;
-  position:sticky;
-  top:16px;
-  z-index:50;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:16px;
-  padding:14px 18px;
-  border:1px solid var(--border);
-  border-radius:999px;
-  backdrop-filter:blur(18px);
-  background:rgba(5,8,22,.58);
-  box-shadow:var(--shadow);
-}
 
 .brand{display:flex;align-items:center;gap:12px;min-width:0}
 .brand-mark{
@@ -93,88 +76,7 @@ img{max-width:100%;display:block}
 .brand-text strong{font-size:1rem;letter-spacing:.2px}
 .brand-text small{font-size:.78rem;color:var(--muted)}
 
-.site-nav{
-  display:flex;align-items:center;gap:22px;
-  color:var(--muted);font-weight:500;
-}
-.site-nav a{transition:.25s ease}
-.site-nav a:hover{color:var(--text)}
-/* ========================================= */
-/* SUPER COOL CTA BUTTON (START PROJECT)    */
-/* ========================================= */
 
-/* 1. Base Style Update for .nav-cta */
-.site-nav .nav-cta {
-  color: white !important; /* Text color pure white */
-  padding: 12px 24px; /* Thoda bada padding */
-  border-radius: 999px;
-  font-weight: 700; /* Bold text */
-  text-transform: uppercase; /* Uppercase letters */
-  font-size: 0.85rem;
-  letter-spacing: 1px;
-  
-  /* Neon Green Gradient Background */
-  background: linear-gradient(135deg, #24D366, #12b861);
-  border: none; /* No border needed now */
-  
-  /* Dynamic Shadow & Positioning */
-  position: relative;
-  z-index: 1;
-  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Smooth, slightly bouncy transition */
-  overflow: hidden; /* For shimmer effect */
-  
-  /* Breathing Animation (Neon Pulse) */
-  animation: neon-pulse 2.5s infinite ease-in-out;
-}
-
-/* 2. Hover Effect (Slightly larger and brighter glow) */
-.site-nav .nav-cta:hover {
-  transform: translateY(-3px) scale(1.03); /* Lift up and slightly grow */
-  box-shadow: 0 10px 30px rgba(36, 211, 102, 0.6); /* Intense green glow on hover */
-}
-
-/* 3. Shimmer Effect inside the button (runs across on hover) */
-.site-nav .nav-cta::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-  transition: all 0.6s ease;
-  z-index: -1;
-}
-
-.site-nav .nav-cta:hover::after {
-  left: 100%; /* Shimmer runs across */
-}
-
-/* 4. The Neon Pulse Animation Logic */
-@keyframes neon-pulse {
-  0% {
-    box-shadow: 0 0 8px rgba(36, 211, 102, 0.4), 0 0 0 0px rgba(36, 211, 102, 0.3);
-  }
-  70% {
-    /* Main glow and an expanding outer ring */
-    box-shadow: 0 0 20px rgba(36, 211, 102, 0.7), 0 0 0 12px rgba(36, 211, 102, 0);
-  }
-  100% {
-    box-shadow: 0 0 8px rgba(36, 211, 102, 0.4), 0 0 0 0px rgba(36, 211, 102, 0);
-  }
-}
-
-.menu-btn{
-  display:none;
-  width:48px;height:48px;
-  border:1px solid var(--border);
-  border-radius:16px;
-  background:rgba(255,255,255,.04);
-  cursor:pointer;
-}
-.menu-btn span{
-  display:block;width:20px;height:2px;margin:4px auto;background:var(--text);border-radius:99px;
-}
 
 .hero{
   display:grid;
@@ -593,34 +495,7 @@ img{max-width:100%;display:block}
   }
 }
 
-@media (max-width: 820px){
-  .site-header{
-    border-radius:24px;
-  }
-  .menu-btn{display:block}
-  .site-nav{
-    position:absolute;
-    left:16px;
-    right:16px;
-    top:76px;
-    display:none;
-    flex-direction:column;
-    gap:12px;
-    padding:16px;
-    border-radius:24px;
-    border:1px solid var(--border);
-    background:rgba(5,8,22,.96);
-    backdrop-filter:blur(20px);
-    box-shadow:var(--shadow);
-  }
-  .site-nav.open{display:flex}
-  .site-nav a{
-    width:100%;
-    padding:12px 14px;
-    border-radius:14px;
-    background:rgba(255,255,255,.03);
-  }
-  .nav-cta{display:flex;justify-content:center}
+
   .hero-stats{grid-template-columns:1fr}
   .mock-grid{grid-template-columns:1fr 1fr}
 }
@@ -762,5 +637,145 @@ img{max-width:100%;display:block}
   }
   .contact-icon-btn .icon-label {
     font-size: 0.8rem;
+  }
+}
+/* ========================================= */
+/* PREMIUM STICKY NAVBAR & ANIMATIONS        */
+/* ========================================= */
+
+.site-header {
+  width: min(1180px, calc(100% - 32px));
+  margin: 18px auto 0;
+  
+  /* YEH LINE NAVBAR KO HAMESHA TOP PAR RAKHEGI */
+  position: sticky;
+  top: 16px;
+  z-index: 100; /* Sabse upar rakhne ke liye */
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 18px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  backdrop-filter: blur(20px); /* Glass effect */
+  background: rgba(5, 8, 22, 0.75);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+/* Hover Animation for Links (Underline Slide) */
+.site-nav .nav-link {
+  position: relative;
+  color: var(--muted);
+  transition: color 0.3s ease;
+  padding: 5px 0;
+}
+
+.site-nav .nav-link:hover {
+  color: #fff;
+}
+
+.site-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(90deg, #7C5CFF, #30D5FF);
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+.site-nav .nav-link:hover::after {
+  width: 100%; /* Hover karne par line draw hogi */
+}
+
+/* Mobile Menu Button */
+.menu-btn {
+  display: none;
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: rgba(255,255,255,.04);
+  cursor: pointer;
+  z-index: 101;
+}
+
+.menu-btn span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  margin: 4px auto;
+  background: var(--text);
+  border-radius: 99px;
+  transition: 0.3s ease;
+}
+
+
+/* ========================================= */
+/* MOBILE MENU SMOOTH ANIMATION (MAX 820px)  */
+/* ========================================= */
+@media (max-width: 820px) {
+  .menu-btn { display: block; }
+  
+  .site-nav {
+    position: absolute;
+    left: 16px;
+    right: 16px;
+    top: 76px;
+    
+    /* Display ki jagah Visibility aur Opacity use kiya hai for Smooth Animation */
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px;
+    border-radius: 24px;
+    border: 1px solid var(--border);
+    background: rgba(5, 8, 22, 0.98);
+    backdrop-filter: blur(25px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+    
+    /* Hidden State */
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-20px); /* Thoda upar rahega */
+    transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
+  }
+  
+  /* Open State (Jab user menu button dabayega) */
+  .site-nav.open {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0); /* Niche slide hoke aayega */
+  }
+
+  .site-nav .nav-link {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 14px;
+    background: rgba(255,255,255,.03);
+    text-align: center;
+  }
+  
+  .site-nav .nav-link::after {
+    display: none; /* Mobile pe underline animation hata diya */
+  }
+
+  .site-nav .nav-cta {
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
 }
