@@ -1,109 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Services - Webnex</title>
-
-<link rel="stylesheet" href="css/services.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#070B16" />
+  <title>Services & Why You Need a Website - Webnex</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/services.css" />
 </head>
-
 <body>
-<div class="bg"></div>
-<div class="bg-effect"></div>
+  <div class="bg-layer"></div>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+  <div class="grid-overlay"></div>
 
-<header class="navbar">
-  <div class="logo">Webnex</div>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="services.html">Services</a>
-  </nav>
-</header>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Webnex by Indus home">
+      <span class="brand-mark">W</span>
+      <span class="brand-text">
+        <strong>Webnex</strong>
+        <small>by Indus</small>
+      </span>
+    </a>
 
-<!-- HERO -->
-<section class="hero-advanced">
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="siteNav">
+      <span></span><span></span><span></span>
+    </button>
 
-  <div class="hero-content">
-    <h1>
-      Your Business <span>Without a Website</span><br>
-      is Losing Customers Daily
-    </h1>
+    <nav class="site-nav" id="siteNav">
+      <a href="index.html">Home</a>
+      <a href="services.html" style="color: var(--text);">Services</a>
+      <a href="index.html#process">Process</a>
+      <a href="index.html#pricing">Pricing</a>
+      <a href="#contact" class="nav-cta">Start Project</a>
+    </nav>
+  </header>
 
-    <p>
-      Today, people search online before they trust any business.  
-      If you don’t have a website, customers will choose your competitors.
-    </p>
+  <main id="top">
+    <section class="hero section text-center-hero">
+      <div class="hero-copy full-width" data-reveal>
+        <div class="pill mx-auto">
+          <span class="dot alert-dot"></span>
+          Don't lose customers to your competitors
+        </div>
 
-    <div class="points">
-      <span>❌ No Online Presence</span>
-      <span>❌ No Trust from Customers</span>
-      <span>❌ Losing Daily Sales</span>
-    </div>
+        <h1 class="mx-auto">A Business Without a Website is an <span class="highlight-text">Invisible Business.</span></h1>
 
-    <a href="#pricing" class="btn">Get Your Website Now</a>
-  </div>
+        <p class="hero-text mx-auto">
+          Today, 85% of people search online before trusting a business. If they can't find you on Google, they will simply go to the next shop. We help you build that trust instantly.
+        </p>
 
-</section>
-<!-- OUR FOCUS -->
-<section class="section">
-  <h2 class="big">Our Focus</h2>
-  <p class="wide">
-    Our mission is simple — help small businesses come online easily. We understand that many
-    shop owners struggle with technology. That’s why we create simple, affordable and powerful
-    websites so you can focus on your business while we handle your online presence.
-  </p>
-</section>
+        <div class="hero-actions justify-center">
+          <a href="#contact" class="btn btn-primary">Fix Your Online Presence</a>
+        </div>
+      </div>
+    </section>
 
-<!-- PRICING -->
-<section class="section">
-  <h2 class="big">Pricing</h2>
+    <section class="section" data-reveal>
+      <div class="section-head">
+        <span class="eyebrow">The Reality Check</span>
+        <h2>Why Every Small Business Needs a Website</h2>
+        <p>A website isn't an expense. It's an employee that works for you 24/7 without taking a salary.</p>
+      </div>
 
-  <div class="grid">
+      <div class="card-grid">
+        <article class="feature-card problem-card" data-reveal>
+          <div class="icon red-icon">24/7</div>
+          <h3>Your Shop Never Closes</h3>
+          <p>Physical shops close at night. A website lets customers see your products, services, and contact you even at 2 AM.</p>
+        </article>
 
-    <div class="card">
-      <h3>Starter</h3>
-      <p>Perfect for small shops</p>
-      <h2>₹999</h2>
-    </div>
+        <article class="feature-card problem-card" data-reveal>
+          <div class="icon blue-icon">👑</div>
+          <h3>Instant Trust & Authority</h3>
+          <p>People trust businesses that look professional online. A polished website makes your local shop look like a premium brand.</p>
+        </article>
 
-    <div class="card highlight">
-      <h3>Business</h3>
-      <p>Best for growing brands</p>
-      <h2>₹1999</h2>
-    </div>
+        <article class="feature-card problem-card" data-reveal>
+          <div class="icon green-icon">🔍</div>
+          <h3>Google Search Traffic</h3>
+          <p>When someone searches "best [your service] near me", you want to be the first one they see. No website = No visibility.</p>
+        </article>
+      </div>
+    </section>
 
-    <div class="card">
-      <h3>Premium</h3>
-      <p>High-end websites</p>
-      <h2>₹3999</h2>
-    </div>
+    <section class="section alt" id="our-services">
+      <div class="section-head" data-reveal>
+        <span class="eyebrow">What We Do</span>
+        <h2>Webnex Custom Services</h2>
+        <p>We don't just build websites; we build digital assets that bring you more business.</p>
+      </div>
 
-  </div>
-</section>
+      <div class="timeline">
+        <div class="timeline-item" data-reveal>
+          <span class="step"><img src="https://cdn-icons-png.flaticon.com/512/3159/3159310.png" width="24" alt="shop" style="filter: invert(1);"></span>
+          <div>
+            <h3>Local Business Websites</h3>
+            <p>Perfect for retail shops, clinics, CA firms, and local services. We build 1-to-5 page websites that showcase your work, address, and an easy WhatsApp contact button.</p>
+          </div>
+        </div>
 
-<!-- TESTIMONIALS -->
-<section class="section">
-  <h2 class="big">Happy Customers</h2>
+        <div class="timeline-item" data-reveal>
+          <span class="step"><img src="https://cdn-icons-png.flaticon.com/512/2838/2838838.png" width="24" alt="rocket" style="filter: invert(1);"></span>
+          <div>
+            <h3>High-Converting Landing Pages</h3>
+            <p>Running ads on Facebook or Instagram? You need a landing page. We design fast, single-page sites focused entirely on getting you leads and sales.</p>
+          </div>
+        </div>
 
-  <div class="scroll-container">
-    <div class="scroll">
+        <div class="timeline-item" data-reveal>
+          <span class="step"><img src="https://cdn-icons-png.flaticon.com/512/1006/1006505.png" width="24" alt="cart" style="filter: invert(1);"></span>
+          <div>
+            <h3>E-Commerce & Portfolios</h3>
+            <p>Want to sell products online or show off your agency's work? We build dynamic websites that look premium and work seamlessly on mobile phones.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <div class="review">"Amazing service! My shop looks professional now."</div>
-      <div class="review">"Got my website in 2 days. Highly recommend!"</div>
-      <div class="review">"Affordable and very clean design."</div>
-      <div class="review">"Customers trust my business more now."</div>
-      <div class="review">"Best decision for my business."</div>
+    <section id="contact" class="section cta-section">
+      <div class="cta-card" data-reveal>
+        <span class="eyebrow">Don't Wait</span>
+        <h2>Ready to make your business visible?</h2>
+        <p>Message us today. Let's discuss your business and build a website that your customers will love.</p>
+        <div class="hero-actions justify-center">
+          <a href="#" class="btn btn-primary" id="whatsappBtn">Chat on WhatsApp</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
-    </div>
-  </div>
-</section>
+  <footer class="site-footer">
+    <p>© 2026 Webnex by Indus. All rights reserved.</p>
+  </footer>
 
-<!-- CTA -->
-<section class="section">
-  <h2 class="big">Start Your Website Today</h2>
-  <a href="#" class="btn primary">Chat on WhatsApp</a>
-</section>
-
-<script src="js/main.js"></script>
+  <a class="floating-whatsapp" href="#" id="floatingWhatsapp" aria-label="Chat on WhatsApp">WhatsApp</a>
+  <script src="js/main.js"></script>
 </body>
 </html>
