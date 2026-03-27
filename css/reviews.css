@@ -168,3 +168,130 @@
   .review-card-pro p { font-size: 1rem; }
   .reviewer-pic { width: 45px; height: 45px; font-size: 1rem;}
 }
+/* ========================================= */
+/* 3. HERO SECTION ANIMATIONS & GLOW         */
+/* ========================================= */
+
+.reviews-hero {
+  position: relative;
+  padding-bottom: 60px;
+  animation: fadeDown 0.8s ease-out forwards;
+}
+
+/* Background me ek subtle purple glow */
+.hero-glow-bg {
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(124, 92, 255, 0.15) 0%, rgba(0,0,0,0) 70%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Wall of love text pulse animation */
+.glowing-text {
+  color: #FFD700;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-weight: 800;
+  font-size: 0.95rem;
+  display: inline-block;
+  margin-bottom: 20px;
+  animation: pulseGoldGlow 2s infinite alternate;
+}
+
+@keyframes pulseGoldGlow {
+  from { text-shadow: 0 0 10px rgba(255, 215, 0, 0.2); }
+  to { text-shadow: 0 0 25px rgba(255, 215, 0, 0.7); }
+}
+
+/* Silver metallic gradient on main heading */
+.hero-title {
+  font-size: 3.8rem;
+  margin-bottom: 20px;
+  background: linear-gradient(to right, #ffffff, #a8b2d1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -1px;
+}
+
+.hero-subtitle {
+  color: #a8b2d1;
+  max-width: 650px;
+  margin: 0 auto;
+  font-size: 1.15rem;
+  line-height: 1.7;
+}
+
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .hero-title { font-size: 2.5rem; }
+  .hero-subtitle { font-size: 1rem; padding: 0 15px; }
+}
+
+/* ========================================= */
+/* 4. PREMIUM GLASS FOOTER                   */
+/* ========================================= */
+
+.site-footer {
+  margin-top: 80px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  background: linear-gradient(180deg, rgba(5, 8, 22, 0) 0%, rgba(124, 92, 255, 0.05) 100%);
+  padding: 50px 20px 30px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  position: relative;
+  z-index: 2;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.4rem;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.footer-copyright {
+  color: var(--muted);
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 25px;
+  margin-top: 15px;
+}
+
+.footer-links a {
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.footer-links a:hover {
+  color: #30D5FF;
+  text-shadow: 0 0 10px rgba(48, 213, 255, 0.4);
+}
