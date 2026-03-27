@@ -132,31 +132,4 @@ document.addEventListener("DOMContentLoaded", function() {
     } catch (error) {
         console.log("Currency detection skipped.");
     }
-
-    // 2. Direct Offer Timer Logic
-    const timerDisplay = document.getElementById("countdown");
-    if (timerDisplay) {
-        let timeInSecs = 2 * 3600 + 45 * 60 + 30; // 02:45:30
-        
-        function updateTimer() {
-            let h = Math.floor(timeInSecs / 3600);
-            let m = Math.floor((timeInSecs % 3600) / 60);
-            let s = timeInSecs % 60;
-
-            h = h < 10 ? "0" + h : h;
-            m = m < 10 ? "0" + m : m;
-            s = s < 10 ? "0" + s : s;
-
-            timerDisplay.innerText = `${h}h ${m}m ${s}s`;
-            
-            if (timeInSecs > 0) {
-                timeInSecs--;
-            } else {
-                // Reset timer loop automatically
-                timeInSecs = 2 * 3600; 
-            }
-        }
-        
-        setInterval(updateTimer, 1000);
-    }
 });
