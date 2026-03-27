@@ -160,6 +160,16 @@
 .review-card-pro:nth-child(8) { animation-delay: 0.45s; }
 .review-card-pro:nth-child(9) { animation-delay: 0.5s; }
 .review-card-pro:nth-child(10) { animation-delay: 0.55s; }
+.review-card-pro:nth-child(11) { animation-delay: 0.6s; }
+.review-card-pro:nth-child(12) { animation-delay: 0.65s; }
+.review-card-pro:nth-child(13) { animation-delay: 0.7s; }
+.review-card-pro:nth-child(14) { animation-delay: 0.75s; }
+.review-card-pro:nth-child(15) { animation-delay: 0.8s; }
+.review-card-pro:nth-child(16) { animation-delay: 0.85s; }
+.review-card-pro:nth-child(17) { animation-delay: 0.9s; }
+.review-card-pro:nth-child(18) { animation-delay: 0.95s; }
+.review-card-pro:nth-child(19) { animation-delay: 1.0s; }
+.review-card-pro:nth-child(20) { animation-delay: 1.05s; }
 
 /* Mobile optimization */
 @media (max-width: 768px) {
