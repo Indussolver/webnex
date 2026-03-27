@@ -133,3 +133,67 @@
   box-shadow: 0 15px 35px rgba(37, 211, 102, 0.6);
   color: #fff;
 }
+/* ========================================= */
+/* LOAD MORE BUTTON & HIDDEN LOGIC           */
+/* ========================================= */
+
+.hidden-faq {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.load-more-btn {
+  background: transparent;
+  color: #30D5FF;
+  border: 1px solid rgba(48, 213, 255, 0.4);
+  padding: 12px 30px;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.load-more-btn:hover {
+  background: rgba(48, 213, 255, 0.1);
+  color: #fff;
+  border-color: #30D5FF;
+  box-shadow: 0 5px 15px rgba(48, 213, 255, 0.2);
+}
+
+/* ========================================= */
+/* DUAL CTA BUTTONS (WHATSAPP + EMAIL)       */
+/* ========================================= */
+
+.cta-buttons-wrapper {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap; /* Taki mobile par upar-neeche ho jayein */
+}
+
+/* Purana WhatsApp button design waisa hi rahega (upar likha hua hai) */
+
+/* Naya Email Button */
+.email-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(135deg, #7C5CFF, #5b3bd4); /* Premium Purple */
+  color: #fff;
+  padding: 15px 35px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 25px rgba(124, 92, 255, 0.3);
+}
+
+.email-btn:hover {
+  background: linear-gradient(135deg, #8A6FFF, #6744E5);
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(124, 92, 255, 0.5);
+  color: #fff;
+}
