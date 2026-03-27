@@ -379,9 +379,30 @@
 
   <a class="floating-whatsapp" href="#" id="floatingWhatsapp" aria-label="Chat on WhatsApp">WhatsApp</a>
 
+  <script src="js/main.js"></script>
+  <div id="scratchModal" class="scratch-modal-overlay">
+    <div class="scratch-modal-box premium-glass">
+      <button class="close-modal" id="closeScratch">&times;</button>
+      
+      <div class="modal-header">
+        <span class="sparkle-icon">✨</span>
+        <span class="eyebrow gradient-text">Exclusive Visitor Gift</span>
       </div>
-    </div>
-  </div>
+      
+      <h2 class="modal-title">Unlock Your Surprise</h2>
+      <p class="modal-subtitle">We have a special, time-sensitive pricing offer hidden below. Scratch the card to claim it!</p>
+
+      <div class="scratch-container premium-ticket" id="scratchContainer">
+        <div class="hidden-offer ticket-content">
+          <div class="confetti-bg"></div>
+          <h3 class="success-text glow-text-green">🎉 Offer Unlocked!</h3>
+          <p class="offer-label">Business Plan Special</p>
+          <div class="discount-price">
+            <span class="new-price glow-text-green">₹1499 <small style="font-size:1rem; opacity:0.8; font-weight:500;">/ $15</small></span>
+            <span class="old-price">₹1999</span>
+          </div>
+          <a href="pricing.html" class="btn btn-primary claim-btn">Claim Offer Now</a>
+        </div>
 
 </body>
 </html>
