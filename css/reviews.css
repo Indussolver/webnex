@@ -172,10 +172,19 @@
 /* 3. HERO SECTION ANIMATIONS & GLOW         */
 /* ========================================= */
 
+/* ========================================= */
+/* 3. HERO SECTION ANIMATIONS & GLOW         */
+/* ========================================= */
+
 .reviews-hero {
   position: relative;
   padding-bottom: 60px;
   animation: fadeDown 0.8s ease-out forwards;
+  /* Ye teen nayi lines text ko 100% center force karengi */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 /* Background me ek subtle purple glow */
