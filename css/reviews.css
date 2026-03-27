@@ -304,3 +304,25 @@
   color: #30D5FF;
   text-shadow: 0 0 10px rgba(48, 213, 255, 0.4);
 }
+/* ========================================= */
+/* 5. ROUNDED PROFILE PICTURE FIX            */
+/* ========================================= */
+
+.reviewer-pic {
+  width: 55px !important;
+  height: 55px !important;
+  border-radius: 50% !important; /* Yeh box ko poora gol (circle) banata hai */
+  overflow: hidden !important;   /* Yeh line box ke bahar jane wali photo ko kaat deti hai (Magic line!) */
+  border: 2px solid rgba(124, 92, 255, 0.4); /* Premium purple border */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  flex-shrink: 0;
+  display: block;
+  background: transparent;
+}
+
+.reviewer-pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Yeh photo ko stretch hone se rokti hai aur perfect fit karti hai */
+  display: block;
+}
