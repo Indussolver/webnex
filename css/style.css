@@ -1090,3 +1090,37 @@ img{max-width:100%;display:block}
   .dropdown:hover .dropdown-content { display: block; }
   .dropdown .arrow { float: right; }
 }
+/* ========================================= */
+/* PREMIUM ACTIVE LINK HIGHLIGHT             */
+/* ========================================= */
+
+.site-nav .nav-link {
+  position: relative; /* Ye line zaroori hai underline position ke liye */
+}
+
+/* Jab link active ho, toh text chamkega */
+.site-nav .nav-link.active {
+  color: #fff !important; 
+  font-weight: 600;
+  text-shadow: 0 0 12px rgba(48, 213, 255, 0.5); /* Premium Cyan Glow */
+}
+
+/* Text ke niche ek choti si glowing line (World-class feel) */
+.site-nav .nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 3px;
+  background: linear-gradient(90deg, #30D5FF, #7C5CFF); /* Cyan to Purple */
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(124, 92, 255, 0.6);
+  animation: popInLine 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes popInLine {
+  0% { width: 0; opacity: 0; }
+  100% { width: 22px; opacity: 1; }
+}
