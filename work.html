@@ -382,6 +382,109 @@
       </div>
     </section>
 
+<section class="section tc-section" data-reveal>
+      <div class="section-head text-center">
+        <span class="eyebrow">Legal Transparency</span>
+        <h2>Terms & Conditions</h2>
+        <p>Clear rules for a smooth digital partnership.</p>
+      </div>
+
+      <div class="tc-container glass-card">
+        <div class="tc-content-wrapper" id="tcWrapper">
+          
+          <div class="tc-text">
+            <p class="tc-last-updated">Last Updated: <strong>March 2026</strong></p>
+            <p>Welcome to Webnex. By accessing or using our website and services, you agree to the following Terms and Conditions. Please read them carefully.</p>
+
+            <h4>1. Introduction</h4>
+            <p>These Terms and Conditions govern your use of our website and services provided by Webnex. By using our services, you accept these terms in full. If you do not agree, please do not use our services.</p>
+
+            <h4>2. Services</h4>
+            <p>Webnex provides website design and development services, including but not limited to:</p>
+            <ul>
+              <li>Static and dynamic website development</li>
+              <li>UI/UX design</li>
+              <li>Website optimization & Basic SEO setup</li>
+              <li>Maintenance and support (as per plan)</li>
+            </ul>
+            <p>We reserve the right to modify or discontinue any service at any time without prior notice.</p>
+
+            <h4>3. User Responsibilities</h4>
+            <p>By working with us, you agree to:</p>
+            <ul>
+              <li>Provide accurate and complete information</li>
+              <li>Share required content (text, images, etc.) on time</li>
+              <li>Ensure that your content does not violate any laws or copyrights</li>
+            </ul>
+            <p>You are solely responsible for the content you provide.</p>
+
+            <h4>4. Payments & Pricing</h4>
+            <ul>
+              <li>All prices are discussed and agreed upon before the project begins.</li>
+              <li>A <strong>minimum upfront payment (advance)</strong> is required to start the project.</li>
+              <li>The remaining balance must be paid before final delivery.</li>
+              <li>Payments are non-refundable once work has started.</li>
+              <li>Failure to complete payment may result in suspension of services.</li>
+            </ul>
+
+            <h4>5. Project Timeline</h4>
+            <ul>
+              <li>Project timelines depend on complexity and client responsiveness.</li>
+              <li>Delays in providing content or feedback may extend the timeline.</li>
+              <li>Webnex is not responsible for delays caused by the client.</li>
+            </ul>
+
+            <h4>6. Revisions & Changes</h4>
+            <ul>
+              <li>A limited number of revisions are included (depending on plan).</li>
+              <li>Additional revisions or major changes may incur extra charges.</li>
+              <li>Once the project is approved and delivered, further changes are considered new work.</li>
+            </ul>
+
+            <h4>7. Intellectual Property</h4>
+            <p>Upon full payment, the final website ownership is transferred to the client. Webnex retains the right to showcase the project in its portfolio. Any third-party assets (images, fonts, plugins) may have separate licenses.</p>
+
+            <h4>8. Hosting & Domain</h4>
+            <p>Clients are responsible for purchasing domain and hosting. We may assist in setup but are not responsible for third-party services. Any issues related to hosting providers are beyond our control.</p>
+
+            <h4>9. Maintenance & Support</h4>
+            <p>Free support is provided for a limited period (as per plan). After the support period, additional charges may apply. Support does not include major redesigns or new features.</p>
+
+            <h4>10. Limitation of Liability</h4>
+            <p>Webnex is not liable for: Any business loss, revenue loss, or data loss; Website downtime due to hosting/server issues; Third-party failures or security breaches. All services are provided “as is” without warranties.</p>
+
+            <h4>11. Termination</h4>
+            <p>We reserve the right to terminate services if: The client violates these terms; Payments are not completed; There is misuse or abusive behavior. No refunds will be issued in such cases.</p>
+
+            <h4>12. Confidentiality</h4>
+            <p>We respect your privacy and will not share your confidential information with third parties, except where required by law.</p>
+
+            <h4>13. Third-Party Tools & Links</h4>
+            <p>Our website or services may include third-party tools or links. We are not responsible for their content, policies, or performance.</p>
+
+            <h4>14. Changes to Terms</h4>
+            <p>We may update these Terms and Conditions at any time. Changes will be posted on this page with an updated date.</p>
+
+            <h4>15. Governing Law</h4>
+            <p>These Terms shall be governed and interpreted in accordance with the laws of <strong>India</strong>. Any disputes will be subject to the jurisdiction of appropriate courts.</p>
+
+            <h4>16. Contact Information</h4>
+            <p>If you have any questions regarding these Terms, you can contact us:<br>
+            Email: <strong>indusreach@outlook.com</strong><br>
+            Website: <strong>Webnex by Indus</strong></p>
+          </div>
+          
+          <div class="tc-gradient-overlay" id="tcOverlay"></div>
+        </div>
+
+        <div class="tc-action text-center">
+          <button class="glowing-explore-btn tc-expand-btn" id="tcBtn">
+            Read Full Terms <span class="arrow" style="display:inline-block; transform: rotate(90deg); margin-left:8px;">→</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
     <section id="contact" class="section cta-section">
       <div class="cta-card" data-reveal>
         <span class="eyebrow">Start now</span>
@@ -437,6 +540,28 @@
         }
       });
     });
+  </script>
+  <script>
+    const tcBtn = document.getElementById('tcBtn');
+    const tcWrapper = document.getElementById('tcWrapper');
+
+    if (tcBtn && tcWrapper) {
+      tcBtn.addEventListener('click', () => {
+        tcWrapper.classList.toggle('expanded');
+        const arrow = tcBtn.querySelector('.arrow');
+        
+        if (tcWrapper.classList.contains('expanded')) {
+          tcBtn.innerHTML = 'View Less <span class="arrow" style="display:inline-block; transform: rotate(-90deg); margin-left:8px; transition: transform 0.3s;">→</span>';
+        } else {
+          tcBtn.innerHTML = 'Read Full Terms <span class="arrow" style="display:inline-block; transform: rotate(90deg); margin-left:8px; transition: transform 0.3s;">→</span>';
+          
+          // Smooth scroll back to top of T&C when collapsing
+          setTimeout(() => {
+            tcWrapper.parentElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }, 100);
+        }
+      });
+    }
   </script>
 </body>
 </html>
