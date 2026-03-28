@@ -251,3 +251,128 @@
     padding: 30px 20px;
   }
 }
+/* ========================================= */
+/* TOOLS & TECHNOLOGIES - NEON FLOAT EFFECTS */
+/* ========================================= */
+
+.tech-stack-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.tech-card {
+  background: rgba(10, 15, 30, 0.4); /* Deep sleek background */
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 20px;
+  padding: 40px 30px;
+  position: relative;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Expanding Neon Bottom Border on Hover */
+.tech-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 0%; height: 4px;
+  background: linear-gradient(90deg, #30D5FF, #7C5CFF);
+  transition: width 0.4s ease-in-out;
+}
+
+.tech-card:hover::after {
+  width: 100%;
+}
+
+.tech-card:hover {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.02);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+  border-color: rgba(124, 92, 255, 0.15);
+}
+
+/* Floating Icon Animation */
+.tech-icon {
+  font-size: 3.2rem;
+  margin-bottom: 20px;
+  display: inline-block;
+  animation: floatTechIcon 3s ease-in-out infinite;
+}
+
+@keyframes floatTechIcon {
+  0% { transform: translateY(0px); filter: drop-shadow(0 0 0px rgba(48, 213, 255, 0)); }
+  50% { transform: translateY(-8px); filter: drop-shadow(0 8px 15px rgba(48, 213, 255, 0.3)); }
+  100% { transform: translateY(0px); filter: drop-shadow(0 0 0px rgba(48, 213, 255, 0)); }
+}
+
+.tech-card h3 {
+  font-size: 1.4rem;
+  color: #fff;
+  margin-bottom: 12px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.tech-card h3 small {
+  display: block;
+  font-size: 0.9rem;
+  color: #30D5FF;
+  font-weight: 500;
+  margin-top: 5px;
+}
+
+.tech-card p {
+  color: #a8b2d1;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Minimalist Glowing Footer Line */
+.tech-footer {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.extra-line-tech {
+  font-size: clamp(1.3rem, 3vw, 1.8rem);
+  line-height: 1.5;
+  font-weight: 600;
+  color: #DCD5FF;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  padding-top: 40px;
+  position: relative;
+}
+
+/* Small glowing dot above the extra line */
+.extra-line-tech::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 4px;
+  background: #7C5CFF;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #7C5CFF;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .tech-stack-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .tech-card {
+    padding: 30px 20px;
+  }
+}
