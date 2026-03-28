@@ -218,28 +218,7 @@
   margin: 0;
 }
 
-/* Extra Line Footer with Infinite Gradient Shine */
-.target-footer {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
 
-.extra-line {
-  font-size: clamp(1.5rem, 4vw, 2.5rem);
-  line-height: 1.4;
-  font-weight: 800;
-  background: linear-gradient(135deg, #7C5CFF, #30D5FF, #ffffff, #7C5CFF);
-  background-size: 300% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: gradientShine 4s linear infinite;
-}
-
-@keyframes gradientShine {
-  0% { background-position: 0% center; }
-  100% { background-position: 300% center; }
-}
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
@@ -333,23 +312,6 @@
   font-size: 0.95rem;
   line-height: 1.7;
   margin: 0;
-}
-
-/* Minimalist Glowing Footer Line */
-.tech-footer {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.extra-line-tech {
-  font-size: clamp(1.3rem, 3vw, 1.8rem);
-  line-height: 1.5;
-  font-weight: 600;
-  color: #DCD5FF;
-  border-top: 1px solid rgba(255,255,255,0.05);
-  padding-top: 40px;
-  position: relative;
 }
 
 /* Small glowing dot above the extra line */
