@@ -1,27 +1,37 @@
 /* ==========================================================================
-   BASE & TYPOGRAPHY
+   🎨 WEBNEX THEME SETTINGS (Yahan apne colors daalein)
    ========================================================================== */
 :root {
-    --bg-dark: #0a0a0a;
-    --card-bg: rgba(20, 20, 20, 0.6);
-    --card-border: rgba(255, 255, 255, 0.08);
-    --text-main: #f5f5f7;
-    --text-muted: #a1a1aa;
-    --accent-glow: rgba(255, 255, 255, 0.1);
+    /* Main Background & Text */
+    --webnex-bg: #050505;        /* Deep black background */
+    --webnex-text: #f8fafc;      /* Clean white text */
+    --webnex-text-muted: #94a3b8;/* Grayish text for descriptions */
+
+    /* Glassmorphism Settings */
+    --glass-bg: rgba(255, 255, 255, 0.02);
+    --glass-border: rgba(255, 255, 255, 0.05);
+    --glass-hover-bg: rgba(255, 255, 255, 0.05);
+
+    /* Brand Accent Colors (Gradients & Glows) */
+    --accent-primary: #3b82f6;   /* Change this to Webnex Main Color */
+    --accent-secondary: #8b5cf6; /* Change this to Webnex Secondary Color */
     
-    /* Brand Colors for Hover States */
-    --yt-color: #ff0000;
-    --insta-color: #e1306c;
-    --linkedin-color: #0a66c2;
-    --github-color: #ffffff;
-    --x-color: #e7e9ea;
-    --fb-color: #1877f2;
-    --tiktok-color: #ff0050;
-    --telegram-color: #0088cc;
-    --pinterest-color: #e60023;
-    --whatsapp-color: #25d366;
+    /* Social Media Original Colors */
+    --yt: #FF0000;
+    --insta: #E1306C;
+    --linkedin: #0A66C2;
+    --github: #ffffff;
+    --x: #e7e9ea;
+    --fb: #1877F2;
+    --tiktok: #FF0050;
+    --telegram: #0088cc;
+    --pinterest: #E60023;
+    --whatsapp: #25D366;
 }
 
+/* ==========================================================================
+   RESET & TYPOGRAPHY
+   ========================================================================== */
 * {
     margin: 0;
     padding: 0;
@@ -29,73 +39,69 @@
 }
 
 body.dark-theme {
-    background-color: var(--bg-dark);
-    color: var(--text-main);
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--webnex-bg);
+    color: var(--webnex-text);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
     line-height: 1.6;
     overflow-x: hidden;
+    /* Subtle background grid pattern for tech feel */
+    background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0 5%;
 }
 
 .text-center { text-align: center; }
 
 /* ==========================================================================
-   UTILITY CLASSES (Glassmorphism & Gradients)
+   GLOBAL UTILITIES
    ========================================================================== */
-.glass-card {
-    background: var(--card-bg);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid var(--card-border);
-    border-radius: 24px;
-    padding: 32px;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
 .gradient-text {
-    background: linear-gradient(135deg, #ffffff 0%, #a1a1aa 100%);
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
 
-.text-glow {
-    text-shadow: 0 0 20px var(--accent-glow);
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    transition: all 0.3s ease;
 }
 
 /* ==========================================================================
    1️⃣ VISION SECTION
    ========================================================================== */
 .vision-section {
-    padding: 120px 0 80px;
+    padding: 15vh 0 10vh;
     text-align: center;
 }
 
 .big-heading {
-    font-size: clamp(3rem, 8vw, 5rem);
+    font-size: clamp(3rem, 6vw, 5rem);
     font-weight: 800;
-    letter-spacing: -0.05em;
-    margin-bottom: 24px;
+    letter-spacing: -1px;
+    margin-bottom: 20px;
 }
 
 .main-line {
-    font-size: clamp(1.5rem, 4vw, 2.5rem);
-    font-weight: 600;
-    color: #e4e4e7;
-    max-width: 900px;
-    margin: 0 auto 32px;
-    line-height: 1.3;
+    font-size: clamp(1.2rem, 3vw, 2rem);
+    font-weight: 500;
+    color: var(--webnex-text);
+    margin-bottom: 30px;
 }
 
-.vision-text {
-    font-size: 1.125rem;
-    color: var(--text-muted);
-    font-weight: 300;
+.vision-text p {
+    color: var(--webnex-text-muted);
+    font-size: 1.1rem;
+    margin-bottom: 8px;
 }
 
 /* ==========================================================================
@@ -104,8 +110,8 @@ body.dark-theme {
 .section-title {
     font-size: 2.5rem;
     font-weight: 700;
-    margin-bottom: 48px;
-    letter-spacing: -0.03em;
+    margin-bottom: 40px;
+    text-align: center;
 }
 
 .value-section, .proof-section {
@@ -114,255 +120,246 @@ body.dark-theme {
 
 .value-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
 }
 
-.value-card i {
-    font-size: 2.5rem;
-    color: #ffffff;
-    margin-bottom: 20px;
-    display: block;
-}
-
-.stats-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 32px;
+.value-card {
+    padding: 30px 20px;
     text-align: center;
 }
 
+.value-card:hover {
+    background: var(--glass-hover-bg);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.value-card i {
+    font-size: 2rem;
+    color: var(--accent-primary);
+    margin-bottom: 15px;
+}
+
+.stats-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 40px 20px;
+}
+
+.stat-box { text-align: center; }
+
 .stat-box h4 {
-    font-size: 3.5rem;
+    font-size: 3rem;
     font-weight: 800;
-    margin-bottom: 8px;
-    line-height: 1;
+    margin-bottom: 5px;
 }
 
 .stat-box p {
-    color: var(--text-muted);
+    color: var(--webnex-text-muted);
+    font-size: 0.9rem;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 0.875rem;
-    font-weight: 600;
+    letter-spacing: 1px;
 }
 
 /* ==========================================================================
    3️⃣ SOCIAL PLATFORMS SECTION (THE MAIN ENGINE)
    ========================================================================== */
 .platforms-section {
-    padding: 100px 0;
+    padding: 80px 0;
 }
 
 .platforms-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 32px;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 30px;
 }
 
 .platform-card {
+    padding: 24px;
     display: flex;
     flex-direction: column;
-    padding: 24px;
-    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover Glow Effect using Pseudo-element */
+.platform-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 3px;
+    background: transparent;
+    transition: all 0.4s ease;
 }
 
 .platform-card:hover {
-    transform: translateY(-8px);
+    background: var(--glass-hover-bg);
+    transform: translateY(-5px);
 }
 
-/* Brand Hover Glow Effects */
-.yt-border:hover { border-color: var(--yt-color); box-shadow: 0 10px 40px rgba(255, 0, 0, 0.15); }
-.insta-border:hover { border-color: var(--insta-color); box-shadow: 0 10px 40px rgba(225, 48, 108, 0.15); }
-.linkedin-border:hover { border-color: var(--linkedin-color); box-shadow: 0 10px 40px rgba(10, 102, 194, 0.15); }
-.github-border:hover { border-color: var(--github-color); box-shadow: 0 10px 40px rgba(255, 255, 255, 0.1); }
-.x-border:hover { border-color: var(--x-color); box-shadow: 0 10px 40px rgba(231, 233, 234, 0.1); }
-.fb-border:hover { border-color: var(--fb-color); box-shadow: 0 10px 40px rgba(24, 119, 242, 0.15); }
-.tiktok-border:hover { border-color: var(--tiktok-color); box-shadow: 0 10px 40px rgba(255, 0, 80, 0.15); }
-.telegram-border:hover { border-color: var(--telegram-color); box-shadow: 0 10px 40px rgba(0, 136, 204, 0.15); }
-.pinterest-border:hover { border-color: var(--pinterest-color); box-shadow: 0 10px 40px rgba(230, 0, 35, 0.15); }
-.whatsapp-border:hover { border-color: var(--whatsapp-color); box-shadow: 0 10px 40px rgba(37, 211, 102, 0.15); }
+/* Individual Platform Hover Borders */
+.yt-border:hover::before { background: var(--yt); box-shadow: 0 0 20px var(--yt); }
+.insta-border:hover::before { background: var(--insta); box-shadow: 0 0 20px var(--insta); }
+.linkedin-border:hover::before { background: var(--linkedin); box-shadow: 0 0 20px var(--linkedin); }
+.github-border:hover::before { background: var(--github); box-shadow: 0 0 20px var(--github); }
+.x-border:hover::before { background: var(--x); box-shadow: 0 0 20px var(--x); }
+.fb-border:hover::before { background: var(--fb); box-shadow: 0 0 20px var(--fb); }
+.tiktok-border:hover::before { background: var(--tiktok); box-shadow: 0 0 20px var(--tiktok); }
+.telegram-border:hover::before { background: var(--telegram); box-shadow: 0 0 20px var(--telegram); }
+.pinterest-border:hover::before { background: var(--pinterest); box-shadow: 0 0 20px var(--pinterest); }
+.whatsapp-border:hover::before { background: var(--whatsapp); box-shadow: 0 0 20px var(--whatsapp); }
 
 .platform-header {
     display: flex;
     align-items: center;
-    gap: 16px;
-    margin-bottom: 24px;
+    gap: 15px;
+    margin-bottom: 20px;
 }
 
 .platform-icon {
-    font-size: 2.5rem;
+    font-size: 2rem;
+    transition: color 0.3s ease;
 }
 
-/* Inheriting brand colors for icons on hover */
-.yt-border:hover .platform-icon { color: var(--yt-color); }
-.insta-border:hover .platform-icon { color: var(--insta-color); }
-.linkedin-border:hover .platform-icon { color: var(--linkedin-color); }
-.github-border:hover .platform-icon { color: var(--github-color); }
-.x-border:hover .platform-icon { color: var(--x-color); }
-.fb-border:hover .platform-icon { color: var(--fb-color); }
-.tiktok-border:hover .platform-icon { color: var(--tiktok-color); }
-.telegram-border:hover .platform-icon { color: var(--telegram-color); }
-.pinterest-border:hover .platform-icon { color: var(--pinterest-color); }
-.whatsapp-border:hover .platform-icon { color: var(--whatsapp-color); }
+/* Icon Colors on Hover */
+.yt-border:hover .platform-icon { color: var(--yt); }
+.insta-border:hover .platform-icon { color: var(--insta); }
+.linkedin-border:hover .platform-icon { color: var(--linkedin); }
+.github-border:hover .platform-icon { color: var(--github); }
+.x-border:hover .platform-icon { color: var(--x); }
+.fb-border:hover .platform-icon { color: var(--fb); }
+.tiktok-border:hover .platform-icon { color: var(--tiktok); }
+.telegram-border:hover .platform-icon { color: var(--telegram); }
+.pinterest-border:hover .platform-icon { color: var(--pinterest); }
+.whatsapp-border:hover .platform-icon { color: var(--whatsapp); }
 
-.platform-header h4 {
-    font-size: 1.25rem;
-    font-weight: 600;
-}
+.platform-header h4 { font-size: 1.2rem; font-weight: 600; }
+.platform-header p { font-size: 0.85rem; color: var(--webnex-text-muted); }
 
-.platform-header p {
-    font-size: 0.875rem;
-    color: var(--text-muted);
-}
-
+/* Embed Container */
 .embed-container {
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 12px;
+    background: #000000;
+    border-radius: 10px;
     overflow: hidden;
-    margin-bottom: 24px;
-    flex-grow: 1; /* Pushes the button to the bottom */
-    min-height: 250px;
+    margin-bottom: 20px;
+    flex-grow: 1;
+    min-height: 220px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.05);
 }
 
 .placeholder-embed {
-    color: #52525b;
-    font-size: 0.875rem;
-    text-align: center;
-    padding: 20px;
+    color: #475569;
+    font-size: 0.9rem;
 }
 
-/* iFrame responsiveness */
 .embed-container iframe {
     width: 100%;
     height: 100%;
     border: none;
-    object-fit: cover;
 }
 
+/* Explore Button */
 .explore-btn {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 14px 20px;
-    background: transparent;
-    color: var(--text-main);
+    padding: 12px 18px;
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--webnex-text);
     text-decoration: none;
-    border: 1px solid var(--card-border);
-    border-radius: 12px;
-    font-weight: 600;
-    font-size: 0.95rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
     transition: all 0.3s ease;
-}
-
-.explore-btn i {
-    transition: transform 0.3s ease;
+    border: 1px solid transparent;
 }
 
 .platform-card:hover .explore-btn {
-    background: rgba(255, 255, 255, 0.05);
-    border-color: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--glass-border);
 }
 
-.explore-btn:hover i {
-    transform: translateX(4px);
-}
+.explore-btn i { transition: transform 0.3s ease; }
+.explore-btn:hover i { transform: translateX(5px); }
 
 /* ==========================================================================
    4️⃣ FEATURED & 6️⃣ CTA SECTIONS
    ========================================================================== */
-.featured-section { padding: 80px 0; }
-
+.featured-section { padding: 60px 0; }
 .featured-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
 }
+.featured-item { padding: 25px; }
 
-.featured-item h4 {
-    font-size: 1.5rem;
-    margin-bottom: 12px;
-}
-
-.cta-section { padding: 100px 0; }
-
+.cta-section { padding: 80px 0 120px; }
 .cta-box {
     text-align: center;
-    padding: 64px 32px;
-    background: linear-gradient(180deg, rgba(30,30,30,0.8) 0%, rgba(10,10,10,0.8) 100%);
+    padding: 60px 20px;
+    background: radial-gradient(circle at center, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+    border: 1px solid var(--glass-border);
 }
 
-.cta-box p {
-    font-size: 1.25rem;
-    color: var(--text-muted);
-    margin: 24px auto 40px;
-    max-width: 600px;
-}
+.cta-box h2 { font-size: 2.5rem; margin-bottom: 15px; }
+.cta-box p { color: var(--webnex-text-muted); margin-bottom: 30px; font-size: 1.1rem; }
 
 .cta-buttons {
     display: flex;
-    gap: 16px;
+    gap: 15px;
     justify-content: center;
     flex-wrap: wrap;
 }
 
 .btn {
-    padding: 16px 32px;
-    border-radius: 30px;
+    padding: 14px 28px;
+    border-radius: 8px;
     font-weight: 600;
     text-decoration: none;
     transition: all 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
 }
 
 .btn-primary {
-    background: #ffffff;
-    color: #000000;
+    background: var(--webnex-text);
+    color: var(--webnex-bg);
 }
 
 .btn-primary:hover {
-    background: #e4e4e7;
-    transform: scale(1.05);
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(255,255,255,0.2);
 }
 
 .btn-whatsapp {
     background: transparent;
-    color: #ffffff;
-    border: 2px solid #25d366;
+    color: var(--webnex-text);
+    border: 1px solid var(--whatsapp);
 }
 
 .btn-whatsapp:hover {
-    background: #25d366;
-    color: #000000;
+    background: rgba(37, 211, 102, 0.1);
+    box-shadow: 0 0 20px rgba(37, 211, 102, 0.2);
 }
 
 /* ==========================================================================
-   ANIMATIONS & RESPONSIVE DESIGN
+   ANIMATIONS
    ========================================================================== */
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(30px); }
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-.fade-in {
-    animation: fadeInUp 1s ease-out forwards;
-}
-
-.slide-up {
-    opacity: 0;
-    animation: fadeInUp 1s ease-out 0.3s forwards;
-}
+.fade-in { animation: fadeIn 0.8s ease-out forwards; }
+.slide-up { opacity: 0; animation: fadeIn 0.8s ease-out 0.2s forwards; }
 
 @media (max-width: 768px) {
-    .big-heading { font-size: 2.5rem; }
-    .main-line { font-size: 1.25rem; }
-    .section-title { font-size: 2rem; }
-    .platform-card { padding: 16px; }
-    .cta-box { padding: 40px 20px; }
+    .platforms-grid { grid-template-columns: 1fr; }
+    .stats-grid { flex-direction: column; gap: 40px; }
 }
