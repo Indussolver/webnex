@@ -1,284 +1,331 @@
-/* ==============================================================
-   WEBNEX SOCIAL ENGINE (SUPER SE UPAR CSS - SCOPED)
-============================================================== */
+/* ==========================================================================
+   🌐 WEBNEX SOCIAL ENGINE : ULTRA-PREMIUM THEME
+   (World-Class, Phone-Optimized, Glassmorphism 2.0)
+========================================================================== */
 
-/* Scoped Container to match Webnex Dark Theme fallbacks */
+/* -----------------------------------------
+   1. CORE VARIABLES & SCOPE
+----------------------------------------- */
 .webnex-social-engine {
-    --wnx-bg: #0a0f1c; /* Deep tech blue/black */
-    --wnx-text: #f8fafc;
-    --wnx-text-dim: #94a3b8;
+    /* Brand Colors */
+    --wnx-bg: #030712; /* Pitch dark tech background */
+    --wnx-card-bg: rgba(17, 24, 39, 0.6);
+    --wnx-text: #f9fafb;
+    --wnx-text-muted: #9ca3af;
+    --wnx-border: rgba(255, 255, 255, 0.08);
     
-    /* Brand Accent Gradients (Webnex Colors) */
-    --accent-blue: #3b82f6; 
-    --accent-purple: #8b5cf6;
+    /* Neon Gradients */
+    --glow-primary: #3b82f6; 
+    --glow-secondary: #8b5cf6;
     
-    /* Glassmorphism settings */
-    --glass-bg: rgba(255, 255, 255, 0.02);
-    --glass-border: rgba(255, 255, 255, 0.05);
-    
+    /* Social Brand Colors */
+    --color-yt: #ff0000;
+    --color-insta: #e1306c;
+    --color-in: #0a66c2;
+    --color-git: #ffffff;
+    --color-x: #e7e9ea;
+    --color-fb: #1877f2;
+    --color-tik: #ff0050;
+    --color-tel: #0088cc;
+    --color-pin: #e60023;
+    --color-wa: #25d366;
+
     background-color: var(--wnx-bg);
     color: var(--wnx-text);
-    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
-    padding: 80px 5%;
-    border-radius: 20px;
+    font-family: 'Plus Jakarta Sans', 'Segoe UI', sans-serif;
+    padding: 100px 5%; /* Desktop Padding */
     box-sizing: border-box;
     width: 100%;
+    overflow-x: hidden;
 }
 
 .webnex-social-engine * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    -webkit-tap-highlight-color: transparent; /* Removes blue tap highlight on phones */
 }
 
-/* Base Classes */
+/* -----------------------------------------
+   2. GLOBAL UTILITIES & ANIMATIONS
+----------------------------------------- */
 .webnex-social-engine .gradient-text {
-    background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+    background: linear-gradient(135deg, #60a5fa, #c084fc);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block;
 }
 
-.webnex-social-engine .text-gradient {
-    color: var(--accent-blue);
-}
-
 .webnex-social-engine .glass-card {
-    background: var(--glass-bg);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid var(--glass-border);
-    border-radius: 16px;
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    background: var(--wnx-card-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--wnx-border);
+    border-radius: 24px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .webnex-social-engine .text-center { text-align: center; }
 
-/* =========================================
-   1. VISION SECTION
-========================================= */
+@keyframes fadeUpIn {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.webnex-social-engine.fade-in { animation: fadeUpIn 1s ease-out forwards; }
+
+/* -----------------------------------------
+   3. VISION SECTION (Hero Area)
+----------------------------------------- */
 .webnex-social-engine .vision-header {
     text-align: center;
-    margin-bottom: 80px;
+    max-width: 900px;
+    margin: 0 auto 100px auto;
 }
 
 .webnex-social-engine .big-title {
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    /* Fluid Typography: Scales automatically from mobile to desktop */
+    font-size: clamp(3rem, 8vw, 5.5rem);
     font-weight: 800;
-    margin-bottom: 20px;
-    letter-spacing: -1px;
+    letter-spacing: -0.03em;
+    margin-bottom: 24px;
+    line-height: 1.1;
 }
 
 .webnex-social-engine .sub-title {
-    font-size: clamp(1.1rem, 3vw, 1.8rem);
-    color: #e2e8f0;
+    font-size: clamp(1.2rem, 4vw, 2rem);
+    color: #f3f4f6;
     margin-bottom: 30px;
     font-weight: 600;
+    line-height: 1.4;
 }
 
 .webnex-social-engine .vision-desc p {
-    color: var(--wnx-text-dim);
-    font-size: 1.1rem;
-    line-height: 1.7;
-    font-weight: 400;
+    color: var(--wnx-text-muted);
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    line-height: 1.8;
 }
 
-/* =========================================
-   2. VALUE SECTION
-========================================= */
+/* -----------------------------------------
+   4. VALUE SECTION
+----------------------------------------- */
 .webnex-social-engine .section-heading {
-    font-size: 2.2rem;
+    font-size: clamp(2rem, 5vw, 2.8rem);
     margin-bottom: 50px;
-    font-weight: 700;
-    color: white;
+    font-weight: 800;
+    letter-spacing: -1px;
 }
 
 .webnex-social-engine .value-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-    margin-bottom: 100px;
+    /* Adapts to 1 col on phone, 2 on tablet, 4 on large screens */
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    margin-bottom: 120px;
 }
 
 .webnex-social-engine .value-item {
-    padding: 25px;
+    padding: 32px 24px;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 18px;
+    text-align: center;
+    gap: 20px;
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 1.1rem;
 }
 
 .webnex-social-engine .value-item:hover {
-    background: rgba(255, 255, 255, 0.04);
-    transform: translateY(-5px);
+    transform: translateY(-8px) scale(1.02);
+    border-color: rgba(96, 165, 250, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), inset 0 0 20px rgba(96, 165, 250, 0.05);
 }
 
 .webnex-social-engine .value-item i {
-    font-size: 1.6rem;
+    font-size: 2.5rem;
+    background: linear-gradient(135deg, var(--glow-primary), var(--glow-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-/* =========================================
-   3. SOCIAL PLATFORMS GRID (The Engine)
-========================================= */
+/* -----------------------------------------
+   5. SOCIAL PLATFORMS GRID (The Masterpiece)
+----------------------------------------- */
 .webnex-social-engine .platforms-wrapper {
-    margin-bottom: 100px;
+    margin-bottom: 120px;
 }
 
 .webnex-social-engine .social-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 32px;
 }
 
 .webnex-social-engine .social-card {
-    padding: 25px;
+    padding: 28px;
     display: flex;
     flex-direction: column;
     position: relative;
     overflow: hidden;
+    z-index: 1;
 }
 
-/* Hover Effect: Glowing top border & lift */
-.webnex-social-engine .social-card:hover {
-    transform: translateY(-10px);
-    background: rgba(255, 255, 255, 0.04);
-}
-
-.webnex-social-engine .social-card::after {
+/* Stunning Hover Glow Effect */
+.webnex-social-engine .social-card::before {
     content: '';
     position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 3px;
-    background: transparent;
-    transition: 0.3s ease;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border-radius: 24px;
+    padding: 2px; /* Border thickness */
+    background: linear-gradient(180deg, rgba(255,255,255,0.1) 0%, transparent 100%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: -1;
+    transition: all 0.4s ease;
 }
 
-/* Social Brand Colors for Hover border & Glow */
-.webnex-social-engine .yt-card:hover::after { background: #ff0000; box-shadow: 0 0 15px rgba(255,0,0,0.3); }
-.webnex-social-engine .insta-card:hover::after { background: #e1306c; box-shadow: 0 0 15px rgba(225,48,108,0.3); }
-.webnex-social-engine .linkedin-card:hover::after { background: #0a66c2; box-shadow: 0 0 15px rgba(10,102,194,0.3); }
-.webnex-social-engine .github-card:hover::after { background: #ffffff; box-shadow: 0 0 15px rgba(255,255,255,0.1); }
-.webnex-social-engine .x-card:hover::after { background: #e7e9ea; box-shadow: 0 0 15px rgba(231,233,234,0.1); }
-.webnex-social-engine .fb-card:hover::after { background: #1877f2; box-shadow: 0 0 15px rgba(24,119,242,0.3); }
-.webnex-social-engine .tiktok-card:hover::after { background: #ff0050; box-shadow: 0 0 15px rgba(255,0,80,0.3); }
-.webnex-social-engine .telegram-card:hover::after { background: #0088cc; box-shadow: 0 0 15px rgba(0,136,204,0.3); }
-.webnex-social-engine .pinterest-card:hover::after { background: #e60023; box-shadow: 0 0 15px rgba(230,0,35,0.3); }
-.webnex-social-engine .whatsapp-card:hover::after { background: #25d366; box-shadow: 0 0 15px rgba(37,211,102,0.3); }
+.webnex-social-engine .social-card:hover {
+    transform: translateY(-12px);
+    background: rgba(31, 41, 55, 0.8);
+}
 
+/* Brand Specific Hover Borders & Shadows */
+.webnex-social-engine .yt-card:hover::before { background: linear-gradient(180deg, var(--color-yt) 0%, transparent 100%); }
+.webnex-social-engine .yt-card:hover { box-shadow: 0 20px 50px rgba(255, 0, 0, 0.15); }
+
+.webnex-social-engine .insta-card:hover::before { background: linear-gradient(180deg, var(--color-insta) 0%, transparent 100%); }
+.webnex-social-engine .insta-card:hover { box-shadow: 0 20px 50px rgba(225, 48, 108, 0.15); }
+
+.webnex-social-engine .linkedin-card:hover::before { background: linear-gradient(180deg, var(--color-in) 0%, transparent 100%); }
+.webnex-social-engine .linkedin-card:hover { box-shadow: 0 20px 50px rgba(10, 102, 194, 0.15); }
+
+.webnex-social-engine .github-card:hover::before { background: linear-gradient(180deg, var(--color-git) 0%, transparent 100%); }
+.webnex-social-engine .github-card:hover { box-shadow: 0 20px 50px rgba(255, 255, 255, 0.08); }
+
+.webnex-social-engine .x-card:hover::before { background: linear-gradient(180deg, var(--color-x) 0%, transparent 100%); }
+.webnex-social-engine .x-card:hover { box-shadow: 0 20px 50px rgba(231, 233, 234, 0.08); }
+
+/* Card Header */
 .webnex-social-engine .card-top {
     display: flex;
     align-items: center;
-    gap: 15px;
-    margin-bottom: 25px;
+    gap: 16px;
+    margin-bottom: 24px;
 }
 
 .webnex-social-engine .platform-icon {
-    font-size: 2.2rem;
-    transition: 0.3s;
-    color: white;
+    font-size: 2.5rem;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    color: #e5e7eb;
 }
 
-/* Icon Colors on Hover */
-.webnex-social-engine .yt-card:hover .platform-icon { color: #ff0000; }
-.webnex-social-engine .insta-card:hover .platform-icon { color: #e1306c; }
-.webnex-social-engine .linkedin-card:hover .platform-icon { color: #0a66c2; }
-.webnex-social-engine .github-card:hover .platform-icon { color: #ffffff; }
-.webnex-social-engine .x-card:hover .platform-icon { color: #e7e9ea; }
-.webnex-social-engine .whatsapp-card:hover .platform-icon { color: #25d366; }
+.webnex-social-engine .social-card:hover .platform-icon {
+    transform: scale(1.1) rotate(-5deg);
+}
 
-.webnex-social-engine .card-titles h4 { font-size: 1.35rem; color: white; font-weight: 700; }
-.webnex-social-engine .card-titles p { font-size: 0.85rem; color: var(--wnx-text-dim); }
+/* Inheriting brand colors on hover */
+.webnex-social-engine .yt-card:hover .platform-icon { color: var(--color-yt); }
+.webnex-social-engine .insta-card:hover .platform-icon { color: var(--color-insta); }
+.webnex-social-engine .linkedin-card:hover .platform-icon { color: var(--color-in); }
+.webnex-social-engine .github-card:hover .platform-icon { color: var(--color-git); }
+.webnex-social-engine .x-card:hover .platform-icon { color: var(--color-x); }
+
+.webnex-social-engine .card-titles h4 { font-size: 1.5rem; color: #ffffff; font-weight: 700; }
+.webnex-social-engine .card-titles p { font-size: 0.9rem; color: var(--wnx-text-muted); }
 
 /* Embed Area */
 .webnex-social-engine .embed-container {
-    background: #000;
-    border-radius: 12px;
+    background: #000000;
+    border-radius: 16px;
     overflow: hidden;
-    margin-bottom: 25px;
-    flex-grow: 1; /* Pushes button to bottom */
+    margin-bottom: 28px;
+    flex-grow: 1;
     position: relative;
-    border: 1px solid rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
 }
 
-/* Aspect Ratio Box for Videos (Super important for Mobile) */
 .webnex-social-engine .video-embed {
-    aspect-ratio: 16/9; /* Perfectly handles all sizes */
+    aspect-ratio: 16/9; /* Perfect video scaling for mobile */
 }
 
-/* Fallback for others */
 .webnex-social-engine .dummy-embed {
-    height: 180px; 
+    height: 200px; 
     display: flex; flex-direction: column; align-items: center; justify-content: center;
-    color: #475569; gap: 10px; font-size: 0.9rem;
+    color: #6b7280; gap: 12px; font-size: 0.95rem; font-weight: 500;
+    background: rgba(0,0,0,0.4);
 }
 
 .webnex-social-engine .embed-container iframe {
     position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;
 }
 
-/* Explore More Button */
+/* Explore Button (Touch Optimized) */
 .webnex-social-engine .explore-btn {
     display: flex; justify-content: space-between; align-items: center;
-    padding: 14px 20px;
-    background: rgba(255, 255, 255, 0.05);
+    padding: 16px 24px; /* Big touch target for phones */
+    background: rgba(255, 255, 255, 0.03);
     color: var(--wnx-text);
     text-decoration: none;
-    border-radius: 8px;
+    border-radius: 12px;
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 1rem;
     transition: all 0.3s ease;
-    border: 1px solid transparent;
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .webnex-social-engine .social-card:hover .explore-btn {
     background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 .webnex-social-engine .explore-btn i { transition: transform 0.3s ease; }
-.webnex-social-engine .explore-btn:hover i { transform: translateX(5px); }
+.webnex-social-engine .explore-btn:hover i { transform: translateX(6px); }
 
-/* =========================================
-   4. PROOF & CTA SECTION
-========================================= */
+/* -----------------------------------------
+   6. SOCIAL PROOF & CTA SECTION
+----------------------------------------- */
 .webnex-social-engine .bottom-metrics {
-    display: flex; justify-content: space-around; flex-wrap: wrap;
-    padding: 50px 30px;
+    display: flex; justify-content: space-evenly; flex-wrap: wrap;
+    padding: 50px 20px;
     margin-bottom: 80px;
-    text-align: center; gap: 30px;
+    text-align: center; gap: 40px;
 }
 
 .webnex-social-engine .metric h4 {
-    font-size: clamp(2.5rem, 4vw, 3.5rem);
-    margin-bottom: 5px;
+    font-size: clamp(3rem, 6vw, 4.5rem);
+    margin-bottom: 8px;
     font-weight: 800;
+    line-height: 1;
 }
 
 .webnex-social-engine .metric p {
-    color: var(--wnx-text-dim);
+    color: var(--wnx-text-muted);
     text-transform: uppercase;
-    font-size: 0.9rem;
-    letter-spacing: 2px;
-    font-weight: 600;
-}
-
-.webnex-social-engine .cta-banner {
-    padding: 70px 30px;
-    background: radial-gradient(circle at center, rgba(59, 130, 246, 0.12) 0%, transparent 75%);
-    border: 1px solid var(--glass-border);
-}
-
-.webnex-social-engine .cta-banner h2 {
-    font-size: clamp(2rem, 4vw, 2.8rem);
-    margin-bottom: 15px;
+    font-size: 1rem;
+    letter-spacing: 3px;
     font-weight: 700;
 }
 
+.webnex-social-engine .cta-banner {
+    padding: 80px 40px;
+    background: radial-gradient(circle at top, rgba(59, 130, 246, 0.15) 0%, rgba(17, 24, 39, 0.8) 70%);
+    border: 1px solid rgba(96, 165, 250, 0.2);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.webnex-social-engine .cta-banner h2 {
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+
 .webnex-social-engine .cta-banner p {
-    color: var(--wnx-text-dim);
+    color: #e5e7eb;
     margin-bottom: 40px;
-    font-size: 1.1rem;
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
 }
 
 .webnex-social-engine .cta-btns {
@@ -287,52 +334,86 @@
 
 .webnex-social-engine .primary-btn, 
 .webnex-social-engine .wa-btn {
-    padding: 16px 35px;
-    border-radius: 30px;
+    padding: 18px 40px;
+    border-radius: 50px; /* Pill shape for modern look */
     text-decoration: none;
-    font-weight: 600;
-    transition: 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    display: flex; align-items: center; gap: 10px;
 }
 
 .webnex-social-engine .primary-btn {
-    background: var(--wnx-text);
-    color: var(--wnx-bg);
+    background: #ffffff;
+    color: #000000;
 }
 
 .webnex-social-engine .primary-btn:hover {
-    background: white;
-    transform: scale(1.05);
-    box-shadow: 0 5px 20px rgba(255,255,255,0.2);
+    transform: scale(1.05) translateY(-3px);
+    box-shadow: 0 10px 30px rgba(255,255,255,0.3);
 }
 
 .webnex-social-engine .wa-btn {
+    background: rgba(37, 211, 102, 0.1);
     border: 2px solid #25d366;
-    color: var(--wnx-text);
+    color: #25d366;
 }
 
 .webnex-social-engine .wa-btn:hover {
     background: #25d366;
-    color: #000;
-    box-shadow: 0 5px 20px rgba(37,211,102,0.3);
+    color: #ffffff;
+    transform: scale(1.05) translateY(-3px);
+    box-shadow: 0 10px 30px rgba(37,211,102,0.4);
 }
 
-/* =========================================
-   ANIMATIONS & RESPONSIVENESS
-========================================= */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(25px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.webnex-social-engine.fade-in {
-    animation: fadeIn 0.8s ease forwards;
-}
-
-/* Mobile Optimisation (Super Important) */
+/* -----------------------------------------
+   7. PRO-LEVEL PHONE OPTIMIZATION (Media Queries)
+----------------------------------------- */
 @media (max-width: 768px) {
-    .webnex-social-engine { padding: 50px 20px; border-radius: 0; }
-    .webnex-social-engine .social-grid { grid-template-columns: 1fr; } /* Stack cards in 1 column */
-    .webnex-social-engine .value-grid { grid-template-columns: 1fr; }
-    .webnex-social-engine .bottom-metrics { flex-direction: column; gap: 40px; padding: 40px 20px; }
-    .webnex-social-engine .cta-box { padding: 40px 15px; }
+    /* Adjust Container for Phone screens */
+    .webnex-social-engine { 
+        padding: 40px 16px; /* Tighter padding to maximize screen space */
+    }
+    
+    /* Make Grids 1-Column on Phones */
+    .webnex-social-engine .social-grid,
+    .webnex-social-engine .value-grid { 
+        grid-template-columns: 1fr; 
+        gap: 24px;
+    }
+    
+    /* Tweak Cards for Phones */
+    .webnex-social-engine .social-card {
+        padding: 20px;
+        border-radius: 20px;
+    }
+    
+    .webnex-social-engine .embed-container {
+        margin-bottom: 20px;
+    }
+    
+    /* Metrics section stacking */
+    .webnex-social-engine .bottom-metrics { 
+        flex-direction: column; 
+        gap: 50px; 
+        padding: 40px 20px; 
+    }
+    
+    /* Buttons width on phone */
+    .webnex-social-engine .cta-btns {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .webnex-social-engine .primary-btn, 
+    .webnex-social-engine .wa-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 16px;
+    }
+    
+    .webnex-social-engine .cta-banner { 
+        padding: 50px 20px; 
+        border-radius: 24px;
+    }
 }
