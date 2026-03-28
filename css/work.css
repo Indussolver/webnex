@@ -338,3 +338,89 @@
     padding: 30px 20px;
   }
 }
+/* ========================================= */
+/* OUR VALUES - SPOTLIGHT & GLOWING ICONS    */
+/* ========================================= */
+
+.values-grid {
+  display: grid;
+  /* Auto-fits 3 in a row on desktop, 2 on tablet, 1 on mobile */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.value-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 24px;
+  padding: 40px 30px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover Effect on the Card */
+.value-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(48, 213, 255, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(48, 213, 255, 0.05);
+  background: linear-gradient(180deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%);
+}
+
+/* Animated Icon Wrapper */
+.value-icon-wrapper {
+  width: 65px; 
+  height: 65px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  font-size: 2rem; 
+  margin-bottom: 25px;
+  transition: all 0.5s ease;
+}
+
+/* Hover Effect on the Icon */
+.value-card:hover .value-icon-wrapper {
+  background: linear-gradient(135deg, #7C5CFF, #30D5FF);
+  border-color: transparent;
+  transform: scale(1.15) rotate(5deg);
+  box-shadow: 0 10px 25px rgba(124, 92, 255, 0.4);
+}
+
+/* Text Styling */
+.value-card h3 {
+  font-size: 1.4rem;
+  color: #fff;
+  margin-bottom: 15px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  transition: color 0.3s ease;
+}
+
+.value-card:hover h3 {
+  color: #30D5FF; /* Title subtly changes color on hover */
+}
+
+.value-card p {
+  color: #a8b2d1;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Responsive Fixes */
+@media (max-width: 768px) {
+  .values-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .value-card {
+    padding: 30px 25px;
+  }
+}
