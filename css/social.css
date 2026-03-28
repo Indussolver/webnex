@@ -105,29 +105,34 @@
 .stat-box p { color: #a8b2d1; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; }
 
 /* ========================================= */
-/* SOCIAL GRID (PLATFORMS)                   */
+/* ENHANCED SOCIAL GRID (PLATFORMS)          */
 /* ========================================= */
 
 .social-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 20px;
-  max-width: 1100px;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); /* Adjusted width to fit embeds nicely */
+  gap: 30px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
 .social-card {
   display: flex;
-  align-items: center;
-  padding: 20px;
+  flex-direction: column;
+  padding: 24px;
   background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01));
   border: 1px solid rgba(255,255,255,0.05);
-  border-radius: 16px;
-  text-decoration: none;
+  border-radius: 20px;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   position: relative;
   overflow: hidden;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 .s-icon {
@@ -146,52 +151,130 @@
   transition: 0.4s;
 }
 
-.s-info h3 { color: #fff; font-size: 1.1rem; margin-bottom: 4px; }
+.s-info h3 { color: #fff; font-size: 1.2rem; margin-bottom: 4px; }
 .s-info p { color: #a8b2d1; font-size: 0.85rem; margin: 0; line-height: 1.4; }
 
-.s-action {
-  margin-left: auto;
-  font-size: 0.8rem;
-  padding: 6px 12px;
-  background: rgba(255,255,255,0.05);
-  color: #fff;
-  border-radius: 8px;
-  transition: 0.4s;
-  white-space: nowrap;
+/* New Embed Wrapper */
+.embed-wrapper {
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 24px;
+  border: 1px solid rgba(255,255,255,0.05);
+  flex-grow: 1; /* Automatically pushes button to bottom */
+  position: relative;
+  min-height: 180px; 
 }
 
-/* Hover Brand Colors */
-.social-card:hover { transform: translateY(-5px); }
-.yt-hover:hover { border-color: #FF0000; box-shadow: 0 10px 20px rgba(255,0,0,0.15); }
-.yt-hover:hover .s-icon, .yt-hover:hover .s-action { background: #FF0000; }
+.video-ratio {
+  aspect-ratio: 16/9; /* Perfect mobile video scaling */
+  min-height: auto;
+}
 
-.ig-hover:hover { border-color: #E1306C; box-shadow: 0 10px 20px rgba(225,48,108,0.15); }
-.ig-hover:hover .s-icon, .ig-hover:hover .s-action { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+.embed-wrapper iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border: none;
+}
 
-.li-hover:hover { border-color: #0077b5; box-shadow: 0 10px 20px rgba(0,119,181,0.15); }
-.li-hover:hover .s-icon, .li-hover:hover .s-action { background: #0077b5; }
+.dummy-embed {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #a8b2d1;
+  font-size: 0.9rem;
+  padding: 20px;
+}
 
-.gh-hover:hover { border-color: #ffffff; box-shadow: 0 10px 20px rgba(255,255,255,0.1); }
-.gh-hover:hover .s-icon, .gh-hover:hover .s-action { background: #333; color: #fff;}
+/* Glowing Explore Button */
+.glowing-explore-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  background: rgba(255,255,255,0.03);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.4s ease;
+  border: 1px solid rgba(255,255,255,0.05);
+}
 
-.wa-hover:hover { border-color: #25D366; box-shadow: 0 10px 20px rgba(37,211,102,0.15); }
-.wa-hover:hover .s-icon, .wa-hover:hover .s-action { background: #25D366; }
+.glowing-explore-btn .arrow {
+  transition: transform 0.3s ease;
+  font-size: 1.1rem;
+}
 
-.x-hover:hover { border-color: #1da1f2; box-shadow: 0 10px 20px rgba(29,161,242,0.15); }
-.x-hover:hover .s-icon, .x-hover:hover .s-action { background: #1da1f2; }
+/* Hover States & Brand specific Glowing Effects */
+.social-card:hover { transform: translateY(-8px); }
+.social-card:hover .glowing-explore-btn .arrow { transform: translateX(6px); }
 
-.tg-hover:hover { border-color: #0088cc; box-shadow: 0 10px 20px rgba(0,136,204,0.15); }
-.tg-hover:hover .s-icon, .tg-hover:hover .s-action { background: #0088cc; }
+/* YouTube Hover */
+.yt-hover:hover { border-color: #FF0000; box-shadow: 0 10px 30px rgba(255,0,0,0.15); }
+.yt-hover:hover .s-icon { background: #FF0000; }
+.yt-hover:hover .glowing-explore-btn { background: rgba(255,0,0,0.1); border-color: #FF0000; text-shadow: 0 0 10px rgba(255,0,0,0.5); box-shadow: 0 0 20px rgba(255,0,0,0.2); }
 
-.tk-hover:hover { border-color: #ff0050; box-shadow: 0 10px 20px rgba(255,0,80,0.15); }
-.tk-hover:hover .s-icon, .tk-hover:hover .s-action { background: #ff0050; }
+/* Instagram Hover */
+.ig-hover:hover { border-color: #E1306C; box-shadow: 0 10px 30px rgba(225,48,108,0.15); }
+.ig-hover:hover .s-icon { background: linear-gradient(45deg, #f09433, #bc1888); }
+.ig-hover:hover .glowing-explore-btn { background: rgba(225,48,108,0.1); border-color: #E1306C; text-shadow: 0 0 10px rgba(225,48,108,0.5); box-shadow: 0 0 20px rgba(225,48,108,0.2); }
 
-.pi-hover:hover { border-color: #E60023; box-shadow: 0 10px 20px rgba(230,0,35,0.15); }
-.pi-hover:hover .s-icon, .pi-hover:hover .s-action { background: #E60023; }
+/* LinkedIn Hover */
+.li-hover:hover { border-color: #0077b5; box-shadow: 0 10px 30px rgba(0,119,181,0.15); }
+.li-hover:hover .s-icon { background: #0077b5; }
+.li-hover:hover .glowing-explore-btn { background: rgba(0,119,181,0.1); border-color: #0077b5; text-shadow: 0 0 10px rgba(0,119,181,0.5); box-shadow: 0 0 20px rgba(0,119,181,0.2); }
 
-.fb-hover:hover { border-color: #1877F2; box-shadow: 0 10px 20px rgba(24,119,242,0.15); }
-.fb-hover:hover .s-icon, .fb-hover:hover .s-action { background: #1877F2; }
+/* GitHub Hover */
+.gh-hover:hover { border-color: #ffffff; box-shadow: 0 10px 30px rgba(255,255,255,0.1); }
+.gh-hover:hover .s-icon { background: #333; color: #fff;}
+.gh-hover:hover .glowing-explore-btn { background: rgba(255,255,255,0.05); border-color: #ffffff; text-shadow: 0 0 10px rgba(255,255,255,0.5); box-shadow: 0 0 20px rgba(255,255,255,0.1); }
 
+/* WhatsApp Hover */
+.wa-hover:hover { border-color: #25D366; box-shadow: 0 10px 30px rgba(37,211,102,0.15); }
+.wa-hover:hover .s-icon { background: #25D366; }
+.wa-hover:hover .glowing-explore-btn { background: rgba(37,211,102,0.1); border-color: #25D366; text-shadow: 0 0 10px rgba(37,211,102,0.5); box-shadow: 0 0 20px rgba(37,211,102,0.2); }
+
+/* X (Twitter) Hover */
+.x-hover:hover { border-color: #1da1f2; box-shadow: 0 10px 30px rgba(29,161,242,0.15); }
+.x-hover:hover .s-icon { background: #1da1f2; }
+.x-hover:hover .glowing-explore-btn { background: rgba(29,161,242,0.1); border-color: #1da1f2; text-shadow: 0 0 10px rgba(29,161,242,0.5); box-shadow: 0 0 20px rgba(29,161,242,0.2); }
+
+/* Telegram Hover */
+.tg-hover:hover { border-color: #0088cc; box-shadow: 0 10px 30px rgba(0,136,204,0.15); }
+.tg-hover:hover .s-icon { background: #0088cc; }
+.tg-hover:hover .glowing-explore-btn { background: rgba(0,136,204,0.1); border-color: #0088cc; text-shadow: 0 0 10px rgba(0,136,204,0.5); box-shadow: 0 0 20px rgba(0,136,204,0.2); }
+
+/* TikTok Hover */
+.tk-hover:hover { border-color: #ff0050; box-shadow: 0 10px 30px rgba(255,0,80,0.15); }
+.tk-hover:hover .s-icon { background: #ff0050; }
+.tk-hover:hover .glowing-explore-btn { background: rgba(255,0,80,0.1); border-color: #ff0050; text-shadow: 0 0 10px rgba(255,0,80,0.5); box-shadow: 0 0 20px rgba(255,0,80,0.2); }
+
+/* Pinterest Hover */
+.pi-hover:hover { border-color: #E60023; box-shadow: 0 10px 30px rgba(230,0,35,0.15); }
+.pi-hover:hover .s-icon { background: #E60023; }
+.pi-hover:hover .glowing-explore-btn { background: rgba(230,0,35,0.1); border-color: #E60023; text-shadow: 0 0 10px rgba(230,0,35,0.5); box-shadow: 0 0 20px rgba(230,0,35,0.2); }
+
+/* Facebook Hover */
+.fb-hover:hover { border-color: #1877F2; box-shadow: 0 10px 30px rgba(24,119,242,0.15); }
+.fb-hover:hover .s-icon { background: #1877F2; }
+.fb-hover:hover .glowing-explore-btn { background: rgba(24,119,242,0.1); border-color: #1877F2; text-shadow: 0 0 10px rgba(24,119,242,0.5); box-shadow: 0 0 20px rgba(24,119,242,0.2); }
+
+/* 📱 Mobile Optimization Fixes */
+@media (max-width: 768px) {
+  .social-grid {
+    grid-template-columns: 1fr; /* Stack cards natively on phone */
+    padding: 0 15px;
+  }
+  .social-card {
+    padding: 20px;
+  }
+  .glowing-explore-btn {
+    padding: 16px 20px; /* Thoda bada banaya taki phone par click karna aasan ho */
+  }
+}
 /* ========================================= */
 /* WHY FOLLOW & FEATURED WORK                */
 /* ========================================= */
