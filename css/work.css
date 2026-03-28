@@ -557,3 +557,121 @@
   .faq-num { margin-right: 15px; }
   .faq-answer p { padding: 0 20px 20px 20px; } /* Reset padding for mobile */
 }
+/* ========================================= */
+/* TERMS & CONDITIONS - EXPANDABLE SECTION   */
+/* ========================================= */
+
+.tc-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px;
+  background: linear-gradient(145deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 24px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  position: relative;
+}
+
+.tc-content-wrapper {
+  max-height: 350px; /* Preview height */
+  overflow: hidden;
+  position: relative;
+  transition: max-height 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.tc-content-wrapper.expanded {
+  max-height: 4000px; /* High enough to show all content */
+}
+
+/* The fading blur effect at the bottom of the preview */
+.tc-gradient-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 150px;
+  background: linear-gradient(to bottom, rgba(7, 11, 22, 0) 0%, rgba(7, 11, 22, 0.95) 80%, rgba(7, 11, 22, 1) 100%);
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+.tc-content-wrapper.expanded .tc-gradient-overlay {
+  opacity: 0;
+}
+
+/* Legal Text Styling */
+.tc-text {
+  color: #a8b2d1;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  padding-bottom: 20px;
+}
+
+.tc-last-updated {
+  color: #30D5FF;
+  font-size: 0.9rem;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.tc-text h4 {
+  color: #fff;
+  font-size: 1.2rem;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  border-left: 3px solid #7C5CFF;
+  padding-left: 12px;
+}
+
+.tc-text p {
+  margin-bottom: 15px;
+}
+
+.tc-text ul {
+  padding-left: 20px;
+  margin-bottom: 20px;
+  list-style-type: none;
+}
+
+.tc-text ul li {
+  position: relative;
+  margin-bottom: 10px;
+  padding-left: 15px;
+}
+
+.tc-text ul li::before {
+  content: '•';
+  color: #7C5CFF;
+  position: absolute;
+  left: 0;
+  font-size: 1.2rem;
+  top: -2px;
+}
+
+.tc-action {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 10;
+}
+
+/* Re-using your glowing explore button style specifically for this */
+.tc-expand-btn {
+  background: rgba(124, 92, 255, 0.1);
+  border: 1px solid rgba(124, 92, 255, 0.3);
+  cursor: pointer;
+}
+
+.tc-expand-btn:hover {
+  background: rgba(124, 92, 255, 0.2);
+  box-shadow: 0 0 20px rgba(124, 92, 255, 0.2);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .tc-container { padding: 30px 20px; }
+  .tc-content-wrapper { max-height: 250px; } /* Shorter preview on phones */
+}
