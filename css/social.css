@@ -1,198 +1,155 @@
-/* =========================================
-   WEBNEX CORE THEME
-========================================= */
-:root {
-    --bg-dark: #0a0f1c; /* Deep tech blue/black */
+/* ==============================================================
+   WEBNEX SOCIAL PAGE (SCOPED CSS TO PREVENT CONFLICTS)
+============================================================== */
+
+/* Base container setting */
+.webnex-social-master {
+    --bg-dark: #0a0f1c;
     --text-main: #f8fafc;
     --text-dim: #94a3b8;
+    --accent-blue: #3b82f6;
+    --accent-purple: #8b5cf6;
     
-    /* Brand Accent Gradients */
-    --accent-1: #3b82f6; /* Blue */
-    --accent-2: #8b5cf6; /* Purple */
-    
-    /* Social Brand Colors */
-    --yt: #ff0000;
-    --insta: #e1306c;
-    --linkedin: #0a66c2;
-    --github: #ffffff;
-    --x: #e7e9ea;
-    --fb: #1877f2;
-    --whatsapp: #25d366;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
     background-color: var(--bg-dark);
     color: var(--text-main);
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    line-height: 1.6;
-    padding-bottom: 80px;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    padding: 60px 5%;
+    border-radius: 20px;
+    box-sizing: border-box;
+    width: 100%;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+.webnex-social-master * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-.text-center { text-align: center; }
-
-/* Utilities */
-.gradient-text {
-    background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+.webnex-social-master .gradient-text {
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-.text-accent { color: var(--accent-1); }
-
-.glass-effect {
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 16px;
+/* 1. Vision Header */
+.webnex-social-master .vision-header {
+    text-align: center;
+    margin-bottom: 60px;
 }
 
-/* =========================================
-   1. VISION SECTION
-========================================= */
-.vision-section {
-    padding: 100px 0 60px;
-}
-
-.big-heading {
-    font-size: clamp(3rem, 6vw, 5rem);
+.webnex-social-master .big-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 800;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
-.main-line {
-    font-size: clamp(1.2rem, 3vw, 2rem);
+.webnex-social-master .sub-title {
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
     color: #e2e8f0;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
-.vision-text p {
+.webnex-social-master .vision-desc p {
     color: var(--text-dim);
     font-size: 1.1rem;
+    line-height: 1.6;
 }
 
-/* =========================================
-   2. VALUE SECTION
-========================================= */
-.section-title {
-    font-size: 2.2rem;
-    margin: 60px 0 40px;
+/* 2. Value Section */
+.webnex-social-master .section-heading {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
     font-weight: 700;
 }
 
-.value-list {
-    list-style: none;
+.webnex-social-master .value-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 20px;
+    margin-bottom: 80px;
 }
 
-.value-list li {
-    background: rgba(255, 255, 255, 0.02);
+.webnex-social-master .value-item {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
     padding: 20px;
     border-radius: 12px;
     display: flex;
     align-items: center;
     gap: 15px;
     font-weight: 600;
-    border: 1px solid rgba(255, 255, 255, 0.02);
+    font-size: 0.95rem;
 }
 
-/* =========================================
-   3. PLATFORMS SECTION
-========================================= */
-.platforms-grid {
+.webnex-social-master .value-item i {
+    color: var(--accent-blue);
+    font-size: 1.5rem;
+}
+
+/* 3. Social Grid */
+.webnex-social-master .social-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
+    margin-bottom: 80px;
 }
 
-.platform-card {
+.webnex-social-master .social-card {
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 20px;
-    padding: 24px;
+    padding: 25px;
     display: flex;
     flex-direction: column;
     transition: all 0.3s ease;
 }
 
-.platform-card:hover {
-    transform: translateY(-5px);
+.webnex-social-master .social-card:hover {
+    transform: translateY(-8px);
     background: rgba(255, 255, 255, 0.04);
 }
 
-/* Brand Hover Effects */
-.yt-hover:hover { border-color: var(--yt); box-shadow: 0 10px 30px rgba(255,0,0,0.1); }
-.insta-hover:hover { border-color: var(--insta); box-shadow: 0 10px 30px rgba(225,48,108,0.1); }
-.linkedin-hover:hover { border-color: var(--linkedin); box-shadow: 0 10px 30px rgba(10,102,194,0.1); }
-.github-hover:hover { border-color: var(--github); box-shadow: 0 10px 30px rgba(255,255,255,0.05); }
-.x-hover:hover { border-color: var(--x); box-shadow: 0 10px 30px rgba(231,233,234,0.05); }
-.fb-hover:hover { border-color: var(--fb); box-shadow: 0 10px 30px rgba(24,119,242,0.1); }
+.webnex-social-master .yt-card:hover { border-color: #ff0000; box-shadow: 0 10px 30px rgba(255,0,0,0.1); }
+.webnex-social-master .insta-card:hover { border-color: #e1306c; box-shadow: 0 10px 30px rgba(225,48,108,0.1); }
+.webnex-social-master .in-card:hover { border-color: #0a66c2; box-shadow: 0 10px 30px rgba(10,102,194,0.1); }
+.webnex-social-master .x-card:hover { border-color: #e7e9ea; box-shadow: 0 10px 30px rgba(231,233,234,0.05); }
 
-.platform-header {
+.webnex-social-master .card-top {
     display: flex;
     align-items: center;
     gap: 15px;
     margin-bottom: 20px;
 }
 
-.platform-header .icon {
-    font-size: 2rem;
+.webnex-social-master .platform-icon {
+    font-size: 2.2rem;
     color: var(--text-main);
-    transition: color 0.3s ease;
+    transition: 0.3s;
 }
 
-/* Icon Colors on Hover */
-.yt-hover:hover .icon { color: var(--yt); }
-.insta-hover:hover .icon { color: var(--insta); }
-.linkedin-hover:hover .icon { color: var(--linkedin); }
-.github-hover:hover .icon { color: var(--github); }
-.x-hover:hover .icon { color: var(--x); }
-.fb-hover:hover .icon { color: var(--fb); }
+.webnex-social-master .card-titles h4 { font-size: 1.3rem; }
+.webnex-social-master .card-titles p { font-size: 0.85rem; color: var(--text-dim); }
 
-.platform-header h4 { font-size: 1.3rem; }
-.platform-header p { font-size: 0.85rem; color: var(--text-dim); }
-
-/* Embed Area */
-.embed-box {
+.webnex-social-master .video-embed {
     background: #000;
     border-radius: 12px;
-    min-height: 200px;
+    min-height: 220px;
     margin-bottom: 20px;
+    flex-grow: 1;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.webnex-social-master .dummy-bg {
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
-    border: 1px solid rgba(255,255,255,0.05);
-    flex-grow: 1;
-}
-
-.placeholder-text {
     color: #475569;
     font-size: 0.9rem;
 }
 
-.embed-box iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-}
-
-/* Explore Button */
-.btn-explore {
+.webnex-social-master .explore-btn {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -202,47 +159,50 @@ body {
     text-decoration: none;
     border-radius: 8px;
     font-weight: 600;
-    transition: all 0.3s ease;
+    transition: 0.3s;
 }
 
-.platform-card:hover .btn-explore {
+.webnex-social-master .social-card:hover .explore-btn {
     background: rgba(255, 255, 255, 0.1);
 }
 
-/* =========================================
-   4. STATS & 5. CTA
-========================================= */
-.stats-container {
+/* 4. Proof & CTA */
+.webnex-social-master .bottom-metrics {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    background: rgba(255,255,255,0.02);
     padding: 40px;
-    margin-top: 60px;
-    gap: 30px;
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.05);
+    margin-bottom: 60px;
+    text-align: center;
+    gap: 20px;
 }
 
-.stat h4 { font-size: 3rem; margin-bottom: 5px; }
-.stat p { color: var(--text-dim); text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px;}
+.webnex-social-master .metric h4 { font-size: 3rem; margin-bottom: 5px; }
+.webnex-social-master .metric p { color: var(--text-dim); text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px; }
 
-.cta-section {
-    margin-top: 80px;
-}
-
-.cta-box {
+.webnex-social-master .cta-banner {
+    text-align: center;
     padding: 60px 20px;
+    background: radial-gradient(circle at center, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 20px;
 }
 
-.cta-box h2 { font-size: 2.5rem; margin-bottom: 10px; }
-.cta-box p { color: var(--text-dim); margin-bottom: 30px; font-size: 1.1rem; }
+.webnex-social-master .cta-banner h2 { font-size: 2.2rem; margin-bottom: 10px; }
+.webnex-social-master .cta-banner p { color: var(--text-dim); margin-bottom: 30px; font-size: 1.1rem; }
 
-.cta-actions {
+.webnex-social-master .cta-btns {
     display: flex;
     gap: 15px;
     justify-content: center;
     flex-wrap: wrap;
 }
 
-.btn-primary, .btn-whatsapp {
+.webnex-social-master .primary-btn, 
+.webnex-social-master .wa-btn {
     padding: 14px 30px;
     border-radius: 8px;
     text-decoration: none;
@@ -250,21 +210,16 @@ body {
     transition: 0.3s;
 }
 
-.btn-primary { background: var(--text-main); color: var(--bg-dark); }
-.btn-primary:hover { background: #e2e8f0; transform: scale(1.05); }
+.webnex-social-master .primary-btn { background: var(--text-main); color: var(--bg-dark); }
+.webnex-social-master .primary-btn:hover { background: #e2e8f0; transform: scale(1.05); }
 
-.btn-whatsapp { border: 2px solid var(--whatsapp); color: var(--text-main); }
-.btn-whatsapp:hover { background: var(--whatsapp); color: #000; }
+.webnex-social-master .wa-btn { border: 2px solid #25d366; color: var(--text-main); }
+.webnex-social-master .wa-btn:hover { background: #25d366; color: #000; }
 
 /* Animations */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
 }
-.fade-in { animation: fadeIn 0.8s ease forwards; }
-.fade-in-delay { opacity: 0; animation: fadeIn 0.8s ease 0.3s forwards; }
-
-@media (max-width: 768px) {
-    .platforms-grid { grid-template-columns: 1fr; }
-    .stats-container { flex-direction: column; text-align: center; }
-}
+.webnex-social-master .fade-in { animation: fadeIn 0.8s ease forwards; }
+.webnex-social-master .fade-in-delay { opacity: 0; animation: fadeIn 0.8s ease 0.3s forwards; }
