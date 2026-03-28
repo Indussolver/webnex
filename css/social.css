@@ -1,218 +1,146 @@
-/* ==========================================================================
-   🎨 WEBNEX THEME SETTINGS (Yahan apne colors daalein)
-   ========================================================================== */
+/* =========================================
+   WEBNEX CORE THEME
+========================================= */
 :root {
-    /* Main Background & Text */
-    --webnex-bg: #050505;        /* Deep black background */
-    --webnex-text: #f8fafc;      /* Clean white text */
-    --webnex-text-muted: #94a3b8;/* Grayish text for descriptions */
-
-    /* Glassmorphism Settings */
-    --glass-bg: rgba(255, 255, 255, 0.02);
-    --glass-border: rgba(255, 255, 255, 0.05);
-    --glass-hover-bg: rgba(255, 255, 255, 0.05);
-
-    /* Brand Accent Colors (Gradients & Glows) */
-    --accent-primary: #3b82f6;   /* Change this to Webnex Main Color */
-    --accent-secondary: #8b5cf6; /* Change this to Webnex Secondary Color */
+    --bg-dark: #0a0f1c; /* Deep tech blue/black */
+    --text-main: #f8fafc;
+    --text-dim: #94a3b8;
     
-    /* Social Media Original Colors */
-    --yt: #FF0000;
-    --insta: #E1306C;
-    --linkedin: #0A66C2;
+    /* Brand Accent Gradients */
+    --accent-1: #3b82f6; /* Blue */
+    --accent-2: #8b5cf6; /* Purple */
+    
+    /* Social Brand Colors */
+    --yt: #ff0000;
+    --insta: #e1306c;
+    --linkedin: #0a66c2;
     --github: #ffffff;
     --x: #e7e9ea;
-    --fb: #1877F2;
-    --tiktok: #FF0050;
-    --telegram: #0088cc;
-    --pinterest: #E60023;
-    --whatsapp: #25D366;
+    --fb: #1877f2;
+    --whatsapp: #25d366;
 }
 
-/* ==========================================================================
-   RESET & TYPOGRAPHY
-   ========================================================================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body.dark-theme {
-    background-color: var(--webnex-bg);
-    color: var(--webnex-text);
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: 'Plus Jakarta Sans', sans-serif;
     line-height: 1.6;
-    overflow-x: hidden;
-    /* Subtle background grid pattern for tech feel */
-    background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-    background-size: 40px 40px;
+    padding-bottom: 80px;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 5%;
+    padding: 0 20px;
 }
 
 .text-center { text-align: center; }
 
-/* ==========================================================================
-   GLOBAL UTILITIES
-   ========================================================================== */
+/* Utilities */
 .gradient-text {
-    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-clip: text;
 }
 
-.glass-card {
-    background: var(--glass-bg);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid var(--glass-border);
+.text-accent { color: var(--accent-1); }
+
+.glass-effect {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 16px;
-    transition: all 0.3s ease;
 }
 
-/* ==========================================================================
-   1️⃣ VISION SECTION
-   ========================================================================== */
+/* =========================================
+   1. VISION SECTION
+========================================= */
 .vision-section {
-    padding: 15vh 0 10vh;
-    text-align: center;
+    padding: 100px 0 60px;
 }
 
 .big-heading {
     font-size: clamp(3rem, 6vw, 5rem);
     font-weight: 800;
-    letter-spacing: -1px;
     margin-bottom: 20px;
 }
 
 .main-line {
     font-size: clamp(1.2rem, 3vw, 2rem);
-    font-weight: 500;
-    color: var(--webnex-text);
+    color: #e2e8f0;
     margin-bottom: 30px;
 }
 
 .vision-text p {
-    color: var(--webnex-text-muted);
+    color: var(--text-dim);
     font-size: 1.1rem;
-    margin-bottom: 8px;
 }
 
-/* ==========================================================================
-   2️⃣ VALUE & 5️⃣ PROOF SECTIONS
-   ========================================================================== */
+/* =========================================
+   2. VALUE SECTION
+========================================= */
 .section-title {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
+    margin: 60px 0 40px;
     font-weight: 700;
-    margin-bottom: 40px;
-    text-align: center;
 }
 
-.value-section, .proof-section {
-    padding: 60px 0;
-}
-
-.value-grid {
+.value-list {
+    list-style: none;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
 }
 
-.value-card {
-    padding: 30px 20px;
-    text-align: center;
-}
-
-.value-card:hover {
-    background: var(--glass-hover-bg);
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-}
-
-.value-card i {
-    font-size: 2rem;
-    color: var(--accent-primary);
-    margin-bottom: 15px;
-}
-
-.stats-grid {
+.value-list li {
+    background: rgba(255, 255, 255, 0.02);
+    padding: 20px;
+    border-radius: 12px;
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 30px;
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
-    border-radius: 20px;
-    padding: 40px 20px;
+    align-items: center;
+    gap: 15px;
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.02);
 }
 
-.stat-box { text-align: center; }
-
-.stat-box h4 {
-    font-size: 3rem;
-    font-weight: 800;
-    margin-bottom: 5px;
-}
-
-.stat-box p {
-    color: var(--webnex-text-muted);
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-/* ==========================================================================
-   3️⃣ SOCIAL PLATFORMS SECTION (THE MAIN ENGINE)
-   ========================================================================== */
-.platforms-section {
-    padding: 80px 0;
-}
-
+/* =========================================
+   3. PLATFORMS SECTION
+========================================= */
 .platforms-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 30px;
 }
 
 .platform-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
     padding: 24px;
     display: flex;
     flex-direction: column;
-    position: relative;
-    overflow: hidden;
-}
-
-/* Hover Glow Effect using Pseudo-element */
-.platform-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0; height: 3px;
-    background: transparent;
-    transition: all 0.4s ease;
+    transition: all 0.3s ease;
 }
 
 .platform-card:hover {
-    background: var(--glass-hover-bg);
     transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.04);
 }
 
-/* Individual Platform Hover Borders */
-.yt-border:hover::before { background: var(--yt); box-shadow: 0 0 20px var(--yt); }
-.insta-border:hover::before { background: var(--insta); box-shadow: 0 0 20px var(--insta); }
-.linkedin-border:hover::before { background: var(--linkedin); box-shadow: 0 0 20px var(--linkedin); }
-.github-border:hover::before { background: var(--github); box-shadow: 0 0 20px var(--github); }
-.x-border:hover::before { background: var(--x); box-shadow: 0 0 20px var(--x); }
-.fb-border:hover::before { background: var(--fb); box-shadow: 0 0 20px var(--fb); }
-.tiktok-border:hover::before { background: var(--tiktok); box-shadow: 0 0 20px var(--tiktok); }
-.telegram-border:hover::before { background: var(--telegram); box-shadow: 0 0 20px var(--telegram); }
-.pinterest-border:hover::before { background: var(--pinterest); box-shadow: 0 0 20px var(--pinterest); }
-.whatsapp-border:hover::before { background: var(--whatsapp); box-shadow: 0 0 20px var(--whatsapp); }
+/* Brand Hover Effects */
+.yt-hover:hover { border-color: var(--yt); box-shadow: 0 10px 30px rgba(255,0,0,0.1); }
+.insta-hover:hover { border-color: var(--insta); box-shadow: 0 10px 30px rgba(225,48,108,0.1); }
+.linkedin-hover:hover { border-color: var(--linkedin); box-shadow: 0 10px 30px rgba(10,102,194,0.1); }
+.github-hover:hover { border-color: var(--github); box-shadow: 0 10px 30px rgba(255,255,255,0.05); }
+.x-hover:hover { border-color: var(--x); box-shadow: 0 10px 30px rgba(231,233,234,0.05); }
+.fb-hover:hover { border-color: var(--fb); box-shadow: 0 10px 30px rgba(24,119,242,0.1); }
 
 .platform-header {
     display: flex;
@@ -221,145 +149,122 @@ body.dark-theme {
     margin-bottom: 20px;
 }
 
-.platform-icon {
+.platform-header .icon {
     font-size: 2rem;
+    color: var(--text-main);
     transition: color 0.3s ease;
 }
 
 /* Icon Colors on Hover */
-.yt-border:hover .platform-icon { color: var(--yt); }
-.insta-border:hover .platform-icon { color: var(--insta); }
-.linkedin-border:hover .platform-icon { color: var(--linkedin); }
-.github-border:hover .platform-icon { color: var(--github); }
-.x-border:hover .platform-icon { color: var(--x); }
-.fb-border:hover .platform-icon { color: var(--fb); }
-.tiktok-border:hover .platform-icon { color: var(--tiktok); }
-.telegram-border:hover .platform-icon { color: var(--telegram); }
-.pinterest-border:hover .platform-icon { color: var(--pinterest); }
-.whatsapp-border:hover .platform-icon { color: var(--whatsapp); }
+.yt-hover:hover .icon { color: var(--yt); }
+.insta-hover:hover .icon { color: var(--insta); }
+.linkedin-hover:hover .icon { color: var(--linkedin); }
+.github-hover:hover .icon { color: var(--github); }
+.x-hover:hover .icon { color: var(--x); }
+.fb-hover:hover .icon { color: var(--fb); }
 
-.platform-header h4 { font-size: 1.2rem; font-weight: 600; }
-.platform-header p { font-size: 0.85rem; color: var(--webnex-text-muted); }
+.platform-header h4 { font-size: 1.3rem; }
+.platform-header p { font-size: 0.85rem; color: var(--text-dim); }
 
-/* Embed Container */
-.embed-container {
-    background: #000000;
-    border-radius: 10px;
-    overflow: hidden;
+/* Embed Area */
+.embed-box {
+    background: #000;
+    border-radius: 12px;
+    min-height: 200px;
     margin-bottom: 20px;
-    flex-grow: 1;
-    min-height: 220px;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
     border: 1px solid rgba(255,255,255,0.05);
+    flex-grow: 1;
 }
 
-.placeholder-embed {
+.placeholder-text {
     color: #475569;
     font-size: 0.9rem;
 }
 
-.embed-container iframe {
+.embed-box iframe {
     width: 100%;
     height: 100%;
     border: none;
 }
 
 /* Explore Button */
-.explore-btn {
+.btn-explore {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 12px 18px;
-    background: rgba(255, 255, 255, 0.03);
-    color: var(--webnex-text);
+    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-main);
     text-decoration: none;
     border-radius: 8px;
-    font-size: 0.9rem;
-    font-weight: 500;
+    font-weight: 600;
     transition: all 0.3s ease;
-    border: 1px solid transparent;
 }
 
-.platform-card:hover .explore-btn {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: var(--glass-border);
+.platform-card:hover .btn-explore {
+    background: rgba(255, 255, 255, 0.1);
 }
 
-.explore-btn i { transition: transform 0.3s ease; }
-.explore-btn:hover i { transform: translateX(5px); }
-
-/* ==========================================================================
-   4️⃣ FEATURED & 6️⃣ CTA SECTIONS
-   ========================================================================== */
-.featured-section { padding: 60px 0; }
-.featured-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
+/* =========================================
+   4. STATS & 5. CTA
+========================================= */
+.stats-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 40px;
+    margin-top: 60px;
+    gap: 30px;
 }
-.featured-item { padding: 25px; }
 
-.cta-section { padding: 80px 0 120px; }
+.stat h4 { font-size: 3rem; margin-bottom: 5px; }
+.stat p { color: var(--text-dim); text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px;}
+
+.cta-section {
+    margin-top: 80px;
+}
+
 .cta-box {
-    text-align: center;
     padding: 60px 20px;
-    background: radial-gradient(circle at center, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
-    border: 1px solid var(--glass-border);
 }
 
-.cta-box h2 { font-size: 2.5rem; margin-bottom: 15px; }
-.cta-box p { color: var(--webnex-text-muted); margin-bottom: 30px; font-size: 1.1rem; }
+.cta-box h2 { font-size: 2.5rem; margin-bottom: 10px; }
+.cta-box p { color: var(--text-dim); margin-bottom: 30px; font-size: 1.1rem; }
 
-.cta-buttons {
+.cta-actions {
     display: flex;
     gap: 15px;
     justify-content: center;
     flex-wrap: wrap;
 }
 
-.btn {
-    padding: 14px 28px;
+.btn-primary, .btn-whatsapp {
+    padding: 14px 30px;
     border-radius: 8px;
-    font-weight: 600;
     text-decoration: none;
-    transition: all 0.3s ease;
+    font-weight: 600;
+    transition: 0.3s;
 }
 
-.btn-primary {
-    background: var(--webnex-text);
-    color: var(--webnex-bg);
-}
+.btn-primary { background: var(--text-main); color: var(--bg-dark); }
+.btn-primary:hover { background: #e2e8f0; transform: scale(1.05); }
 
-.btn-primary:hover {
-    transform: scale(1.02);
-    box-shadow: 0 0 20px rgba(255,255,255,0.2);
-}
+.btn-whatsapp { border: 2px solid var(--whatsapp); color: var(--text-main); }
+.btn-whatsapp:hover { background: var(--whatsapp); color: #000; }
 
-.btn-whatsapp {
-    background: transparent;
-    color: var(--webnex-text);
-    border: 1px solid var(--whatsapp);
-}
-
-.btn-whatsapp:hover {
-    background: rgba(37, 211, 102, 0.1);
-    box-shadow: 0 0 20px rgba(37, 211, 102, 0.2);
-}
-
-/* ==========================================================================
-   ANIMATIONS
-   ========================================================================== */
+/* Animations */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
 }
-
-.fade-in { animation: fadeIn 0.8s ease-out forwards; }
-.slide-up { opacity: 0; animation: fadeIn 0.8s ease-out 0.2s forwards; }
+.fade-in { animation: fadeIn 0.8s ease forwards; }
+.fade-in-delay { opacity: 0; animation: fadeIn 0.8s ease 0.3s forwards; }
 
 @media (max-width: 768px) {
     .platforms-grid { grid-template-columns: 1fr; }
-    .stats-grid { flex-direction: column; gap: 40px; }
+    .stats-container { flex-direction: column; text-align: center; }
 }
