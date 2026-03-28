@@ -485,6 +485,119 @@
       </div>
     </section>
 
+<section class="section tc-section" data-reveal style="padding-top: 0;">
+      <div class="section-head text-center">
+        <span class="eyebrow">Data Protection</span>
+        <h2>Privacy Policy</h2>
+        <p>How we protect and handle your information.</p>
+      </div>
+
+      <div class="tc-container glass-card">
+        <div class="tc-content-wrapper" id="ppWrapper">
+          
+          <div class="tc-text">
+            <p class="tc-last-updated">Last Updated: <strong>March 2026</strong></p>
+            <p>At Webnex, we respect your privacy and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, and safeguard your data when you visit our website or use our services.</p>
+
+            <h4>1. Introduction</h4>
+            <p>This Privacy Policy applies to all users of the Webnex website and services. By accessing or using our website, you agree to the terms outlined in this policy.</p>
+
+            <h4>2. Information We Collect</h4>
+            <p>We may collect the following types of information:</p>
+            <p><strong>a) Personal Information</strong></p>
+            <ul>
+              <li>Name</li>
+              <li>Email address</li>
+              <li>Phone number</li>
+              <li>Business details</li>
+            </ul>
+            <p><strong>b) Non-Personal Information</strong></p>
+            <ul>
+              <li>Browser type</li>
+              <li>Device information</li>
+              <li>IP address</li>
+              <li>Pages visited and time spent on the website</li>
+            </ul>
+            <p><strong>c) Client-Provided Content</strong></p>
+            <ul>
+              <li>Any content (text, images, logos, etc.) you provide for website development.</li>
+            </ul>
+
+            <h4>3. How We Use Your Information</h4>
+            <p>We use your information to:</p>
+            <ul>
+              <li>Provide and deliver our services</li>
+              <li>Communicate with you regarding your project</li>
+              <li>Improve our website and user experience</li>
+              <li>Respond to inquiries and support requests</li>
+              <li>Send important updates or service-related information</li>
+            </ul>
+            <p>We do not sell your personal information to third parties.</p>
+
+            <h4>4. Cookies & Tracking Technologies</h4>
+            <p>We may use cookies and similar technologies to:</p>
+            <ul>
+              <li>Enhance user experience</li>
+              <li>Analyze website traffic</li>
+              <li>Understand user behavior</li>
+            </ul>
+            <p>You can choose to disable cookies through your browser settings.</p>
+
+            <h4>5. Data Sharing & Disclosure</h4>
+            <p>We may share your information only in the following cases:</p>
+            <ul>
+              <li>With trusted service providers (e.g., hosting, analytics tools)</li>
+              <li>When required by law or legal authorities</li>
+              <li>To protect our rights, users, or services</li>
+            </ul>
+            <p>We do not share your data for marketing or resale purposes.</p>
+
+            <h4>6. Data Security</h4>
+            <p>We take reasonable steps to protect your personal information using secure systems and practices. However, no method of transmission over the internet is 100% secure, and we cannot guarantee absolute security.</p>
+
+            <h4>7. Third-Party Services</h4>
+            <p>Our website may contain links or integrations with third-party services (e.g., hosting providers, social media platforms). We are not responsible for the privacy practices of these third parties.</p>
+
+            <h4>8. Your Rights</h4>
+            <p>You have the right to:</p>
+            <ul>
+              <li>Request access to your personal data</li>
+              <li>Request correction or deletion of your data</li>
+              <li>Withdraw consent for data usage</li>
+            </ul>
+            <p>To exercise these rights, contact us using the details below.</p>
+
+            <h4>9. Data Retention</h4>
+            <p>We retain your information only for as long as necessary to:</p>
+            <ul>
+              <li>Provide services</li>
+              <li>Comply with legal obligations</li>
+              <li>Resolve disputes</li>
+            </ul>
+
+            <h4>10. Children’s Privacy</h4>
+            <p>Our services are not intended for individuals under the age of 13. We do not knowingly collect personal information from children.</p>
+
+            <h4>11. Changes to This Policy</h4>
+            <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated date.</p>
+
+            <h4>12. Contact Information</h4>
+            <p>If you have any questions about this Privacy Policy, you can contact us:<br>
+            Email: <strong>indusreach@outlook.com</strong><br>
+            Website: <strong>Webnex by Indus</strong></p>
+          </div>
+          
+          <div class="tc-gradient-overlay" id="ppOverlay"></div>
+        </div>
+
+        <div class="tc-action text-center">
+          <button class="tc-expand-btn" id="ppBtn">
+            Read Full Policy <span class="arrow" style="display:inline-block; transform: rotate(90deg); margin-left:8px;">→</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
     <section id="contact" class="section cta-section">
       <div class="cta-card" data-reveal>
         <span class="eyebrow">Start now</span>
@@ -563,5 +676,25 @@
       });
     }
   </script>
+  // Privacy Policy Expand/Collapse Script
+    const ppBtn = document.getElementById('ppBtn');
+    const ppWrapper = document.getElementById('ppWrapper');
+
+    if (ppBtn && ppWrapper) {
+      ppBtn.addEventListener('click', () => {
+        ppWrapper.classList.toggle('expanded');
+        
+        if (ppWrapper.classList.contains('expanded')) {
+          ppBtn.innerHTML = 'View Less <span class="arrow" style="display:inline-block; transform: rotate(-90deg); margin-left:8px; transition: transform 0.3s;">→</span>';
+        } else {
+          ppBtn.innerHTML = 'Read Full Policy <span class="arrow" style="display:inline-block; transform: rotate(90deg); margin-left:8px; transition: transform 0.3s;">→</span>';
+          
+          // Smooth scroll back to top of Privacy Policy when collapsing
+          setTimeout(() => {
+            ppWrapper.parentElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }, 100);
+        }
+      });
+    }
 </body>
 </html>
