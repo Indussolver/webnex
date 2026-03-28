@@ -1,249 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Indus Social | Webnex</title>
+<div class="webnex-social-engine fade-in">
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        /* Base container setting */
-        .webnex-social-master {
-            --bg-dark: #0a0f1c;
-            --text-main: #f8fafc;
-            --text-dim: #94a3b8;
-            --accent-blue: #3b82f6;
-            --accent-purple: #8b5cf6;
-            
-            background-color: var(--bg-dark);
-            color: var(--text-main);
-            font-family: 'Segoe UI', system-ui, sans-serif;
-            padding: 60px 5%;
-            border-radius: 20px;
-            box-sizing: border-box;
-            width: 100%;
-            min-height: 100vh;
-        }
-
-        .webnex-social-master * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            background-color: #0a0f1c; /* Ensuring whole page is dark */
-            margin: 0;
-        }
-
-        .webnex-social-master .gradient-text {
-            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        /* 1. Vision Header */
-        .webnex-social-master .vision-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .webnex-social-master .big-title {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 800;
-            margin-bottom: 15px;
-        }
-
-        .webnex-social-master .sub-title {
-            font-size: clamp(1.2rem, 3vw, 1.8rem);
-            color: #e2e8f0;
-            margin-bottom: 25px;
-        }
-
-        .webnex-social-master .vision-desc p {
-            color: var(--text-dim);
-            font-size: 1.1rem;
-            line-height: 1.6;
-        }
-
-        /* 2. Value Section */
-        .webnex-social-master .section-heading {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 40px;
-            font-weight: 700;
-            color: white;
-        }
-
-        .webnex-social-master .value-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 20px;
-            margin-bottom: 80px;
-        }
-
-        .webnex-social-master .value-item {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            padding: 20px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            color: white;
-        }
-
-        .webnex-social-master .value-item i {
-            color: var(--accent-blue);
-            font-size: 1.5rem;
-        }
-
-        /* 3. Social Grid */
-        .webnex-social-master .social-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 80px;
-        }
-
-        .webnex-social-master .social-card {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
-            padding: 25px;
-            display: flex;
-            flex-direction: column;
-            transition: all 0.3s ease;
-        }
-
-        .webnex-social-master .social-card:hover {
-            transform: translateY(-8px);
-            background: rgba(255, 255, 255, 0.04);
-        }
-
-        .webnex-social-master .yt-card:hover { border-color: #ff0000; box-shadow: 0 10px 30px rgba(255,0,0,0.1); }
-        .webnex-social-master .insta-card:hover { border-color: #e1306c; box-shadow: 0 10px 30px rgba(225,48,108,0.1); }
-        .webnex-social-master .in-card:hover { border-color: #0a66c2; box-shadow: 0 10px 30px rgba(10,102,194,0.1); }
-        .webnex-social-master .x-card:hover { border-color: #e7e9ea; box-shadow: 0 10px 30px rgba(231,233,234,0.05); }
-
-        .webnex-social-master .card-top {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-
-        .webnex-social-master .platform-icon {
-            font-size: 2.2rem;
-            color: var(--text-main);
-            transition: 0.3s;
-        }
-
-        .webnex-social-master .card-titles h4 { font-size: 1.3rem; color: white; }
-        .webnex-social-master .card-titles p { font-size: 0.85rem; color: var(--text-dim); }
-
-        .webnex-social-master .video-embed {
-            background: #000;
-            border-radius: 12px;
-            min-height: 220px;
-            margin-bottom: 20px;
-            flex-grow: 1;
-            overflow: hidden;
-            border: 1px solid rgba(255,255,255,0.05);
-        }
-
-        .webnex-social-master .dummy-bg {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #475569;
-            font-size: 0.9rem;
-        }
-
-        .webnex-social-master .explore-btn {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 12px 20px;
-            background: rgba(255, 255, 255, 0.05);
-            color: var(--text-main);
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: 0.3s;
-        }
-
-        .webnex-social-master .social-card:hover .explore-btn {
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        /* 4. Proof & CTA */
-        .webnex-social-master .bottom-metrics {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            background: rgba(255,255,255,0.02);
-            padding: 40px;
-            border-radius: 16px;
-            border: 1px solid rgba(255,255,255,0.05);
-            margin-bottom: 60px;
-            text-align: center;
-            gap: 20px;
-        }
-
-        .webnex-social-master .metric h4 { font-size: 3rem; margin-bottom: 5px; }
-        .webnex-social-master .metric p { color: var(--text-dim); text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px; }
-
-        .webnex-social-master .cta-banner {
-            text-align: center;
-            padding: 60px 20px;
-            background: radial-gradient(circle at center, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
-            border: 1px solid rgba(255,255,255,0.05);
-            border-radius: 20px;
-        }
-
-        .webnex-social-master .cta-banner h2 { font-size: 2.2rem; margin-bottom: 10px; }
-        .webnex-social-master .cta-banner p { color: var(--text-dim); margin-bottom: 30px; font-size: 1.1rem; }
-
-        .webnex-social-master .cta-btns {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .webnex-social-master .primary-btn, 
-        .webnex-social-master .wa-btn {
-            padding: 14px 30px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: 0.3s;
-        }
-
-        .webnex-social-master .primary-btn { background: var(--text-main); color: var(--bg-dark); }
-        .webnex-social-master .primary-btn:hover { background: #e2e8f0; transform: scale(1.05); }
-
-        .webnex-social-master .wa-btn { border: 2px solid #25d366; color: var(--text-main); }
-        .webnex-social-master .wa-btn:hover { background: #25d366; color: #000; }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .webnex-social-master .fade-in { animation: fadeIn 0.8s ease forwards; }
-        .webnex-social-master .fade-in-delay { opacity: 0; animation: fadeIn 0.8s ease 0.3s forwards; }
-    </style>
-</head>
-<body>
-
-<div class="webnex-social-master">
-    
-    <div class="vision-header fade-in">
+    <header class="vision-header">
         <h1 class="gradient-text big-title">Our Vision</h1>
         <h2 class="sub-title">Building one of the Top 100 Most Followed Digital Brands.</h2>
         <div class="vision-desc">
@@ -251,23 +8,23 @@
             <p>Sharing our journey, growth & learnings.</p>
             <p>Helping people and businesses grow online.</p>
         </div>
-    </div>
+    </header>
 
-    <div class="value-container fade-in-delay">
-        <h3 class="section-heading">Why Follow Indus?</h3>
+    <section class="value-container">
+        <h3 class="section-heading text-center">Why Follow Indus?</h3>
         <div class="value-grid">
-            <div class="value-item"><i class="fa-solid fa-users"></i> We're building a huge, supportive community.</div>
-            <div class="value-item"><i class="fa-solid fa-wand-magic-sparkles"></i> Creating stunning, high-quality content.</div>
-            <div class="value-item"><i class="fa-solid fa-video"></i> Premium videos are currently under production.</div>
-            <div class="value-item"><i class="fa-solid fa-fire"></i> Top-tier social media influencer insights.</div>
+            <div class="value-item glass-card"><i class="fa-solid fa-users text-gradient"></i> <span>We're building a huge community.</span></div>
+            <div class="value-item glass-card"><i class="fa-solid fa-wand-magic-sparkles text-gradient"></i> <span>Creating stunning, high-quality content.</span></div>
+            <div class="value-item glass-card"><i class="fa-solid fa-video text-gradient"></i> <span>Premium videos currently under production.</span></div>
+            <div class="value-item glass-card"><i class="fa-solid fa-fire text-gradient"></i> <span>Top-tier social media influencer insights.</span></div>
         </div>
-    </div>
+    </section>
 
-    <div class="platforms-wrapper">
-        <h3 class="section-heading">Explore Our Content Ecosystem</h3>
+    <main class="platforms-wrapper">
+        <h3 class="section-heading text-center">Explore Our Ecosystem</h3>
         <div class="social-grid">
             
-            <div class="social-card yt-card">
+            <div class="social-card glass-card yt-card">
                 <div class="card-top">
                     <i class="fa-brands fa-youtube platform-icon"></i>
                     <div class="card-titles">
@@ -275,13 +32,13 @@
                         <p>Learn Web Dev & Business</p>
                     </div>
                 </div>
-                <div class="video-embed">
+                <div class="embed-container video-embed">
                     <iframe width="100%" height="100%" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video" frameborder="0" allowfullscreen></iframe>
                 </div>
-                <a href="#" class="explore-btn">Explore on YouTube <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="YOUR_YOUTUBE_URL" target="_blank" class="explore-btn">Explore on YouTube <i class="fa-solid fa-arrow-right"></i></a>
             </div>
 
-            <div class="social-card insta-card">
+            <div class="social-card glass-card insta-card">
                 <div class="card-top">
                     <i class="fa-brands fa-instagram platform-icon"></i>
                     <div class="card-titles">
@@ -289,13 +46,14 @@
                         <p>Behind the scenes & Tips</p>
                     </div>
                 </div>
-                <div class="video-embed dummy-bg">
-                    <span>[Instagram Embed Code Here]</span>
+                <div class="embed-container dummy-embed">
+                    <i class="fa-brands fa-instagram fa-3x"></i>
+                    <span>[Instagram Embed]</span>
                 </div>
-                <a href="#" class="explore-btn">View Instagram Profile <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="YOUR_INSTA_URL" target="_blank" class="explore-btn">View Instagram Profile <i class="fa-solid fa-arrow-right"></i></a>
             </div>
 
-            <div class="social-card in-card">
+            <div class="social-card glass-card linkedin-card">
                 <div class="card-top">
                     <i class="fa-brands fa-linkedin platform-icon"></i>
                     <div class="card-titles">
@@ -303,13 +61,29 @@
                         <p>Professional Growth</p>
                     </div>
                 </div>
-                <div class="video-embed dummy-bg">
-                    <span>[LinkedIn Embed Code Here]</span>
+                <div class="embed-container dummy-embed">
+                    <i class="fa-brands fa-linkedin fa-3x"></i>
+                    <span>[LinkedIn Embed]</span>
                 </div>
-                <a href="#" class="explore-btn">Connect on LinkedIn <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="YOUR_LINKEDIN_URL" target="_blank" class="explore-btn">Connect on LinkedIn <i class="fa-solid fa-arrow-right"></i></a>
             </div>
 
-            <div class="social-card x-card">
+            <div class="social-card glass-card github-card">
+                <div class="card-top">
+                    <i class="fa-brands fa-github platform-icon"></i>
+                    <div class="card-titles">
+                        <h4>GitHub</h4>
+                        <p>Open Source Codes</p>
+                    </div>
+                </div>
+                <div class="embed-container dummy-embed">
+                    <i class="fa-brands fa-github fa-3x"></i>
+                    <span>[GitHub Repo Widget]</span>
+                </div>
+                <a href="YOUR_GITHUB_URL" target="_blank" class="explore-btn">Explore GitHub <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="social-card glass-card x-card">
                 <div class="card-top">
                     <i class="fa-brands fa-x-twitter platform-icon"></i>
                     <div class="card-titles">
@@ -317,31 +91,106 @@
                         <p>Daily Tech Thoughts</p>
                     </div>
                 </div>
-                <div class="video-embed dummy-bg">
-                    <span>[X Post Embed Code Here]</span>
+                <div class="embed-container dummy-embed">
+                    <i class="fa-brands fa-x-twitter fa-3x"></i>
+                    <span>[X Post Embed]</span>
                 </div>
-                <a href="#" class="explore-btn">Follow on X <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="YOUR_X_URL" target="_blank" class="explore-btn">Follow on X <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <div class="social-card glass-card fb-card">
+                <div class="card-top">
+                    <i class="fa-brands fa-facebook platform-icon"></i>
+                    <div class="card-titles">
+                        <h4>Facebook</h4>
+                        <p>Community Events</p>
+                    </div>
+                </div>
+                <div class="embed-container dummy-embed">
+                    <i class="fa-brands fa-facebook fa-3x"></i>
+                    <span>[Facebook Plugin]</span>
+                </div>
+                <a href="YOUR_FB_URL" target="_blank" class="explore-btn">Visit Facebook Page <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <div class="social-card glass-card tiktok-card">
+                <div class="card-top">
+                    <i class="fa-brands fa-tiktok platform-icon"></i>
+                    <div class="card-titles">
+                        <h4>TikTok</h4>
+                        <p>Short-form Tech Content</p>
+                    </div>
+                </div>
+                <div class="embed-container dummy-embed">
+                    <i class="fa-brands fa-tiktok fa-3x"></i>
+                    <span>[TikTok Embed]</span>
+                </div>
+                <a href="YOUR_TIKTOK_URL" target="_blank" class="explore-btn">Watch on TikTok <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <div class="social-card glass-card telegram-card">
+                <div class="card-top">
+                    <i class="fa-brands fa-telegram platform-icon"></i>
+                    <div class="card-titles">
+                        <h4>Telegram</h4>
+                        <p>Exclusive Resources</p>
+                    </div>
+                </div>
+                <div class="embed-container dummy-embed">
+                    <i class="fa-brands fa-telegram fa-3x"></i>
+                    <span>[Telegram Post]</span>
+                </div>
+                <a href="YOUR_TELEGRAM_URL" target="_blank" class="explore-btn">Join Telegram Channel <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <div class="social-card glass-card pinterest-card">
+                <div class="card-top">
+                    <i class="fa-brands fa-pinterest platform-icon"></i>
+                    <div class="card-titles">
+                        <h4>Pinterest</h4>
+                        <p>UI/UX Inspiration</p>
+                    </div>
+                </div>
+                <div class="embed-container dummy-embed">
+                    <i class="fa-brands fa-pinterest fa-3x"></i>
+                    <span>[Pinterest Board Embed]</span>
+                </div>
+                <a href="YOUR_PINTEREST_URL" target="_blank" class="explore-btn">Explore Pinterest <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <div class="social-card glass-card whatsapp-card">
+                <div class="card-top">
+                    <i class="fa-brands fa-whatsapp platform-icon"></i>
+                    <div class="card-titles">
+                        <h4>WhatsApp</h4>
+                        <p>Direct Alerts & News</p>
+                    </div>
+                </div>
+                <div class="embed-container dummy-embed">
+                    <i class="fa-brands fa-whatsapp fa-3x"></i>
+                    <span>[Channel Feed Preview]</span>
+                </div>
+                <a href="YOUR_WHATSAPP_URL" target="_blank" class="explore-btn">Follow on WhatsApp <i class="fa-solid fa-arrow-right"></i></a>
             </div>
 
         </div>
-    </div>
+    </main>
 
-    <div class="bottom-metrics">
-        <div class="metric"><h4 class="gradient-text">100K+</h4><p>Followers</p></div>
-        <div class="metric"><h4 class="gradient-text">50+</h4><p>Projects</p></div>
-        <div class="metric"><h4 class="gradient-text">10</h4><p>Platforms</p></div>
-    </div>
-
-    <div class="cta-banner">
-        <h2 class="gradient-text">Want a Website Like This?</h2>
-        <p>Let’s build your brand online with a professional website.</p>
-        <div class="cta-btns">
-            <a href="#" class="primary-btn">Get Started</a>
-            <a href="#" class="wa-btn"><i class="fa-brands fa-whatsapp"></i> WhatsApp Chat</a>
+    <footer class="proof-cta-section">
+        <div class="bottom-metrics glass-card">
+            <div class="metric"><h4 class="gradient-text">100K+</h4><p>Followers</p></div>
+            <div class="metric"><h4 class="gradient-text">50+</h4><p>Projects</p></div>
+            <div class="metric"><h4 class="gradient-text">10</h4><p>Platforms</p></div>
         </div>
-    </div>
+
+        <div class="cta-banner glass-card text-center">
+            <h2 class="gradient-text">Want a Website Like This?</h2>
+            <p>Let’s build your brand online with a professional website.</p>
+            <div class="cta-btns">
+                <a href="#" class="primary-btn">Get Started</a>
+                <a href="#" class="wa-btn"><i class="fa-brands fa-whatsapp"></i> WhatsApp Chat</a>
+            </div>
+        </div>
+    </footer>
 
 </div>
-
-</body>
-</html>
