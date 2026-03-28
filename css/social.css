@@ -334,3 +334,8 @@
 .gh-bg { background: linear-gradient(45deg, #333, #666); }
 
 .feat-text { padding: 15px; color: #e2e8f0; font-size: 0.95rem; font-weight: 500;}
+/* --- FIX FOR MISSING EMBEDS --- */
+.embed-wrapper { min-height: 250px; position: relative; }
+.ig-fix { min-height: 450px !important; } /* Reel ke liye lamba box */
+.widget-scroll { overflow-y: auto; background: #fff; max-height: 400px; padding: 10px; border-radius: 12px; }
+.widget-scroll blockquote { margin: 0 auto; }
