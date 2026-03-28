@@ -141,3 +141,113 @@
   .vision-grid, .ecosystem-grid { grid-template-columns: 1fr; }
   .founder-card { padding: 30px; }
 }
+/* ========================================= */
+/* WHO WE WORK WITH - GLASS SHIMMER ANIMATION*/
+/* ========================================= */
+
+.target-audience-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.glass-target-card {
+  position: relative;
+  background: linear-gradient(145deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 24px;
+  padding: 40px 30px;
+  overflow: hidden;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  z-index: 1;
+}
+
+/* Unique Glass Shimmer Animation (The Light Reflection) */
+.glass-target-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -150%;
+  width: 50%; height: 100%;
+  background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0) 100%);
+  transform: skewX(-25deg);
+  transition: all 0.7s ease;
+  z-index: -1;
+}
+
+/* Hover Effects */
+.glass-target-card:hover::before {
+  left: 200%; /* Shimmer moves across the card */
+}
+
+.glass-target-card:hover {
+  transform: translateY(-10px);
+  background: linear-gradient(145deg, rgba(124, 92, 255, 0.1), rgba(48, 213, 255, 0.05));
+  border-color: rgba(124, 92, 255, 0.3);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 20px rgba(124, 92, 255, 0.1);
+}
+
+.target-icon {
+  font-size: 3.5rem;
+  margin-bottom: 25px;
+  display: inline-block;
+  filter: drop-shadow(0 0 15px rgba(255,255,255,0.1));
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.glass-target-card:hover .target-icon {
+  transform: scale(1.15) rotate(8deg);
+}
+
+.glass-target-card h3 {
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 15px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.glass-target-card p {
+  color: #a8b2d1;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Extra Line Footer with Infinite Gradient Shine */
+.target-footer {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.extra-line {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  line-height: 1.4;
+  font-weight: 800;
+  background: linear-gradient(135deg, #7C5CFF, #30D5FF, #ffffff, #7C5CFF);
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShine 4s linear infinite;
+}
+
+@keyframes gradientShine {
+  0% { background-position: 0% center; }
+  100% { background-position: 300% center; }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .target-audience-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .glass-target-card {
+    padding: 30px 20px;
+  }
+}
