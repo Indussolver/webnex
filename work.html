@@ -414,5 +414,29 @@
     </div>
   </footer>
   <script src="js/main.js"></script>
+  <script>
+    document.querySelectorAll('.faq-question').forEach(button => {
+      button.addEventListener('click', () => {
+        const faqItem = button.parentElement;
+        const faqAnswer = button.nextElementSibling;
+        
+        // Agar aap chahte hain ki ek kholne par baaki band ho jayein (Optional but recommended)
+        document.querySelectorAll('.faq-item').forEach(item => {
+          if (item !== faqItem) {
+            item.classList.remove('active');
+            item.querySelector('.faq-answer').style.maxHeight = null;
+          }
+        });
+
+        // Current item ko toggle karna
+        faqItem.classList.toggle('active');
+        if (faqItem.classList.contains('active')) {
+          faqAnswer.style.maxHeight = faqAnswer.scrollHeight + "px";
+        } else {
+          faqAnswer.style.maxHeight = null;
+        }
+      });
+    });
+  </script>
 </body>
 </html>
