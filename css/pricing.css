@@ -1,224 +1,150 @@
-/* PRICING SPECIFIC STYLES */
+/* ========================================= */
+/* PRICING PAGE SPECIFIC STYLES - WEBNEX     */
+/* ========================================= */
 
 .text-center-hero {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding-top: 80px;
+  display: flex; flex-direction: column; align-items: center; text-align: center; padding-top: 80px;
 }
-
-.full-width {
-  width: 100%;
-  max-width: 900px;
-}
-
+.full-width { width: 100%; max-width: 800px; }
 .mx-auto { margin-left: auto; margin-right: auto; }
-.justify-center { justify-content: center; display: flex; }
 .pt-0 { padding-top: 0; }
 
 .highlight-text {
-  background: linear-gradient(135deg, #30D5FF, var(--primary));
+  background: linear-gradient(135deg, #7C5CFF, #30D5FF);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  display: inline-block;
 }
 
-/* Comparison Grid Layout */
-.comparison-grid {
+/* Pricing Grid Layout */
+.pricing-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 20px;
-  max-width: 1100px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 0 20px;
+  align-items: stretch;
 }
 
-/* Compare Cards */
-.compare-card {
-  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 30px 24px;
+/* Base Price Card Styles */
+.price-card {
   position: relative;
-  box-shadow: var(--shadow);
-  backdrop-filter: blur(18px);
-  transition: transform 0.3s ease;
-}
-
-.compare-card:hover {
-  transform: translateY(-5px);
-}
-
-.compare-header {
-  text-align: center;
-  margin-bottom: 24px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
-}
-
-.emoji-icon {
-  font-size: 3rem;
-  display: block;
-  margin-bottom: 12px;
-}
-
-.compare-header h3 {
-  font-size: 1.3rem;
-  color: var(--text);
-  margin-bottom: 8px;
-}
-
-.price-tag {
-  font-size: 1.8rem;
-  font-weight: 800;
-  color: var(--muted);
-}
-
-/* Lists and Pros/Cons */
-.pros-cons-list {
-  list-style: none;
+  background: linear-gradient(180deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 24px;
+  padding: 40px 30px;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  overflow: hidden;
+  z-index: 1;
 }
 
-.pros-cons-list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  font-size: 0.95rem;
-  line-height: 1.5;
-  color: var(--muted);
-}
-
-
-/* The Bad Investments (Red focus on Cons) */
-.bad-investment .con {
-  color: #fca5a5; /* Light Red */
-}
-
-/* The Good Investment (Webnex) */
-.highlight-investment {
-  background: linear-gradient(180deg, rgba(36, 211, 102, 0.1), rgba(5, 8, 22, 0.8));
-  border-color: rgba(36, 211, 102, 0.3);
-  transform: scale(1.02);
-  z-index: 2;
-  box-shadow: 0 20px 50px rgba(36, 211, 102, 0.15);
-}
-
-.highlight-investment:hover {
-  transform: scale(1.04);
-}
-
-.compare-badge {
+/* Subtle background glow for cards */
+.card-glow {
   position: absolute;
-  top: -14px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: linear-gradient(135deg, #24D366, #12b861);
-  color: white;
-  padding: 6px 16px;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: 700;
-  box-shadow: 0 8px 20px rgba(36, 211, 102, 0.3);
-  white-space: nowrap;
+  top: -50px; left: -50px;
+  width: 150px; height: 150px;
+  border-radius: 50%;
+  filter: blur(60px);
+  z-index: -1;
+  opacity: 0.5;
+  transition: opacity 0.4s ease;
 }
 
-.highlight-investment .price-tag {
-  color: #24D366;
-}
+.price-card:hover { transform: translateY(-10px); }
+.price-card:hover .card-glow { opacity: 0.8; }
 
-.green-pros li {
-  color: #e2e8f0; /* brighter text for good points */
-}
-.green-pros li strong {
-  color: #fff;
-}
+/* Plan Specific Theme Colors */
+/* Starter (Neon Green/Teal) */
+.starter-card:hover { border-color: rgba(16, 185, 129, 0.4); box-shadow: 0 20px 40px rgba(0,0,0,0.5), 0 0 20px rgba(16, 185, 129, 0.1); }
+.starter-glow { background: rgba(16, 185, 129, 0.6); }
+.starter-card .plan-name { color: #10B981; }
+.starter-check { color: #10B981; }
+.btn-starter { background: transparent; border: 1px solid #10B981; color: #10B981; }
+.btn-starter:hover { background: rgba(16, 185, 129, 0.1); box-shadow: 0 0 15px rgba(16, 185, 129, 0.3); }
 
-/* Responsive */
-@media (max-width: 900px) {
-  .comparison-grid {
-    grid-template-columns: 1fr;
-    max-width: 450px;
-  }
-  .highlight-investment {
-    transform: scale(1);
-  }
-  .highlight-investment:hover {
-    transform: translateY(-5px);
-  }
-}
-/* ========================================= */
-/* SVG ANIMATED ICONS (TICK & CROSS)         */
-/* ========================================= */
+/* Business (Blue/Purple) */
+.business-card:hover { border-color: rgba(48, 213, 255, 0.4); box-shadow: 0 20px 40px rgba(0,0,0,0.5), 0 0 20px rgba(48, 213, 255, 0.1); }
+.business-glow { background: rgba(48, 213, 255, 0.6); }
+.business-card .plan-name { color: #30D5FF; }
+.business-check { color: #30D5FF; }
+.btn-business { background: transparent; border: 1px solid #30D5FF; color: #30D5FF; }
+.btn-business:hover { background: rgba(48, 213, 255, 0.1); box-shadow: 0 0 15px rgba(48, 213, 255, 0.3); }
 
-.anim-icon {
-  width: 22px;
-  height: 22px;
-  flex-shrink: 0;
-  display: inline-block;
-  vertical-align: middle;
-  margin-top: 2px;
+/* Premium (Red/Coral) - The Highlighted Card */
+.premium-card {
+  transform: scale(1.05); /* Make it slightly bigger by default */
+  border-color: rgba(255, 77, 77, 0.3);
+  background: linear-gradient(180deg, rgba(255, 77, 77, 0.08) 0%, rgba(10, 15, 30, 0.5) 100%);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.4), inset 0 0 20px rgba(255, 77, 77, 0.05);
 }
+.premium-card:hover { transform: scale(1.05) translateY(-10px); border-color: rgba(255, 77, 77, 0.6); box-shadow: 0 25px 50px rgba(0,0,0,0.6), 0 0 30px rgba(255, 77, 77, 0.2); }
+.premium-glow { background: rgba(255, 77, 77, 0.6); width: 200px; height: 200px; }
+.premium-card .plan-name { color: #FF4D4D; }
+.premium-check { color: #FF4D4D; }
+.btn-premium { background: linear-gradient(135deg, #FF4D4D, #F97316); border: none; color: #fff; }
+.btn-premium:hover { box-shadow: 0 10px 20px rgba(255, 77, 77, 0.4); transform: translateY(-2px); }
 
-.anim-icon svg {
+/* Typography inside Cards */
+.plan-name { font-size: 1.8rem; margin-bottom: 5px; font-weight: 700; }
+.best-for { color: #a8b2d1; font-size: 0.9rem; margin-bottom: 25px; line-height: 1.5; }
+.best-for strong { color: #e2e8f0; }
+
+.pricing-block { margin-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 20px; }
+.old-price { color: #64748b; font-size: 1.1rem; font-weight: 500; margin-bottom: 5px; }
+.old-price del { text-decoration: line-through; }
+.old-price .divider { margin: 0 8px; opacity: 0.5; }
+
+.new-price { font-size: 2.8rem; font-weight: 800; color: #fff; line-height: 1; }
+.new-price span { font-size: 1.2rem; color: #94a3b8; font-weight: 600; }
+
+.price-desc { color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 30px; }
+
+/* Features List */
+.features-wrapper { flex-grow: 1; margin-bottom: 30px; }
+.what-you-get { color: #fff; font-weight: 600; margin-bottom: 15px; font-size: 1.05rem; }
+.features { list-style: none; padding: 0; margin: 0; }
+.features li { display: flex; align-items: flex-start; margin-bottom: 12px; color: #cbd5e1; font-size: 0.95rem; line-height: 1.5; }
+.features li strong { color: #fff; }
+.features li .check { margin-right: 12px; font-weight: bold; font-size: 1.1rem; }
+
+/* Buttons */
+.price-card .btn {
   width: 100%;
-  height: 100%;
+  padding: 16px 20px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1.05rem;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
   display: block;
+  margin-top: auto;
 }
 
-/* Tick Styles (Green) */
-.tick-circle {
-  stroke: #24D366;
-  stroke-width: 3;
-  stroke-dasharray: 166;
-  stroke-dashoffset: 166;
-}
-.tick-path {
-  stroke: #24D366;
-  stroke-width: 4;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-dasharray: 48;
-  stroke-dashoffset: 48;
-}
-
-/* Cross Styles (Red) */
-.cross-circle {
-  stroke: #fca5a5;
-  stroke-width: 3;
-  stroke-dasharray: 166;
-  stroke-dashoffset: 166;
-}
-.cross-path {
-  stroke: #fca5a5;
-  stroke-width: 4;
-  stroke-linecap: round;
-  stroke-dasharray: 29;
-  stroke-dashoffset: 29;
+/* Popular Badge */
+.popular-badge {
+  position: absolute;
+  top: 0; right: 0;
+  background: linear-gradient(135deg, #FF4D4D, #F97316);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 6px 20px;
+  border-bottom-left-radius: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: -5px 5px 15px rgba(255, 77, 77, 0.3);
 }
 
-/* ANIMATION LOGIC (Triggers when user scrolls to it via 'is-visible' class) */
-[data-reveal].is-visible .tick-circle,
-[data-reveal].is-visible .cross-circle {
-  animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
-}
-
-[data-reveal].is-visible .tick-path {
-  animation: stroke 0.4s cubic-bezier(0.65, 0, 0.45, 1) 0.5s forwards;
-}
-
-[data-reveal].is-visible .cross-path-right {
-  animation: stroke 0.2s cubic-bezier(0.65, 0, 0.45, 1) 0.5s forwards;
-}
-
-[data-reveal].is-visible .cross-path-left {
-  animation: stroke 0.2s cubic-bezier(0.65, 0, 0.45, 1) 0.7s forwards;
-}
-
-@keyframes stroke {
-  100% {
-    stroke-dashoffset: 0;
-  }
+/* Mobile Responsive */
+@media (max-width: 992px) {
+  .pricing-grid { grid-template-columns: 1fr; max-width: 500px; }
+  .premium-card { transform: scale(1); /* Reset scale on mobile */ order: -1; /* Puts premium card at the top on mobile */ }
+  .premium-card:hover { transform: translateY(-8px); }
+  .pricing-block { padding-bottom: 15px; }
+  .new-price { font-size: 2.5rem; }
 }
