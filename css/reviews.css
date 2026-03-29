@@ -337,165 +337,176 @@
   display: block;
 }
 /* ========================================= */
-/* CASE STUDIES SECTION - REVIEWS PAGE       */
+/* CASE STUDIES SECTION - STORY CARDS        */
 /* ========================================= */
 
-.case-study-grid {
+.cs-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 30px;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-.cs-card {
-  padding: 35px 30px;
+.cs-story-card {
+  position: relative;
+  padding: 40px 30px;
   border-radius: 24px;
-  background: linear-gradient(145deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+  background: linear-gradient(145deg, rgba(255,255,255,0.03), rgba(10, 15, 30, 0.4));
   border: 1px solid rgba(255,255,255,0.05);
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(16px);
   display: flex;
   flex-direction: column;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  overflow: hidden;
+  z-index: 1;
 }
 
-.cs-card:hover {
+/* Background Hover Glow */
+.cs-card-glow {
+  position: absolute;
+  top: -50px; right: -50px;
+  width: 150px; height: 150px;
+  background: radial-gradient(circle, rgba(124, 92, 255, 0.2) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: -1;
+  transition: all 0.5s ease;
+  opacity: 0;
+}
+
+.cs-story-card:hover {
   transform: translateY(-8px);
   border-color: rgba(48, 213, 255, 0.3);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.3), 0 0 20px rgba(48, 213, 255, 0.05);
-  background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 20px rgba(48, 213, 255, 0.05);
 }
 
-/* Header & Avatar (Verified Profile Style) */
+.cs-story-card:hover .cs-card-glow {
+  opacity: 1;
+  transform: scale(1.5);
+}
+
+/* Header */
 .cs-header {
-  display: flex;
-  align-items: center;
-  gap: 15px;
   margin-bottom: 30px;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
-  padding-bottom: 20px;
 }
 
-.cs-avatar {
-  position: relative;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  padding: 3px;
-  background: linear-gradient(135deg, #7C5CFF, #30D5FF);
-}
-
-.cs-avatar img {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid #070B16; /* Theme background color to create gap */
-}
-
-.verified-badge {
-  position: absolute;
-  bottom: -2px;
-  right: -2px;
-  width: 22px;
-  height: 22px;
-  color: #30D5FF;
-  background: #070B16;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.verified-badge svg {
-  width: 18px;
-  height: 18px;
-}
-
-.cs-title-wrap h3 {
-  font-size: 1.25rem;
-  color: #fff;
-  margin: 0 0 4px 0;
-  font-weight: 700;
-}
-
-.cs-handle {
-  color: #7C5CFF;
+.cs-number {
+  display: inline-block;
   font-size: 0.85rem;
+  color: #7C5CFF;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  background: rgba(124, 92, 255, 0.1);
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+.cs-header h3 {
+  font-size: 1.5rem;
+  color: #fff;
   margin: 0;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+/* Story Body */
+.cs-body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.cs-phase {
+  position: relative;
+}
+
+.phase-label {
+  display: block;
+  font-size: 0.8rem;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.result-label {
+  color: #30D5FF;
+}
+
+.cs-phase p {
+  color: #94a3b8;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.result-text {
+  color: #e2e8f0 !important;
   font-weight: 500;
 }
 
-/* Before / After Section */
-.cs-transformation {
+/* Animated Connector Line */
+.cs-animated-connector {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  margin-bottom: 25px;
-  flex-grow: 1;
+  align-items: flex-start;
+  margin: 20px 0;
+  padding-left: 5px;
+  opacity: 0.5;
+  transition: all 0.4s ease;
 }
 
-.cs-before, .cs-after {
-  padding: 20px;
-  border-radius: 12px;
-  position: relative;
+.connector-line {
+  width: 2px;
+  height: 20px;
+  background: #334155;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.cs-before {
-  background: rgba(255, 77, 77, 0.05);
-  border: 1px dashed rgba(255, 77, 77, 0.2);
+.connector-arrow {
+  color: #334155;
+  font-size: 1.2rem;
+  line-height: 0.5;
+  margin-left: -4.5px;
+  transition: all 0.4s ease;
 }
 
-.cs-after {
-  background: rgba(36, 211, 102, 0.05);
-  border: 1px solid rgba(36, 211, 102, 0.2);
+.cs-story-card:hover .cs-animated-connector {
+  opacity: 1;
 }
 
-.cs-label {
-  position: absolute;
-  top: -10px;
-  left: 15px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  padding: 2px 10px;
-  border-radius: 20px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+.cs-story-card:hover .connector-line {
+  height: 40px; /* Line grows on hover */
+  background: linear-gradient(to bottom, #7C5CFF, #30D5FF);
 }
 
-.red-label { background: #FF4D4D; color: #fff; }
-.green-label { background: #24D366; color: #000; }
-
-.cs-transformation ul {
-  list-style: none;
-  padding: 0;
-  margin: 10px 0 0 0;
+.cs-story-card:hover .connector-arrow {
+  color: #30D5FF;
+  transform: translateY(5px);
 }
 
-.cs-transformation ul li {
-  color: #a8b2d1;
-  font-size: 0.9rem;
-  margin-bottom: 8px;
-  line-height: 1.4;
-  display: flex;
-  gap: 8px;
+/* Client Quote Highlight */
+.cs-client-quote {
+  margin-top: 35px;
+  padding-top: 25px;
+  border-top: 1px solid rgba(255,255,255,0.05);
 }
 
-/* Quote Section */
-.cs-quote {
-  background: rgba(255,255,255,0.03);
-  padding: 15px 20px;
-  border-radius: 12px;
-  border-left: 3px solid #30D5FF;
-}
-
-.cs-quote p {
+.cs-client-quote p {
+  font-size: 1.1rem;
   color: #DCD5FF;
   font-style: italic;
-  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.6;
   margin: 0;
-  line-height: 1.5;
+  position: relative;
+  padding-left: 20px;
+  border-left: 3px solid #7C5CFF;
 }
 
 /* Footer Line */
@@ -511,11 +522,11 @@
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
-  .case-study-grid {
+  .cs-grid {
     grid-template-columns: 1fr;
     padding: 0 15px;
   }
-  .cs-card {
-    padding: 25px 20px;
+  .cs-story-card {
+    padding: 30px 20px;
   }
 }
