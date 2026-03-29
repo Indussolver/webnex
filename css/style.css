@@ -250,24 +250,7 @@ img{max-width:100%;display:block}
   background:linear-gradient(180deg, rgba(48,213,255,.12), rgba(255,255,255,.04));
 }
 
-.trust-strip{
-  padding-top:10px;
-  text-align:center;
-}
-.trust-strip p{
-  color:var(--muted);
-  margin-bottom:18px;
-}
-.trust-logos{
-  display:flex;flex-wrap:wrap;justify-content:center;gap:12px;
-}
-.trust-logos span{
-  padding:10px 16px;
-  border:1px solid var(--border);
-  border-radius:999px;
-  color:var(--muted);
-  background:rgba(255,255,255,.03);
-}
+
 
 .section-head{
   text-align:center;
@@ -1138,4 +1121,89 @@ img{max-width:100%;display:block}
   .premium-card:hover { transform: translateY(-8px); }
   .pricing-block { padding-bottom: 15px; }
   .new-price { font-size: 2.5rem; }
+}
+/* ========================================= */
+/* TRUST STRIP - INFINITE MARQUEE            */
+/* ========================================= */
+
+.trust-strip {
+  padding: 40px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  /* Subdued background gradient matching Webnex theme */
+  background: linear-gradient(90deg, rgba(7, 11, 22, 1) 0%, rgba(124, 92, 255, 0.05) 50%, rgba(7, 11, 22, 1) 100%);
+  overflow: hidden;
+  text-align: center;
+}
+
+.trust-text {
+  color: #a8b2d1;
+  font-size: 1.05rem;
+  margin-bottom: 30px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+/* Container for the scrolling track */
+.marquee-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  /* Fades out the left and right edges for a premium look */
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+/* The moving track */
+.trust-logos-track {
+  display: flex;
+  width: max-content;
+  gap: 30px;
+  /* 20 seconds loop, continuous linear movement */
+  animation: scrollTrust 20s linear infinite;
+}
+
+/* Pauses the scroll when user hovers */
+.trust-logos-track:hover {
+  animation-play-state: paused;
+}
+
+/* Glassmorphism Pills for Categories */
+.trust-pill {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 12px 25px;
+  border-radius: 50px;
+  color: #e2e8f0;
+  font-weight: 600;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  cursor: default;
+}
+
+.trust-pill:hover {
+  background: rgba(124, 92, 255, 0.15);
+  border-color: #30D5FF;
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(48, 213, 255, 0.2);
+}
+
+/* Infinite Scroll Keyframes */
+@keyframes scrollTrust {
+  0% { transform: translateX(0); }
+  /* Moves exactly halfway (one full list length) to loop seamlessly */
+  100% { transform: translateX(calc(-50% - 15px)); } 
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .trust-strip { padding: 30px 0; }
+  .trust-text { font-size: 0.95rem; margin-bottom: 25px; padding: 0 20px; }
+  .trust-pill { padding: 10px 20px; font-size: 0.9rem; }
+  .trust-logos-track { gap: 20px; }
 }
