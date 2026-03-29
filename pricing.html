@@ -169,6 +169,138 @@
       </div>
     </section>
 
+<section class="section faq-section" data-reveal>
+      <div class="section-head text-center">
+        <span class="eyebrow">Clear Your Doubts</span>
+        <h2>Mini FAQ <span style="font-size: 1.8rem; vertical-align: middle;">❓</span></h2>
+        <p>Pricing & Decisions — Real answers to your questions.</p>
+      </div>
+
+      <div class="faq-accordion">
+        
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="faq-num">01</span>
+            <span class="faq-text">How long does it take to build my website?</span>
+            <span class="faq-toggle"></span>
+          </button>
+          <div class="faq-answer">
+            <p>Not forever — don’t worry. Most websites are delivered within 3–10 days, depending on the complexity.<br>
+            <em>Fast, but without compromising quality.</em></p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="faq-num">02</span>
+            <span class="faq-text">Do I need any technical knowledge?</span>
+            <span class="faq-toggle"></span>
+          </button>
+          <div class="faq-answer">
+            <p>Absolutely not. That’s literally why we exist.<br>
+            <em>We handle everything — you just tell us what you need.</em></p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="faq-num">03</span>
+            <span class="faq-text">Can I upgrade my plan later?</span>
+            <span class="faq-toggle"></span>
+          </button>
+          <div class="faq-answer">
+            <p>Of course. Growth is kind of the goal, right?<br>
+            <em>You can upgrade anytime as your business expands.</em></p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="faq-num">04</span>
+            <span class="faq-text">Why shouldn’t I just use a cheap freelancer?</span>
+            <span class="faq-toggle"></span>
+          </button>
+          <div class="faq-answer">
+            <p>You can. But you’ll probably end up paying twice — once for them, and once to fix it later.<br>
+            <em>We focus on doing it right the first time.</em></p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="faq-num">05</span>
+            <span class="faq-text">What makes Webnex different?</span>
+            <span class="faq-toggle"></span>
+          </button>
+          <div class="faq-answer">
+            <p>We don’t just build websites — we build conversion-focused digital assets.<br>
+            <em>Design + Performance + Strategy = Results.</em></p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="faq-num">06</span>
+            <span class="faq-text">Will my website work on mobile devices?</span>
+            <span class="faq-toggle"></span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes — it will be fully responsive on all devices.<br>
+            <em>If it didn’t, we wouldn’t even call it a website in 2026.</em></p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="faq-num">07</span>
+            <span class="faq-text">Are there any hidden charges?</span>
+            <span class="faq-toggle"></span>
+          </button>
+          <div class="faq-answer">
+            <p>No surprises here.<br>
+            <em>What you see is what you pay — clean and transparent.</em></p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="faq-num">08</span>
+            <span class="faq-text">What if I don’t like the design?</span>
+            <span class="faq-toggle"></span>
+          </button>
+          <div class="faq-answer">
+            <p>Fair question.<br>
+            <em>We work with your feedback during the process to make sure you DO like it — not just tolerate it.</em></p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="faq-num">09</span>
+            <span class="faq-text">Do you provide support after delivery?</span>
+            <span class="faq-toggle"></span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes, we don’t disappear after payment.<br>
+            <em>Support is included based on your plan — because long-term relationships matter.</em></p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="faq-num">10</span>
+            <span class="faq-text">Is this really worth the price?</span>
+            <span class="faq-toggle"></span>
+          </button>
+          <div class="faq-answer">
+            <p>If your business is serious about growth — yes. If not, a free template might be enough.<br>
+            <em>It depends on how seriously you take your brand.</em></p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
     <section id="contact" class="section cta-section">
       <div class="cta-card" data-reveal>
         <span class="eyebrow">Take Action</span>
@@ -219,6 +351,29 @@
 
   <a class="floating-whatsapp" href="#" id="floatingWhatsapp" aria-label="Chat on WhatsApp">WhatsApp</a>
   <script src="js/main.js"></script>
+<script>
+    document.querySelectorAll('.faq-question').forEach(button => {
+      button.addEventListener('click', () => {
+        const faqItem = button.parentElement;
+        const faqAnswer = button.nextElementSibling;
+        
+        // Close other open items
+        document.querySelectorAll('.faq-item').forEach(item => {
+          if (item !== faqItem) {
+            item.classList.remove('active');
+            item.querySelector('.faq-answer').style.maxHeight = null;
+          }
+        });
 
+        // Toggle the clicked item
+        faqItem.classList.toggle('active');
+        if (faqItem.classList.contains('active')) {
+          faqAnswer.style.maxHeight = faqAnswer.scrollHeight + "px";
+        } else {
+          faqAnswer.style.maxHeight = null;
+        }
+      });
+    });
+  </script>
 </body>
 </html>
