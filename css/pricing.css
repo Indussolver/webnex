@@ -281,3 +281,127 @@
   .faq-num { margin-right: 15px; }
   .faq-answer p { padding: 0 20px 20px 20px; } 
 }
+/* ========================================= */
+/* PLAN GUIDANCE SECTION - GUIDING PATHWAY   */
+/* ========================================= */
+
+.guide-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.guide-card {
+  background: linear-gradient(145deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 20px;
+  padding: 35px 30px;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  flex-direction: column;
+}
+
+/* The Animated Guiding Line */
+.guide-glow-line {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 4px;
+  background: transparent;
+  transition: all 0.5s ease;
+  opacity: 0;
+}
+
+.guide-card:hover {
+  transform: translateY(-8px);
+}
+
+.guide-card:hover .guide-glow-line {
+  opacity: 1;
+}
+
+/* Card Specific Theme Colors on Hover */
+.guide-starter:hover { border-color: rgba(16, 185, 129, 0.3); box-shadow: 0 15px 35px rgba(0,0,0,0.4), 0 0 20px rgba(16, 185, 129, 0.05); }
+.guide-starter .guide-glow-line { background: linear-gradient(90deg, transparent, #10B981, transparent); box-shadow: 0 0 15px #10B981; }
+.guide-starter .guide-header h3 { color: #10B981; }
+
+.guide-business:hover { border-color: rgba(48, 213, 255, 0.3); box-shadow: 0 15px 35px rgba(0,0,0,0.4), 0 0 20px rgba(48, 213, 255, 0.05); }
+.guide-business .guide-glow-line { background: linear-gradient(90deg, transparent, #30D5FF, transparent); box-shadow: 0 0 15px #30D5FF; }
+.guide-business .guide-header h3 { color: #30D5FF; }
+
+.guide-premium:hover { border-color: rgba(255, 77, 77, 0.3); box-shadow: 0 15px 35px rgba(0,0,0,0.4), 0 0 20px rgba(255, 77, 77, 0.05); }
+.guide-premium .guide-glow-line { background: linear-gradient(90deg, transparent, #FF4D4D, transparent); box-shadow: 0 0 15px #FF4D4D; }
+.guide-premium .guide-header h3 { color: #FF4D4D; }
+
+/* Content Styling */
+.guide-header { margin-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 15px; }
+.guide-header h3 { font-size: 1.6rem; font-weight: 800; margin-bottom: 5px; display: flex; align-items: center; gap: 10px; }
+.guide-subtitle { color: #e2e8f0; font-size: 0.95rem; font-weight: 600; letter-spacing: 0.5px; }
+
+.guide-intro { color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 25px; font-style: italic; }
+
+.guide-points { list-style: none; padding: 0; margin: 0 0 30px 0; flex-grow: 1; }
+.guide-points li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 12px;
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+.guide-points li::before {
+  content: '•';
+  position: absolute;
+  left: 0; top: -2px;
+  font-size: 1.5rem;
+}
+
+.guide-starter .guide-points li::before { color: #10B981; }
+.guide-business .guide-points li::before { color: #30D5FF; }
+.guide-premium .guide-points li::before { color: #FF4D4D; }
+
+/* The "In Short" Highlight Box */
+.guide-conclusion {
+  background: rgba(0,0,0,0.3);
+  padding: 15px 20px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  color: #f8fafc;
+  line-height: 1.5;
+  border-left: 3px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.guide-starter .guide-conclusion { border-left-color: #10B981; }
+.guide-business .guide-conclusion { border-left-color: #30D5FF; }
+.guide-premium .guide-conclusion { border-left-color: #FF4D4D; }
+
+.guide-card:hover .guide-conclusion { background: rgba(255,255,255,0.05); }
+
+/* Closing Line Footer */
+.guide-footer {
+  margin-top: 60px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+}
+
+.closing-fire-text {
+  font-size: clamp(1.4rem, 4vw, 2rem);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.4;
+  text-shadow: 0 0 20px rgba(255, 77, 77, 0.4);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 992px) {
+  .guide-grid { grid-template-columns: 1fr; max-width: 500px; }
+  .guide-card { padding: 30px 20px; }
+}
