@@ -1108,7 +1108,6 @@ img{max-width:100%;display:block}
   position: relative;
   min-height: 100vh;
   display: flex;
-  flex-direction: column; /* 👉 BAS YEH EK LINE ADD KARNI HAI */
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -1138,7 +1137,6 @@ img{max-width:100%;display:block}
 .hero-content {
   position: relative;
   z-index: 1;
-  width: 100%; /* 👉 YEH NAYI LINE HAI */
   max-width: 950px;
   margin: 0 auto;
   display: flex;
@@ -1298,8 +1296,7 @@ img{max-width:100%;display:block}
 .hero-visual {
   width: 100%;
   max-width: 900px;
-  margin: 60px auto 0 !important; 
-  align-self: center !important; /* 👉 YEH NAYI LINE HAI */
+  margin: 60px auto 0; 
   perspective: 1000px;
   animation: floatUp 1.5s ease-out forwards;
 }
