@@ -316,3 +316,193 @@
   .faq-num { margin-right: 15px; }
   .faq-answer p { padding: 0 20px 20px 20px; } 
 }
+/* ========================================= */
+/* A LETTER FROM A BUSINESS OWNER (CINEMATIC)*/
+/* ========================================= */
+
+.letter-section {
+  padding: 60px 20px;
+  position: relative;
+  background: radial-gradient(circle at center, rgba(124, 92, 255, 0.05) 0%, transparent 70%);
+}
+
+.letter-container {
+  max-width: 750px; /* Narrow width for optimal reading experience */
+  margin: 0 auto;
+  padding: 60px 50px;
+  background: linear-gradient(180deg, rgba(10, 15, 30, 0.7) 0%, rgba(7, 11, 22, 0.9) 100%);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 24px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Glowing Top Accent */
+.letter-container::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #7C5CFF, #30D5FF, #FF4D4D);
+}
+
+.letter-header {
+  text-align: center;
+  margin-bottom: 40px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  padding-bottom: 30px;
+}
+
+.letter-header h2 {
+  font-size: 2rem;
+  color: #fff;
+  margin-top: 10px;
+}
+
+.letter-intro-quote {
+  font-size: 1.6rem;
+  color: #DCD5FF;
+  font-family: 'Georgia', serif; /* Serif font for quotes gives an editorial feel */
+  font-style: italic;
+  text-align: center;
+  line-height: 1.5;
+  margin-bottom: 50px;
+  text-shadow: 0 0 20px rgba(124, 92, 255, 0.2);
+}
+
+.letter-content {
+  font-size: 1.15rem;
+  color: #cbd5e1;
+  line-height: 1.8;
+}
+
+.letter-content p {
+  margin-bottom: 20px;
+}
+
+.letter-content strong {
+  color: #fff;
+}
+
+.mt-4 { margin-top: 30px; }
+.mt-5 { margin-top: 50px; }
+
+/* Dialogue Boxes */
+.dialogue-box {
+  background: rgba(255,255,255,0.03);
+  border-left: 3px solid #64748b;
+  padding: 15px 25px;
+  font-size: 1.25rem;
+  color: #f8fafc;
+  font-style: italic;
+  margin: 20px 0;
+  border-radius: 0 12px 12px 0;
+}
+
+.highlight-dialogue {
+  border-left-color: #FF4D4D;
+  background: linear-gradient(90deg, rgba(255, 77, 77, 0.05) 0%, transparent 100%);
+}
+
+/* Impact Boxes */
+.impact-box {
+  background: rgba(124, 92, 255, 0.05);
+  padding: 30px;
+  border-radius: 16px;
+  margin: 40px 0;
+  border: 1px solid rgba(124, 92, 255, 0.1);
+}
+
+.outline-box {
+  background: transparent;
+  border: 1px dashed rgba(48, 213, 255, 0.3);
+}
+
+.impact-highlight {
+  font-size: 1.4rem;
+  color: #7C5CFF;
+  font-weight: 700;
+  line-height: 1.5;
+  margin-top: 20px !important;
+}
+
+/* Lists */
+.letter-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.letter-list li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 12px;
+  color: #e2e8f0;
+}
+
+.letter-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: #7C5CFF;
+  font-weight: bold;
+}
+
+.success-list li::before {
+  content: '✓';
+  color: #30D5FF;
+}
+
+/* Final Punchline */
+.final-punchline {
+  font-size: 1.35rem;
+  color: #fff;
+  font-weight: 600;
+  padding: 20px 0;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.letter-footer-quote {
+  font-size: 1.6rem;
+  color: #fff;
+  text-align: center;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-top: 40px;
+}
+
+.fire-text {
+  background: linear-gradient(135deg, #7C5CFF, #30D5FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Scroll Animation Classes */
+.reveal-text {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal-text.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delay-1 { transition-delay: 0.2s; }
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .letter-container {
+    padding: 40px 20px;
+  }
+  .letter-header h2 { font-size: 1.6rem; }
+  .letter-intro-quote { font-size: 1.3rem; }
+  .letter-content { font-size: 1.05rem; }
+  .dialogue-box { font-size: 1.15rem; padding: 12px 20px; }
+  .impact-highlight { font-size: 1.25rem; }
+  .letter-footer-quote { font-size: 1.35rem; }
+  .fire-text { font-size: 1.3rem !important; }
+}
