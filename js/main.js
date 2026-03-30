@@ -133,3 +133,36 @@ document.addEventListener("DOMContentLoaded", function() {
         console.log("Currency detection skipped.");
     }
 });
+/* ========================================= */
+/* FAQ ACCORDION SCRIPT (ALL PAGES)          */
+/* ========================================= */
+document.addEventListener("DOMContentLoaded", function() {
+  const faqQuestions = document.querySelectorAll('.faq-question');
+  
+  if (faqQuestions.length > 0) {
+    faqQuestions.forEach(button => {
+      button.addEventListener('click', () => {
+        const faqItem = button.parentElement;
+        const faqAnswer = button.nextElementSibling;
+        
+        // Baaki sabhi open FAQs ko close karne ke liye (Ek baar me ek hi open rahega)
+        document.querySelectorAll('.faq-item').forEach(item => {
+          if (item !== faqItem) {
+            item.classList.remove('active');
+            if (item.querySelector('.faq-answer')) {
+              item.querySelector('.faq-answer').style.maxHeight = null;
+            }
+          }
+        });
+
+        // Click kiye gaye FAQ ko open/close karna
+        faqItem.classList.toggle('active');
+        if (faqItem.classList.contains('active')) {
+          faqAnswer.style.maxHeight = faqAnswer.scrollHeight + "px";
+        } else {
+          faqAnswer.style.maxHeight = null;
+        }
+      });
+    });
+  }
+});
