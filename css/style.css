@@ -925,7 +925,21 @@ img{max-width:100%;display:block}
 }
 
 @media (max-width: 820px) {
-  .dropdown { width: 100%; }
+
+  /* Resetting content for mobile (Smooth Slide Version) */
+  .dropdown-content { 
+    position: static; 
+    transform: none; 
+    display: none; 
+    max-height: 0; /* Important for sliding */
+    overflow: hidden; /* Important for sliding */
+    opacity: 0;
+    margin-top: 5px; 
+    background: rgba(0, 0, 0, 0.3); 
+    border: 1px solid rgba(255, 255, 255, 0.05); 
+    box-shadow: inset 0 2px 10px rgba(0,0,0,0.2);
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  }
   
   /* Mobile Link alignment fix */
   .dropdown .nav-link {
