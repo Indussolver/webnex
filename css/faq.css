@@ -197,3 +197,11 @@
   box-shadow: 0 15px 35px rgba(124, 92, 255, 0.5);
   color: #fff;
 }
+.hidden-faq {
+  display: none !important;
+}
+
+@keyframes floatUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
