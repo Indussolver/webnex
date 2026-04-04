@@ -136,45 +136,7 @@
     </div>
   </footer>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // Accordion Logic
-      const faqItems = document.querySelectorAll('.faq-item');
-      faqItems.forEach(item => {
-        const question = item.querySelector('.faq-question');
-        question.addEventListener('click', () => {
-          const isOpen = item.classList.contains('active');
-          faqItems.forEach(faq => {
-            faq.classList.remove('active');
-            faq.querySelector('.faq-answer').style.maxHeight = null;
-          });
-          if (!isOpen) {
-            item.classList.add('active');
-            const answer = item.querySelector('.faq-answer');
-            answer.style.maxHeight = answer.scrollHeight + "px";
-          }
-        });
-      });
-
-      // Load More Logic
-      const loadMoreBtn = document.getElementById('loadMoreBtn');
-      const hiddenFaqs = document.querySelectorAll('.hidden-faq');
-      
-      loadMoreBtn.addEventListener('click', () => {
-        hiddenFaqs.forEach(faq => {
-          // Animate them opening
-          faq.style.display = 'block';
-          // Chhote delay ke baad opacity 1 karenge taaki smooth lage
-          setTimeout(() => {
-            faq.classList.remove('hidden-faq');
-          }, 50);
-        });
-        // Button ko hide kar do
-        loadMoreBtn.style.display = 'none';
-      });
-    });
-    
-  </script>
+  
   <script src="js/main.js"></script>
 </body>
 </html>
