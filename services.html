@@ -438,7 +438,30 @@
   </footer>
   <a class="floating-whatsapp" href="#" id="floatingWhatsapp" aria-label="Chat on WhatsApp">WhatsApp</a>
   <script src="js/main.js"></script>
-  
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const observerOptions = {
+        root: null,
+        rootMargin: "0px 0px -10% 0px", // Screen ke thoda niche aane par trigger hoga
+        threshold: 0.1
+      };
+
+      const letterObserver = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target); // Ek baar dikhne ke baad dubara animate nahi hoga
+          }
+        });
+      }, observerOptions);
+
+      // Select all text blocks inside the letter
+      const revealElements = document.querySelectorAll(".reveal-text");
+      revealElements.forEach(el => {
+        letterObserver.observe(el);
+      });
+    });
+  </script>
   
 </body>
 </html>
