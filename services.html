@@ -439,53 +439,6 @@
   <a class="floating-whatsapp" href="#" id="floatingWhatsapp" aria-label="Chat on WhatsApp">WhatsApp</a>
   <script src="js/main.js"></script>
   
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const observerOptions = {
-        root: null,
-        rootMargin: "0px 0px -10% 0px", // Triggers slightly before reaching the bottom
-        threshold: 0.1
-      };
-
-      const letterObserver = new IntersectionObserver(function(entries, observer) {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            observer.unobserve(entry.target); // Reveal only once
-          }
-        });
-      }, observerOptions);
-
-      // Select all text blocks inside the letter
-      const revealElements = document.querySelectorAll(".reveal-text");
-      revealElements.forEach(el => {
-        letterObserver.observe(el);
-      });
-    });
-  </script>
-  <script>
-    document.querySelectorAll('.faq-question').forEach(button => {
-      button.addEventListener('click', () => {
-        const faqItem = button.parentElement;
-        const faqAnswer = button.nextElementSibling;
-        
-        // Close other open items
-        document.querySelectorAll('.faq-item').forEach(item => {
-          if (item !== faqItem) {
-            item.classList.remove('active');
-            item.querySelector('.faq-answer').style.maxHeight = null;
-          }
-        });
-
-        // Toggle the clicked item
-        faqItem.classList.toggle('active');
-        if (faqItem.classList.contains('active')) {
-          faqAnswer.style.maxHeight = faqAnswer.scrollHeight + "px";
-        } else {
-          faqAnswer.style.maxHeight = null;
-        }
-      });
-    });
-  </script>
+  <script src="js/main.js"></script>
 </body>
-</html>
+</html>s
