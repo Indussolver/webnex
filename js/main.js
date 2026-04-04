@@ -227,3 +227,31 @@ document.addEventListener("DOMContentLoaded", function() {
       });
     }
   });
+  // ========================================= //
+  // 8. FAQ LOAD MORE BUTTON LOGIC             //
+  // ========================================= //
+  const loadMoreBtn = document.getElementById('loadMoreBtn');
+  const hiddenFaqs = document.querySelectorAll('.hidden-faq');
+
+  if (loadMoreBtn && hiddenFaqs.length > 0) {
+    let currentlyShown = 0;
+    const itemsToShowAtOnce = 10; // Kitne FAQs ek baar mein dikhane hain
+
+    loadMoreBtn.addEventListener('click', function() {
+      // Loop through the next set of hidden FAQs and show them
+      for (let i = currentlyShown; i < currentlyShown + itemsToShowAtOnce; i++) {
+        if (hiddenFaqs[i]) {
+          hiddenFaqs[i].classList.remove('hidden-faq');
+          // Add a tiny animation delay for a cascading effect
+          hiddenFaqs[i].style.animation = `floatUp 0.5s ease-out ${i * 0.05}s forwards`;
+        }
+      }
+
+      currentlyShown += itemsToShowAtOnce;
+
+      // If all hidden FAQs are now visible, hide the "Load More" button
+      if (currentlyShown >= hiddenFaqs.length) {
+        loadMoreBtn.style.display = 'none';
+      }
+    });
+  }
