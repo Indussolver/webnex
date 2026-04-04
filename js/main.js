@@ -134,35 +134,45 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 /* ========================================= */
-/* FAQ ACCORDION SCRIPT (ALL PAGES)          */
+/* ADVANCED FAQ ACCORDION SCRIPT (ALL PAGES) */
 /* ========================================= */
-document.addEventListener("DOMContentLoaded", function() {
-  const faqQuestions = document.querySelectorAll('.faq-question');
-  
-  if (faqQuestions.length > 0) {
-    faqQuestions.forEach(button => {
-      button.addEventListener('click', () => {
-        const faqItem = button.parentElement;
-        const faqAnswer = button.nextElementSibling;
-        
-        // Baaki sabhi open FAQs ko close karne ke liye (Ek baar me ek hi open rahega)
-        document.querySelectorAll('.faq-item').forEach(item => {
-          if (item !== faqItem) {
-            item.classList.remove('active');
-            if (item.querySelector('.faq-answer')) {
-              item.querySelector('.faq-answer').style.maxHeight = null;
-            }
-          }
-        });
 
-        // Click kiye gaye FAQ ko open/close karna
-        faqItem.classList.toggle('active');
-        if (faqItem.classList.contains('active')) {
-          faqAnswer.style.maxHeight = faqAnswer.scrollHeight + "px";
-        } else {
-          faqAnswer.style.maxHeight = null;
+document.addEventListener("DOMContentLoaded", function() {
+  
+  // Event Delegation Method: This ensures it works even if FAQs are added later or on different pages.
+  document.body.addEventListener('click', function(e) {
+    
+    // Check if the clicked element (or its parent) is a faq-question button
+    const faqButton = e.target.closest('.faq-question');
+    
+    // If a faq-question was clicked
+    if (faqButton) {
+      const faqItem = faqButton.parentElement;
+      const faqAnswer = faqButton.nextElementSibling;
+      
+      // OPTIONAL: Close all OTHER open FAQs first (Accordion effect)
+      // If you want multiple FAQs to stay open at once, you can delete this block.
+      document.querySelectorAll('.faq-item').forEach(item => {
+        if (item !== faqItem && item.classList.contains('active')) {
+          item.classList.remove('active');
+          const otherAnswer = item.querySelector('.faq-answer');
+          if (otherAnswer) {
+            otherAnswer.style.maxHeight = null;
+          }
         }
       });
-    });
-  }
+
+      // Toggle the clicked FAQ
+      faqItem.classList.toggle('active');
+      
+      if (faqItem.classList.contains('active')) {
+        // Expand the answer
+        faqAnswer.style.maxHeight = faqAnswer.scrollHeight + "px";
+      } else {
+        // Collapse the answer
+        faqAnswer.style.maxHeight = null;
+      }
+    }
+  });
+
 });
