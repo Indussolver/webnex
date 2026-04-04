@@ -177,28 +177,53 @@ document.addEventListener("DOMContentLoaded", function() {
 
 });
 // ========================================= //
-  // 7. MOBILE DROPDOWN MENU FIX               //
+  // 7. SMOOTH MOBILE DROPDOWN MENU FIX        //
   // ========================================= //
   const mobileDropdowns = document.querySelectorAll('.dropdown');
 
   mobileDropdowns.forEach(dropdown => {
+    // Only select the link that opens the dropdown (e.g., Services, About)
     const mainLink = dropdown.querySelector('.nav-link');
+    const dropdownContent = dropdown.querySelector('.dropdown-content');
     
-    mainLink.addEventListener('click', function(e) {
-      // Check if user is on mobile (screen width 820px or less)
-      if (window.innerWidth <= 820) {
-        // Stop the link from opening the page directly
-        e.preventDefault(); 
-        
-        // Optional: Close other dropdowns if one is clicked
-        mobileDropdowns.forEach(otherDropdown => {
-          if (otherDropdown !== dropdown) {
-            otherDropdown.classList.remove('active');
-          }
-        });
+    if (mainLink && dropdownContent) {
+      mainLink.addEventListener('click', function(e) {
+        // Run only on mobile sizes
+        if (window.innerWidth <= 820) {
+          e.preventDefault(); 
+          
+          // Close ALL other dropdowns first (Accordion style)
+          mobileDropdowns.forEach(otherDropdown => {
+            if (otherDropdown !== dropdown && otherDropdown.classList.contains('active')) {
+              otherDropdown.classList.remove('active');
+              const otherContent = otherDropdown.querySelector('.dropdown-content');
+              if (otherContent) {
+                otherContent.style.maxHeight = null;
+                otherContent.style.opacity = '0';
+              }
+            }
+          });
 
-        // Toggle the current dropdown menu
-        dropdown.classList.toggle('active');
-      }
-    });
+          // Toggle the clicked dropdown
+          dropdown.classList.toggle('active');
+
+          if (dropdown.classList.contains('active')) {
+            // OPEN: Calculate exact height needed
+            dropdownContent.style.display = 'block'; // Ensure it's block to measure height
+            dropdownContent.style.maxHeight = dropdownContent.scrollHeight + "px";
+            dropdownContent.style.opacity = '1';
+          } else {
+            // CLOSE: Slide up
+            dropdownContent.style.maxHeight = null;
+            dropdownContent.style.opacity = '0';
+            // Wait for transition before fully hiding
+            setTimeout(() => {
+              if(!dropdown.classList.contains('active')){
+                dropdownContent.style.display = 'none';
+              }
+            }, 300); // 300ms matches the CSS transition time
+          }
+        }
+      });
+    }
   });
