@@ -154,3 +154,169 @@
     right: auto;
   }
 }
+/* ========================================= */
+/* WHAT WE NEED SECTION STYLES               */
+/* ========================================= */
+
+.req-section {
+  position: relative;
+  z-index: 1;
+}
+
+.req-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Individual Requirement Cards */
+.req-card {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 20px;
+  padding: 30px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.req-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(48, 213, 255, 0.3);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3), 0 0 20px rgba(48, 213, 255, 0.1);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+}
+
+.req-icon-wrapper {
+  width: 54px;
+  height: 54px;
+  background: linear-gradient(135deg, rgba(124, 92, 255, 0.15), rgba(48, 213, 255, 0.1));
+  border: 1px solid rgba(124, 92, 255, 0.2);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  transition: transform 0.4s ease;
+}
+
+.req-card:hover .req-icon-wrapper {
+  transform: scale(1.1) rotate(-5deg);
+  border-color: rgba(48, 213, 255, 0.5);
+  box-shadow: 0 0 15px rgba(48, 213, 255, 0.2);
+}
+
+.req-icon {
+  font-size: 1.6rem;
+}
+
+.req-card h3 {
+  color: #fff;
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+  letter-spacing: -0.3px;
+}
+
+.req-card p {
+  color: #a8b2d1;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Conclusion Card (Spans Full Width) */
+.req-conclusion {
+  grid-column: 1 / -1; /* Makes it span across all columns */
+  margin-top: 10px;
+  position: relative;
+  background: linear-gradient(135deg, rgba(124, 92, 255, 0.1), rgba(48, 213, 255, 0.05));
+  border: 1px solid rgba(124, 92, 255, 0.3);
+  border-radius: 20px;
+  padding: 35px 40px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  transition: transform 0.4s ease;
+}
+
+.req-conclusion:hover {
+  transform: translateY(-5px);
+  border-color: rgba(124, 92, 255, 0.6);
+}
+
+/* Ambient glow inside the conclusion card */
+.glow-bg-layer {
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(124, 92, 255, 0.4) 0%, transparent 70%);
+  filter: blur(40px);
+  z-index: 0;
+  animation: pulse-glow 6s infinite alternate;
+}
+
+@keyframes pulse-glow {
+  0% { transform: scale(1); opacity: 0.5; }
+  100% { transform: scale(1.3); opacity: 0.8; }
+}
+
+.conclusion-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.conclusion-icon {
+  font-size: 3rem;
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.2));
+}
+
+.conclusion-content h3 {
+  color: #fff;
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+}
+
+.conclusion-content p {
+  color: #DCD5FF;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* 📱 Mobile Optimization */
+@media (max-width: 768px) {
+  .req-grid {
+    grid-template-columns: 1fr; /* Stack cards natively on phone */
+    gap: 16px;
+  }
+  
+  .req-card {
+    padding: 24px;
+  }
+
+  .req-conclusion {
+    padding: 25px 20px;
+  }
+
+  .conclusion-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+  
+  .conclusion-icon {
+    font-size: 2.5rem;
+  }
+  
+  .conclusion-content h3 {
+    font-size: 1.3rem;
+  }
+}
