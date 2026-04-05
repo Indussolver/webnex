@@ -2593,3 +2593,158 @@ img{max-width:100%;display:block}
     text-align: center;
   }
 }
+/* ========================================= */
+/* WHY CHOOSE US SECTION STYLES              */
+/* ========================================= */
+
+.why-us-section {
+  position: relative;
+  z-index: 1;
+  padding-top: 90px;
+  padding-bottom: 80px;
+}
+
+/* Background Ambient Glow */
+.why-glow-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 75vw;
+  height: 500px;
+  background: radial-gradient(circle, rgba(124, 92, 255, 0.06) 0%, rgba(48, 213, 255, 0.04) 50%, transparent 70%);
+  filter: blur(60px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Flexbox Layout (Perfect for 5 items: 3 top, 2 bottom centered) */
+.why-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Premium Glass Cards */
+.why-card {
+  flex: 1 1 calc(33.333% - 25px); /* 3 cards per row mathematically */
+  min-width: 320px; /* Forces wrap on smaller screens */
+  max-width: 380px; /* Prevents stretching too wide when 2 are on bottom */
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 20px;
+  padding: 35px 30px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  flex-direction: column;
+}
+
+.why-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(124, 92, 255, 0.4);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3), 0 0 20px rgba(124, 92, 255, 0.15);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+}
+
+/* Glowing Icons */
+.why-icon {
+  width: 55px;
+  height: 55px;
+  font-size: 1.6rem;
+  background: linear-gradient(135deg, rgba(124, 92, 255, 0.15), rgba(48, 213, 255, 0.1));
+  border: 1px solid rgba(124, 92, 255, 0.2);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 22px;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.02);
+  transition: transform 0.4s ease, border-color 0.4s ease;
+}
+
+.why-card:hover .why-icon {
+  transform: scale(1.1) rotate(5deg);
+  border-color: rgba(48, 213, 255, 0.5);
+  box-shadow: 0 0 15px rgba(48, 213, 255, 0.2);
+}
+
+/* Typography */
+.why-card h3 {
+  color: #fff;
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+  letter-spacing: -0.3px;
+}
+
+.why-card p {
+  color: #a8b2d1;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* Closing Line */
+.why-closing {
+  margin-top: 60px;
+  padding: 0 20px;
+}
+
+.why-closing p {
+  font-size: 1.3rem;
+  color: #DCD5FF;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* ========================================= */
+/* 📱 PERFECT MOBILE OPTIMIZATION            */
+/* ========================================= */
+@media (max-width: 768px) {
+  .why-grid {
+    flex-direction: column; /* Force single column on phone */
+    align-items: center;
+    gap: 16px;
+  }
+  
+  .why-card {
+    width: 100%;
+    min-width: unset;
+    max-width: 100%;
+    padding: 25px 20px;
+  }
+
+  .why-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.4rem;
+    margin-bottom: 16px;
+  }
+
+  .why-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .why-card p {
+    font-size: 0.95rem;
+  }
+
+  /* Reduce hover jump for touch screens */
+  .why-card:hover {
+    transform: translateY(-2px);
+  }
+
+  .why-closing {
+    margin-top: 40px;
+  }
+
+  .why-closing p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
+}
