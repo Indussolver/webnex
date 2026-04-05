@@ -2748,3 +2748,206 @@ img{max-width:100%;display:block}
     line-height: 1.5;
   }
 }
+/* ========================================= */
+/* CASE STUDIES / REAL RESULTS STYLES        */
+/* ========================================= */
+
+.case-studies-section {
+  position: relative;
+  z-index: 1;
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+/* Background Lighting */
+.cs-glow-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80vw;
+  height: 500px;
+  background: radial-gradient(circle, rgba(48, 213, 255, 0.06) 0%, rgba(124, 92, 255, 0.04) 50%, transparent 70%);
+  filter: blur(60px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* 3-Column Grid for Desktop */
+.cs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Premium Glass Cards */
+.cs-card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 35px 30px;
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.cs-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(48, 213, 255, 0.4);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 25px rgba(48, 213, 255, 0.15);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0.02) 100%);
+}
+
+/* Card Header */
+.cs-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding-bottom: 20px;
+}
+
+.cs-icon {
+  width: 50px;
+  height: 50px;
+  font-size: 1.5rem;
+  background: linear-gradient(135deg, rgba(124, 92, 255, 0.15), rgba(48, 213, 255, 0.1));
+  border: 1px solid rgba(124, 92, 255, 0.2);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cs-header h3 {
+  color: #fff;
+  font-size: 1.3rem;
+  margin: 0;
+  letter-spacing: -0.3px;
+}
+
+/* Story Content (Problem & Action) */
+.cs-body {
+  flex-grow: 1; /* Pushes the result box to the bottom evenly */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.cs-body p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.cs-problem {
+  color: #a8b2d1;
+}
+
+.cs-action {
+  color: #cbd5e1;
+}
+
+.cs-body strong {
+  color: #fff;
+  font-weight: 600;
+  margin-right: 5px;
+}
+
+/* The Highlighted Result Box */
+.cs-result-box {
+  background: linear-gradient(90deg, rgba(48, 213, 255, 0.1), rgba(124, 92, 255, 0.05));
+  border-left: 3px solid #30D5FF;
+  padding: 20px;
+  border-radius: 0 12px 12px 0;
+  position: relative;
+}
+
+.cs-result-label {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #30D5FF;
+  margin-bottom: 8px;
+}
+
+.cs-result-text {
+  color: #fff;
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Closing Section */
+.cs-closing {
+  margin-top: 60px;
+}
+
+.cs-closing p {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+/* ========================================= */
+/* 📱 PERFECT MOBILE OPTIMIZATION            */
+/* ========================================= */
+@media (max-width: 900px) {
+  .cs-grid {
+    grid-template-columns: 1fr; /* Stack into 1 column */
+    gap: 25px;
+  }
+  
+  .cs-card {
+    padding: 30px 20px;
+  }
+
+  .cs-header {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+  }
+
+  .cs-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 1.3rem;
+  }
+
+  .cs-header h3 {
+    font-size: 1.2rem;
+  }
+
+  .cs-body p {
+    font-size: 0.95rem;
+  }
+
+  .cs-result-box {
+    padding: 15px;
+  }
+
+  .cs-result-text {
+    font-size: 1rem;
+  }
+
+  .cs-closing p {
+    font-size: 1.4rem;
+  }
+
+  /* Prevent jumpy hover on mobile touch */
+  .cs-card:hover {
+    transform: translateY(-2px);
+  }
+}
