@@ -1803,3 +1803,164 @@ img{max-width:100%;display:block}
     font-size: 0.9rem;
   }
 }
+/* ========================================= */
+/* WHO THIS IS FOR SECTION STYLES            */
+/* ========================================= */
+
+.target-section {
+  position: relative;
+  z-index: 1;
+  padding-top: 80px;
+  padding-bottom: 60px;
+}
+
+/* Subtle background lighting */
+.target-glow-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60vw;
+  height: 400px;
+  background: radial-gradient(circle, rgba(124, 92, 255, 0.08) 0%, rgba(48, 213, 255, 0.05) 50%, transparent 70%);
+  filter: blur(60px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* 2x2 Grid Layout for Desktop */
+.target-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Premium Glass Card */
+.target-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 20px;
+  padding: 30px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.target-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(48, 213, 255, 0.3);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3), 0 0 20px rgba(48, 213, 255, 0.1);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+}
+
+/* Icon Styling */
+.t-icon-box {
+  flex-shrink: 0;
+  width: 55px;
+  height: 55px;
+  font-size: 1.6rem;
+  background: linear-gradient(135deg, rgba(124, 92, 255, 0.15), rgba(48, 213, 255, 0.1));
+  border: 1px solid rgba(124, 92, 255, 0.2);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 0 10px rgba(255,255,255,0.02);
+  transition: transform 0.4s ease, border-color 0.4s ease;
+}
+
+.target-card:hover .t-icon-box {
+  transform: scale(1.1) rotate(-5deg);
+  border-color: rgba(48, 213, 255, 0.5);
+  box-shadow: 0 0 15px rgba(48, 213, 255, 0.2);
+}
+
+/* Typography */
+.t-content h3 {
+  color: #fff;
+  font-size: 1.25rem;
+  margin-bottom: 8px;
+  margin-top: 5px;
+  letter-spacing: -0.3px;
+}
+
+.t-content p {
+  color: #a8b2d1;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Keyword Highlights (Cyan/Blue logic) */
+.t-highlight {
+  color: #30D5FF;
+  font-weight: 600;
+}
+
+/* The Powerful Closing Line */
+.target-closing {
+  max-width: 800px;
+  margin: 40px auto 0;
+  padding: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.target-closing p {
+  font-size: 1.15rem;
+  color: #DCD5FF;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.target-closing strong {
+  color: #fff;
+  background: linear-gradient(135deg, #fff, #30D5FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ========================================= */
+/* 📱 PERFECT MOBILE OPTIMIZATION            */
+/* ========================================= */
+@media (max-width: 768px) {
+  .target-grid {
+    grid-template-columns: 1fr; /* Stacks perfectly on phone */
+    gap: 16px;
+  }
+  
+  .target-card {
+    padding: 24px 20px;
+    gap: 15px; /* Slightly less gap between icon and text on mobile */
+  }
+
+  .t-icon-box {
+    width: 48px;
+    height: 48px;
+    font-size: 1.4rem;
+  }
+
+  .t-content h3 {
+    font-size: 1.15rem;
+    margin-top: 2px;
+  }
+
+  .t-content p {
+    font-size: 0.9rem;
+  }
+
+  .target-closing p {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  /* Prevent jittery hovers on touch devices */
+  .target-card:hover {
+    transform: translateY(-2px);
+  }
+}
