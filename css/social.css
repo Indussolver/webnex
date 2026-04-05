@@ -967,10 +967,10 @@
   }
 }
 /* ========================================= */
-/* TRUST POINTS HIGHLIGHT STYLES             */
+/* SOCIAL TRUST POINTS STYLES                */
 /* ========================================= */
 
-.trust-points-section {
+.social-trust-section {
   position: relative;
   z-index: 1;
   padding-top: 80px;
@@ -978,31 +978,31 @@
 }
 
 /* Subtle, soft background lighting */
-.tph-glow-bg {
+.strust-glow-bg {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 60vw;
   height: 300px;
-  background: radial-gradient(circle, rgba(48, 213, 255, 0.05) 0%, rgba(124, 92, 255, 0.03) 50%, transparent 70%);
-  filter: blur(50px);
+  background: radial-gradient(circle, rgba(48, 213, 255, 0.04) 0%, rgba(124, 92, 255, 0.02) 50%, transparent 70%);
+  filter: blur(60px);
   z-index: -1;
   pointer-events: none;
 }
 
 /* 3-Column Grid setup */
-.tph-grid {
+.strust-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
+  gap: 24px;
   max-width: 1050px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
 /* Minimalist Glass Card */
-.tph-card {
+.strust-card {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1011,13 +1011,13 @@
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 20px;
   padding: 40px 30px;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* Subtle Hover Lift (No aggressive glowing to keep it professional) */
-.tph-card:hover {
+/* Subtle Hover Lift */
+.strust-card:hover {
   transform: translateY(-5px);
   border-color: rgba(48, 213, 255, 0.2);
   background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
@@ -1025,13 +1025,13 @@
 }
 
 /* Clean, simple icon box */
-.tph-icon {
+.strust-icon {
   width: 50px;
   height: 50px;
   font-size: 1.5rem;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
+  border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1039,19 +1039,19 @@
   transition: transform 0.4s ease;
 }
 
-.tph-card:hover .tph-icon {
+.strust-card:hover .strust-icon {
   transform: scale(1.08);
 }
 
 /* Typography */
-.tph-card h3 {
+.strust-text h3 {
   color: #fff;
   font-size: 1.25rem;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   letter-spacing: -0.2px;
 }
 
-.tph-card p {
+.strust-text p {
   color: #a8b2d1;
   font-size: 0.95rem;
   line-height: 1.6;
@@ -1062,37 +1062,37 @@
 /* 📱 PERFECT MOBILE OPTIMIZATION            */
 /* ========================================= */
 @media (max-width: 768px) {
-  .tph-grid {
+  .strust-grid {
     grid-template-columns: 1fr; /* Stacks cards on mobile */
     gap: 16px;
   }
   
-  .tph-card {
-    padding: 30px 20px;
+  .strust-card {
+    padding: 25px 20px;
     align-items: flex-start; /* Left aligns on mobile for better readability */
     text-align: left;
-    flex-direction: row; /* Horizontal layout on phone */
-    gap: 15px;
+    flex-direction: row; /* Horizontal layout on phone (Icon left, text right) */
+    gap: 18px;
   }
 
-  .tph-icon {
-    width: 45px;
-    height: 45px;
+  .strust-icon {
+    width: 48px;
+    height: 48px;
     margin-bottom: 0;
-    flex-shrink: 0;
+    flex-shrink: 0; /* Prevents icon from squeezing */
   }
 
-  .tph-card h3 {
+  .strust-text h3 {
     font-size: 1.15rem;
     margin-bottom: 5px;
   }
 
-  .tph-card p {
+  .strust-text p {
     font-size: 0.9rem;
   }
 
   /* Reduce hover movement for touch devices */
-  .tph-card:hover {
+  .strust-card:hover {
     transform: translateY(-2px);
   }
 }
