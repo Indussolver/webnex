@@ -198,3 +198,210 @@
     display: none;
   }
 }
+/* ========================================= */
+/* SOCIAL PLATFORMS SECTION STYLES           */
+/* ========================================= */
+
+.social-platforms-section {
+  position: relative;
+  z-index: 1;
+  padding-top: 60px;
+  padding-bottom: 80px;
+}
+
+.sp-glow-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70vw;
+  height: 500px;
+  background: radial-gradient(circle, rgba(124, 92, 255, 0.05) 0%, rgba(48, 213, 255, 0.03) 50%, transparent 70%);
+  filter: blur(60px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* 2x2 Grid Layout */
+.sp-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Premium Clickable Glass Card */
+.sp-card {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 20px;
+  padding: 35px 30px;
+  text-decoration: none; /* Removes default link underline */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.sp-icon {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.4s ease;
+}
+
+.sp-icon svg {
+  width: 28px;
+  height: 28px;
+  color: #fff;
+  transition: all 0.4s ease;
+}
+
+/* Typography Inside Link */
+.sp-card h3 {
+  color: #fff;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+
+.sp-card p {
+  color: #a8b2d1;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  margin: 0;
+  flex-grow: 1; /* Pushes CTA to the bottom evenly */
+}
+
+/* Specific Platform Hover Effects & Colors */
+/* Instagram */
+.instagram-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(225, 48, 108, 0.4);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3), 0 0 25px rgba(225, 48, 108, 0.15);
+  background: linear-gradient(145deg, rgba(225, 48, 108, 0.08), rgba(255, 255, 255, 0.01));
+}
+.instagram-card:hover .sp-icon {
+  background: linear-gradient(135deg, #E1306C, #F56040);
+  border-color: #E1306C;
+  box-shadow: 0 5px 15px rgba(225, 48, 108, 0.4);
+}
+.instagram-card:hover .sp-cta { color: #E1306C; }
+
+/* YouTube */
+.youtube-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255, 0, 0, 0.4);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3), 0 0 25px rgba(255, 0, 0, 0.15);
+  background: linear-gradient(145deg, rgba(255, 0, 0, 0.08), rgba(255, 255, 255, 0.01));
+}
+.youtube-card:hover .sp-icon {
+  background: #FF0000;
+  border-color: #FF0000;
+  box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4);
+}
+.youtube-card:hover .sp-cta { color: #FF0000; }
+
+/* Facebook */
+.facebook-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(24, 119, 242, 0.4);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3), 0 0 25px rgba(24, 119, 242, 0.15);
+  background: linear-gradient(145deg, rgba(24, 119, 242, 0.08), rgba(255, 255, 255, 0.01));
+}
+.facebook-card:hover .sp-icon {
+  background: #1877F2;
+  border-color: #1877F2;
+  box-shadow: 0 5px 15px rgba(24, 119, 242, 0.4);
+}
+.facebook-card:hover .sp-cta { color: #1877F2; }
+
+/* X (Twitter) */
+.x-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3), 0 0 25px rgba(255, 255, 255, 0.1);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.01));
+}
+.x-card:hover .sp-icon {
+  background: #fff;
+  border-color: #fff;
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+}
+.x-card:hover .sp-icon svg { color: #000; /* Contrast icon color */ }
+.x-card:hover .sp-cta { color: #fff; }
+
+/* Dynamic CTA Text */
+.sp-cta {
+  display: block;
+  margin-top: 25px;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #30D5FF; /* Default Color */
+  transition: all 0.3s ease;
+}
+
+.sp-card:hover .sp-cta {
+  transform: translateX(5px);
+}
+
+/* Closing Line */
+.sp-closing {
+  margin-top: 50px;
+}
+
+.sp-closing p {
+  font-size: 1.15rem;
+  color: #DCD5FF;
+}
+
+/* ========================================= */
+/* 📱 PERFECT MOBILE OPTIMIZATION            */
+/* ========================================= */
+@media (max-width: 768px) {
+  .sp-grid {
+    grid-template-columns: 1fr; /* Stacks everything natively on mobile */
+    gap: 16px;
+  }
+  
+  .sp-card {
+    padding: 25px 20px;
+  }
+
+  .sp-icon {
+    width: 45px;
+    height: 45px;
+    margin-bottom: 15px;
+  }
+
+  .sp-card h3 {
+    font-size: 1.25rem;
+  }
+
+  .sp-card p {
+    font-size: 0.95rem;
+  }
+  
+  .sp-cta {
+    margin-top: 20px;
+  }
+
+  /* Prevent jumpy hovers on touch devices */
+  .sp-card:hover {
+    transform: translateY(-2px);
+  }
+  
+  .sp-closing p {
+    font-size: 1rem;
+    padding: 0 15px;
+  }
+}
