@@ -1096,3 +1096,274 @@
     transform: translateY(-2px);
   }
 }
+/* ========================================= */
+/* LIVE SOCIAL FEED SECTION STYLES           */
+/* ========================================= */
+
+.social-feed-section {
+  position: relative;
+  z-index: 1;
+  padding-top: 80px;
+  padding-bottom: 90px;
+}
+
+.sfeed-glow-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80vw;
+  height: 600px;
+  background: radial-gradient(circle, rgba(124, 92, 255, 0.05) 0%, rgba(225, 48, 108, 0.03) 50%, transparent 70%);
+  filter: blur(70px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Desktop Grid (4 Columns) */
+.sfeed-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Premium Feed Card */
+.sfeed-card {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  overflow: hidden;
+  text-decoration: none; /* For links */
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.sfeed-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Platform Tag at Top */
+.sfeed-platform {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: rgba(0, 0, 0, 0.2);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Media Area (Video/Image) */
+.sfeed-media {
+  width: 100%;
+  aspect-ratio: 16/9; /* Standard video ratio */
+  position: relative;
+  background: #111;
+  overflow: hidden;
+}
+
+/* YouTube Specific (Taller for mobile if needed, but 16:9 is standard) */
+.yt-feed .sfeed-media iframe {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Image/Video Placeholders */
+.ig-gradient {
+  background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+  aspect-ratio: 1/1; /* Square for IG */
+}
+.fb-gradient {
+  background: linear-gradient(135deg, #1877F2, #0e5a9c);
+}
+
+/* Play Button Overlay */
+.play-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+}
+
+.sfeed-card:hover .play-overlay {
+  transform: translate(-50%, -50%) scale(1.1);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Text Content Area */
+.sfeed-content {
+  padding: 20px 16px;
+  flex-grow: 1;
+}
+
+.sfeed-content h4 {
+  color: #fff;
+  font-size: 1.05rem;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.sfeed-content p {
+  color: #a8b2d1;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Text-Only Post (Twitter/X) */
+.sfeed-text-only {
+  padding: 20px 16px;
+  flex-grow: 1;
+}
+
+.x-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.x-avatar {
+  width: 40px;
+  height: 40px;
+  background: #30D5FF;
+  color: #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+.x-name strong { display: block; color: #fff; font-size: 0.95rem; }
+.x-name span { color: #a8b2d1; font-size: 0.8rem; }
+
+.x-tweet {
+  color: #e2e8f0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* --- Brand Hover Borders --- */
+.yt-feed:hover { border-color: #FF0000; }
+.ig-feed:hover { border-color: #E1306C; }
+.x-feed:hover { border-color: #fff; }
+.fb-feed:hover { border-color: #1877F2; }
+
+/* Redirect CTA Section */
+.sfeed-explore-cta {
+  margin-top: 50px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sfeed-explore-cta h3 {
+  color: #fff;
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+}
+
+.sfeed-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.feed-btn {
+  padding: 10px 24px;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.btn-ig { background: rgba(225, 48, 108, 0.1); }
+.btn-ig:hover { background: #E1306C; border-color: #E1306C; }
+
+.btn-yt { background: rgba(255, 0, 0, 0.1); }
+.btn-yt:hover { background: #FF0000; border-color: #FF0000; }
+
+.btn-x { background: rgba(255, 255, 255, 0.05); }
+.btn-x:hover { background: #fff; color: #000; border-color: #fff; }
+
+.btn-fb { background: rgba(24, 119, 242, 0.1); }
+.btn-fb:hover { background: #1877F2; border-color: #1877F2; }
+
+
+/* ========================================= */
+/* 📱 PERFECT MOBILE OPTIMIZATION            */
+/* ========================================= */
+@media (max-width: 900px) {
+  .sfeed-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablet */
+  }
+}
+
+@media (max-width: 600px) {
+  .sfeed-grid {
+    grid-template-columns: 1fr; /* 1 column on phone */
+    gap: 20px;
+  }
+
+  .sfeed-card {
+    border-radius: 12px;
+  }
+
+  .sfeed-media {
+    aspect-ratio: auto; /* Remove strict ratio to prevent letterboxing */
+    height: 200px; /* Fixed height for consistent mobile look */
+  }
+
+  /* Keep IG square on mobile */
+  .ig-gradient {
+    height: auto;
+    aspect-ratio: 1/1;
+  }
+
+  .sfeed-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .feed-btn {
+    text-align: center;
+    width: 100%;
+  }
+
+  .sfeed-explore-cta {
+    margin: 40px 15px 0;
+    padding: 25px 20px;
+  }
+}
