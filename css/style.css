@@ -3101,15 +3101,22 @@ img{max-width:100%;display:block}
 .idx-faq-closing {
   margin-top: 60px;
   padding: 0 20px;
+  display: flex;             /* Centering fix */
+  justify-content: center;   /* Centering fix */
 }
 
 .closing-glow-box {
-  display: inline-block;
+  display: flex;             /* Centering fix */
+  flex-direction: column;    /* Stack items vertically */
+  align-items: center;       /* Center text & button horizontally */
+  text-align: center;        /* Center the text itself */
   padding: 40px;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
   border: 1px solid rgba(124, 92, 255, 0.3);
   border-radius: 20px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  width: 100%;               /* Ensure it takes space correctly */
+  max-width: 600px;          /* Prevent it from getting too wide on desktop */
 }
 
 .closing-glow-box h3 {
