@@ -378,3 +378,193 @@
     font-size: 1.3rem;
   }
 }
+/* ========================================= */
+/* WHAT YOU GET (DELIVERABLES) STYLES        */
+/* ========================================= */
+
+.deliver-section {
+  position: relative;
+  z-index: 1;
+  padding-top: 60px;
+}
+
+/* Ambient glow behind the grid */
+.deliver-glow-bg {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70vw;
+  height: 500px;
+  background: radial-gradient(circle, rgba(48, 213, 255, 0.08) 0%, rgba(124, 92, 255, 0.05) 40%, transparent 70%);
+  filter: blur(60px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Grid Layout - 3 Columns on Desktop */
+.deliver-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Glassmorphism Cards */
+.deliver-card {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.01));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 35px 30px;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  flex-direction: column;
+}
+
+.deliver-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(124, 92, 255, 0.4);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 25px rgba(124, 92, 255, 0.15);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+}
+
+.deliver-icon {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.02);
+  transition: transform 0.4s ease;
+}
+
+.deliver-card:hover .deliver-icon {
+  transform: scale(1.1) rotate(5deg);
+  background: rgba(124, 92, 255, 0.1);
+  border-color: rgba(124, 92, 255, 0.3);
+}
+
+.deliver-card h3 {
+  color: #fff;
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+  letter-spacing: -0.3px;
+}
+
+.deliver-card p {
+  color: #a8b2d1;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  margin: 0;
+  flex-grow: 1; /* Pushes content evenly */
+}
+
+/* Full Width Highlight Conclusion */
+.deliver-conclusion {
+  grid-column: 1 / -1; /* Spans across all available columns */
+  margin-top: 15px;
+  background: linear-gradient(135deg, rgba(48, 213, 255, 0.1), rgba(36, 211, 102, 0.05));
+  border: 1px solid rgba(48, 213, 255, 0.3);
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  transition: transform 0.4s ease, border-color 0.4s ease;
+}
+
+.deliver-conclusion:hover {
+  transform: translateY(-5px);
+  border-color: rgba(48, 213, 255, 0.6);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 30px rgba(48, 213, 255, 0.15);
+}
+
+.deliver-conclusion-inner {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.deliver-conclusion-icon {
+  font-size: 3.5rem;
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 15px rgba(48, 213, 255, 0.4));
+}
+
+.deliver-conclusion-text h3 {
+  color: #fff;
+  font-size: 1.6rem;
+  margin-bottom: 8px;
+  background: linear-gradient(135deg, #fff, #30D5FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.deliver-conclusion-text p {
+  color: #DCD5FF;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ========================================= */
+/* 📱 PERFECT MOBILE OPTIMIZATION            */
+/* ========================================= */
+@media (max-width: 768px) {
+  .deliver-grid {
+    grid-template-columns: 1fr; /* Stacks all cards vertically */
+    gap: 18px;
+  }
+  
+  .deliver-card {
+    padding: 25px 20px;
+    border-radius: 20px;
+  }
+
+  .deliver-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+
+  .deliver-card h3 {
+    font-size: 1.25rem;
+  }
+
+  /* Conclusion mobile formatting */
+  .deliver-conclusion {
+    padding: 30px 20px;
+    border-radius: 20px;
+  }
+
+  .deliver-conclusion-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+  
+  .deliver-conclusion-icon {
+    font-size: 3rem;
+  }
+  
+  .deliver-conclusion-text h3 {
+    font-size: 1.4rem;
+  }
+
+  .deliver-conclusion-text p {
+    font-size: 1rem;
+  }
+
+  /* Reduce hover jump on touch screens */
+  .deliver-card:hover, .deliver-conclusion:hover {
+    transform: translateY(-2px);
+  }
+}
