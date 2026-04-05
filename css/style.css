@@ -2379,3 +2379,156 @@ img{max-width:100%;display:block}
     padding: 8px 15px;
   }
 }
+/* ========================================= */
+/* INDEX SERVICES PREVIEW STYLES             */
+/* ========================================= */
+
+.idx-srv-section {
+  position: relative;
+  z-index: 1;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+/* Background Ambient Lighting */
+.idx-srv-glow {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70vw;
+  height: 500px;
+  background: radial-gradient(circle, rgba(124, 92, 255, 0.08) 0%, rgba(48, 213, 255, 0.05) 50%, transparent 70%);
+  filter: blur(60px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* 2x2 Grid Setup */
+.idx-srv-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Premium Glassmorphism Cards */
+.idx-srv-card {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 20px;
+  padding: 35px 30px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  flex-direction: column;
+}
+
+.idx-srv-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(48, 213, 255, 0.3);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3), 0 0 20px rgba(48, 213, 255, 0.1);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+}
+
+/* Service Icon */
+.idx-srv-icon {
+  width: 55px;
+  height: 55px;
+  font-size: 1.6rem;
+  background: linear-gradient(135deg, rgba(124, 92, 255, 0.15), rgba(48, 213, 255, 0.1));
+  border: 1px solid rgba(124, 92, 255, 0.2);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.02);
+  transition: transform 0.4s ease, border-color 0.4s ease;
+}
+
+.idx-srv-card:hover .idx-srv-icon {
+  transform: scale(1.1) rotate(5deg);
+  border-color: rgba(48, 213, 255, 0.5);
+  box-shadow: 0 0 15px rgba(48, 213, 255, 0.2);
+}
+
+/* Typography */
+.idx-srv-card h3 {
+  color: #fff;
+  font-size: 1.35rem;
+  margin-bottom: 12px;
+  letter-spacing: -0.3px;
+}
+
+.idx-srv-card p {
+  color: #a8b2d1;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.t-highlight {
+  color: #30D5FF;
+  font-weight: 500;
+}
+
+/* CTA Wrapper */
+.idx-srv-cta-wrapper {
+  margin-top: 50px;
+}
+
+.idx-srv-tagline {
+  margin-top: 15px;
+  color: #a8b2d1;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* ========================================= */
+/* 📱 PERFECT MOBILE OPTIMIZATION            */
+/* ========================================= */
+@media (max-width: 768px) {
+  .idx-srv-grid {
+    grid-template-columns: 1fr; /* Stacks to 1 column on phone */
+    gap: 16px;
+  }
+  
+  .idx-srv-card {
+    padding: 25px 20px;
+  }
+
+  .idx-srv-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+  }
+
+  .idx-srv-card h3 {
+    font-size: 1.25rem;
+  }
+
+  .idx-srv-card p {
+    font-size: 0.95rem;
+  }
+
+  /* Prevent UI jumping on scroll for mobile touch */
+  .idx-srv-card:hover {
+    transform: translateY(-2px);
+  }
+
+  .idx-srv-cta-wrapper {
+    margin-top: 40px;
+    padding: 0 20px;
+  }
+
+  /* Full width button on phone */
+  .idx-srv-cta-wrapper .btn-primary {
+    width: 100%;
+    text-align: center;
+  }
+}
