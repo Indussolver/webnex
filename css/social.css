@@ -809,3 +809,160 @@
     transform: translateY(-2px);
   }
 }
+/* ========================================= */
+/* BEHIND THE BRAND (LETTER) STYLES          */
+/* ========================================= */
+
+.behind-brand-section {
+  position: relative;
+  z-index: 1;
+  padding-top: 80px;
+  padding-bottom: 100px;
+}
+
+/* Deep Ambient Glow */
+.bb-glow-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70vw;
+  height: 600px;
+  background: radial-gradient(circle, rgba(124, 92, 255, 0.08) 0%, rgba(48, 213, 255, 0.03) 50%, transparent 70%);
+  filter: blur(80px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Premium Letter Container */
+.bb-letter-container {
+  position: relative;
+  max-width: 850px;
+  margin: 0 auto;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.01));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 60px 70px;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3), inset 0 0 20px rgba(255, 255, 255, 0.02);
+}
+
+/* Decorative Accents for the Letter */
+.letter-accent {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  filter: blur(40px);
+  z-index: -1;
+}
+
+.letter-accent.top-left {
+  top: -20px;
+  left: -20px;
+  background: rgba(48, 213, 255, 0.3);
+}
+
+.letter-accent.bottom-right {
+  bottom: -20px;
+  right: -20px;
+  background: rgba(124, 92, 255, 0.3);
+}
+
+/* Giant Subtle Quote Mark */
+.quote-mark {
+  position: absolute;
+  top: 10px;
+  left: 30px;
+  font-size: 10rem;
+  font-family: serif;
+  color: rgba(255, 255, 255, 0.04);
+  line-height: 1;
+  pointer-events: none;
+}
+
+/* Content Styling */
+.bb-letter-content {
+  position: relative;
+  z-index: 1;
+}
+
+.bb-paragraph {
+  color: #a8b2d1;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 25px;
+  letter-spacing: 0.2px;
+}
+
+.bb-paragraph strong {
+  color: #fff;
+  font-weight: 600;
+}
+
+.bb-conclusion {
+  margin-top: 40px;
+  margin-bottom: 0;
+  font-size: 1.3rem;
+  color: #fff;
+  font-style: italic;
+  font-weight: 500;
+  border-left: 3px solid #30D5FF;
+  padding-left: 20px;
+  background: linear-gradient(90deg, rgba(48, 213, 255, 0.1), transparent);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 0 8px 8px 0;
+}
+
+/* --- SUPER ANIMATION (Sequential Fade In) --- */
+/* Ye automatically trigger hoga jab scroll .bb-letter-container tak pahuchega (via main.js reveal logic) */
+
+.bb-letter-container[data-reveal].is-visible .bb-paragraph {
+  animation: paragraphFadeUp 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  opacity: 0;
+}
+
+.bb-paragraph.delay-1 { animation-delay: 0.1s !important; }
+.bb-paragraph.delay-2 { animation-delay: 0.25s !important; }
+.bb-paragraph.delay-3 { animation-delay: 0.4s !important; }
+.bb-paragraph.delay-4 { animation-delay: 0.55s !important; }
+.bb-paragraph.delay-5 { animation-delay: 0.7s !important; }
+.bb-paragraph.delay-6 { animation-delay: 0.85s !important; }
+.bb-paragraph.delay-7 { animation-delay: 1s !important; }
+
+@keyframes paragraphFadeUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+
+/* ========================================= */
+/* 📱 PERFECT MOBILE OPTIMIZATION            */
+/* ========================================= */
+@media (max-width: 768px) {
+  .bb-letter-container {
+    padding: 40px 25px;
+    margin: 0 15px; /* Ensures it doesn't touch the exact edges of the screen */
+    border-radius: 20px;
+  }
+  
+  .quote-mark {
+    font-size: 7rem;
+    top: 5px;
+    left: 15px;
+  }
+  
+  .bb-paragraph {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+
+  .bb-conclusion {
+    font-size: 1.15rem;
+    margin-top: 30px;
+    padding-left: 15px;
+  }
+}
