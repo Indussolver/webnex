@@ -2151,3 +2151,231 @@ img{max-width:100%;display:block}
     height: 55px;
   }
 }
+/* ========================================= */
+/* 3-STEP PROCESS SECTION STYLES             */
+/* ========================================= */
+
+.process-step-section {
+  position: relative;
+  z-index: 1;
+  padding-top: 100px;
+  padding-bottom: 80px;
+}
+
+.ps-glow-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70vw;
+  height: 400px;
+  background: radial-gradient(circle, rgba(48, 213, 255, 0.08) 0%, rgba(124, 92, 255, 0.05) 50%, transparent 70%);
+  filter: blur(60px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Horizontal Layout for Desktop */
+.ps-steps-grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Premium Card Design */
+.ps-step-card {
+  flex: 1; /* Equal width for all 3 cards */
+  position: relative;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.01));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 40px 30px;
+  text-align: center;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  overflow: hidden; /* For the subtle background gradient shift on hover */
+}
+
+/* The massive, faint background number */
+.ps-step-number {
+  position: absolute;
+  top: -20px;
+  right: -10px;
+  font-size: 8rem;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.03);
+  line-height: 1;
+  z-index: 0;
+  transition: color 0.4s ease;
+}
+
+/* Visual Connection Lines (Desktop Only) */
+.ps-step-card:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 50px;
+  right: -30px; /* Extends past the card */
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(48, 213, 255, 0.3), transparent);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Hover States */
+.ps-step-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(48, 213, 255, 0.4);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 25px rgba(48, 213, 255, 0.1);
+}
+
+.ps-step-card:hover .ps-step-number {
+  color: rgba(48, 213, 255, 0.08);
+}
+
+.ps-step-icon {
+  position: relative;
+  z-index: 1;
+  font-size: 2.5rem;
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 25px;
+  background: linear-gradient(135deg, rgba(124, 92, 255, 0.15), rgba(48, 213, 255, 0.1));
+  border: 1px solid rgba(124, 92, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.02);
+  transition: transform 0.4s ease;
+}
+
+.ps-step-card:hover .ps-step-icon {
+  transform: scale(1.1);
+  border-color: rgba(48, 213, 255, 0.5);
+  box-shadow: 0 0 20px rgba(48, 213, 255, 0.2);
+}
+
+.ps-step-content {
+  position: relative;
+  z-index: 1;
+}
+
+.ps-step-content h3 {
+  color: #fff;
+  font-size: 1.35rem;
+  margin-bottom: 15px;
+  letter-spacing: -0.3px;
+}
+
+.ps-step-content p {
+  color: #a8b2d1;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Closing Section */
+.ps-closing {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.trust-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(48, 213, 255, 0.05);
+  border: 1px solid rgba(48, 213, 255, 0.15);
+  padding: 10px 20px;
+  border-radius: 50px;
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.trust-pill-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.ps-closing h4 {
+  font-size: 1.8rem;
+  color: #fff;
+  background: linear-gradient(135deg, #fff, #30D5FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+}
+
+/* ========================================= */
+/* 📱 PERFECT MOBILE OPTIMIZATION            */
+/* ========================================= */
+@media (max-width: 900px) {
+  .ps-steps-grid {
+    flex-direction: column; /* Stack cards vertically */
+    gap: 20px;
+  }
+  
+  .ps-step-card {
+    padding: 30px 20px;
+    display: flex; /* Switch to horizontal layout for mobile cards */
+    text-align: left;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  /* Hide the connection lines on mobile */
+  .ps-step-card::after {
+    display: none;
+  }
+  
+  /* Adjust the massive background number for mobile layout */
+  .ps-step-number {
+    font-size: 6rem;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+  }
+  
+  .ps-step-icon {
+    margin: 0; /* Remove auto centering */
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+    flex-shrink: 0;
+  }
+  
+  .ps-step-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+  }
+  
+  .ps-step-content p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  
+  /* Less aggressive hover for touch */
+  .ps-step-card:hover {
+    transform: translateY(-2px);
+  }
+
+  .ps-closing h4 {
+    font-size: 1.4rem;
+  }
+  
+  .trust-pill {
+    font-size: 0.85rem;
+    padding: 8px 15px;
+  }
+}
