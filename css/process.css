@@ -771,3 +771,163 @@
     transform: translateY(-3px); /* Upward jump instead of sideways on mobile */
   }
 }
+/* ========================================= */
+/* PROCESS FAQ STYLES                        */
+/* ========================================= */
+
+.process-faq-section {
+  padding-top: 60px;
+  padding-bottom: 80px;
+  position: relative;
+}
+
+.process-faq-wrapper {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Individual FAQ Box */
+.p-faq-item {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  margin-bottom: 16px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  backdrop-filter: blur(10px);
+}
+
+.p-faq-item:hover {
+  border-color: rgba(48, 213, 255, 0.4);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+/* Active State (When Opened) */
+.p-faq-item.active {
+  border-color: #30D5FF;
+  background: linear-gradient(145deg, rgba(48, 213, 255, 0.05), rgba(124, 92, 255, 0.05));
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2), 0 0 15px rgba(48, 213, 255, 0.1);
+}
+
+/* The Clickable Button */
+.p-faq-question {
+  width: 100%;
+  text-align: left;
+  padding: 24px 30px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.15rem;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+/* The Number */
+.p-faq-num {
+  color: #30D5FF;
+  font-size: 0.95rem;
+  margin-right: 20px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+/* The Text */
+.p-faq-text {
+  flex-grow: 1;
+  padding-right: 20px;
+  line-height: 1.4;
+}
+
+.p-faq-item.active .p-faq-text {
+  color: #30D5FF;
+}
+
+/* The Plus/Minus Icon */
+.p-faq-toggle {
+  width: 18px;
+  height: 2px;
+  background: #fff;
+  position: relative;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  flex-shrink: 0;
+}
+
+.p-faq-toggle::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 18px;
+  background: #fff;
+  top: -8px;
+  left: 8px;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.p-faq-item.active .p-faq-toggle {
+  background: #30D5FF;
+  transform: rotate(180deg);
+}
+
+.p-faq-item.active .p-faq-toggle::after {
+  transform: rotate(90deg) scale(0);
+  opacity: 0;
+}
+
+/* The Hidden Answer Area */
+.p-faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out;
+}
+
+/* Inner padding for the answer */
+.p-faq-inner {
+  padding: 0 30px 25px 72px; /* 72px aligns perfectly with text, skipping the number */
+}
+
+.p-faq-inner p {
+  margin: 0;
+  color: #a8b2d1;
+  line-height: 1.7;
+  font-size: 0.98rem;
+}
+
+.p-faq-inner em {
+  color: #DCD5FF;
+  font-style: normal;
+  display: block;
+  margin-top: 10px;
+  border-left: 2px solid #30D5FF;
+  padding-left: 15px;
+  background: linear-gradient(90deg, rgba(48, 213, 255, 0.1) 0%, transparent 100%);
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 0 5px 5px 0;
+}
+
+/* ========================================= */
+/* 📱 PERFECT MOBILE OPTIMIZATION            */
+/* ========================================= */
+@media (max-width: 768px) {
+  .p-faq-question { 
+    padding: 20px 20px; 
+    font-size: 1.05rem; 
+  }
+  
+  .p-faq-num { 
+    margin-right: 15px; 
+  }
+  
+  .p-faq-inner { 
+    padding: 0 20px 20px 20px; /* Reset padding for mobile */
+  }
+  
+  .p-faq-inner p {
+    font-size: 0.95rem;
+  }
+}
