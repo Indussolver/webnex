@@ -637,3 +637,175 @@
     transform: translateY(-2px);
   }
 }
+/* ========================================= */
+/* PLATFORM BREAKDOWN SECTION STYLES         */
+/* ========================================= */
+
+.sp-breakdown-section {
+  position: relative;
+  z-index: 1;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+/* Ambient Background Glow */
+.spb-glow-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80vw;
+  height: 500px;
+  background: radial-gradient(circle, rgba(124, 92, 255, 0.04) 0%, rgba(48, 213, 255, 0.02) 50%, transparent 70%);
+  filter: blur(60px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* 3-Column Grid Layout for Desktop */
+.spb-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Clean, Minimalist Glass Cards */
+.spb-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 24px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Icon Box Setup */
+.spb-icon {
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+/* Text Setup */
+.spb-text h3 {
+  color: #fff;
+  font-size: 1.15rem;
+  margin-bottom: 6px;
+  margin-top: 2px;
+  transition: color 0.3s ease;
+}
+
+.spb-text p {
+  color: #a8b2d1;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* --- BRAND SPECIFIC HOVER GLOWS --- */
+
+/* Instagram */
+.ig-card:hover {
+  border-color: rgba(225, 48, 108, 0.3);
+  transform: translateY(-4px);
+  background: linear-gradient(145deg, rgba(225, 48, 108, 0.05), rgba(255, 255, 255, 0.01));
+}
+.ig-card:hover .spb-icon { color: #E1306C; border-color: #E1306C; background: rgba(225, 48, 108, 0.1); }
+
+/* YouTube */
+.yt-card:hover {
+  border-color: rgba(255, 0, 0, 0.3);
+  transform: translateY(-4px);
+  background: linear-gradient(145deg, rgba(255, 0, 0, 0.05), rgba(255, 255, 255, 0.01));
+}
+.yt-card:hover .spb-icon { color: #FF0000; border-color: #FF0000; background: rgba(255, 0, 0, 0.1); }
+
+/* Facebook */
+.fb-card:hover {
+  border-color: rgba(24, 119, 242, 0.3);
+  transform: translateY(-4px);
+  background: linear-gradient(145deg, rgba(24, 119, 242, 0.05), rgba(255, 255, 255, 0.01));
+}
+.fb-card:hover .spb-icon { color: #1877F2; border-color: #1877F2; background: rgba(24, 119, 242, 0.1); }
+
+/* X (Twitter) */
+.x-card:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-4px);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.01));
+}
+.x-card:hover .spb-icon { color: #fff; border-color: #fff; background: rgba(255, 255, 255, 0.1); }
+
+/* Fiverr */
+.fiverr-card:hover {
+  border-color: rgba(29, 191, 115, 0.3);
+  transform: translateY(-4px);
+  background: linear-gradient(145deg, rgba(29, 191, 115, 0.05), rgba(255, 255, 255, 0.01));
+}
+.fiverr-card:hover .spb-icon { color: #1dbf73; border-color: #1dbf73; background: rgba(29, 191, 115, 0.1); }
+
+/* Upwork */
+.upwork-card:hover {
+  border-color: rgba(20, 168, 0, 0.3);
+  transform: translateY(-4px);
+  background: linear-gradient(145deg, rgba(20, 168, 0, 0.05), rgba(255, 255, 255, 0.01));
+}
+.upwork-card:hover .spb-icon { color: #14a800; border-color: #14a800; background: rgba(20, 168, 0, 0.1); }
+
+
+/* ========================================= */
+/* 📱 PERFECT MOBILE & TABLET OPTIMIZATION   */
+/* ========================================= */
+
+/* Tablet (2 columns) */
+@media (max-width: 950px) {
+  .spb-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile (1 column) */
+@media (max-width: 650px) {
+  .spb-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .spb-card {
+    padding: 20px;
+    gap: 15px;
+  }
+
+  .spb-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .spb-text h3 {
+    font-size: 1.1rem;
+  }
+
+  .spb-text p {
+    font-size: 0.88rem;
+  }
+
+  /* Reduce hover movement on touch devices */
+  .spb-card:hover {
+    transform: translateY(-2px);
+  }
+}
