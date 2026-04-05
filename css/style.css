@@ -2521,14 +2521,75 @@ img{max-width:100%;display:block}
     transform: translateY(-2px);
   }
 
+/* CTA Wrapper & Premium Button */
+.idx-srv-cta-wrapper {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Ekdum perfect center alignment */
+  text-align: center;
+}
+
+.btn-explore-glow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #7C5CFF, #30D5FF);
+  color: #fff;
+  padding: 16px 45px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 10px 25px rgba(124, 92, 255, 0.4);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btn-explore-glow .arrow {
+  transition: transform 0.3s ease;
+  font-size: 1.2rem;
+}
+
+.btn-explore-glow:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 15px 35px rgba(48, 213, 255, 0.5);
+  background: linear-gradient(135deg, #6a4ce6, #2bc0e6);
+}
+
+.btn-explore-glow:hover .arrow {
+  transform: translateX(6px); /* Arrow smoothly aage jayega */
+}
+
+.idx-srv-tagline {
+  margin-top: 20px;
+  color: #a8b2d1;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.guide-link {
+  color: #30D5FF;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.guide-link:hover {
+  color: #fff;
+  text-shadow: 0 0 10px rgba(48, 213, 255, 0.5);
+}
+
+/* ========================================= */
+/* 📱 CTA MOBILE OPTIMIZATION                */
+/* ========================================= */
+@media (max-width: 768px) {
   .idx-srv-cta-wrapper {
     margin-top: 40px;
     padding: 0 20px;
   }
 
-  /* Full width button on phone */
-  .idx-srv-cta-wrapper .btn-primary {
+  /* Phone par button full width aur perfect center rahega */
+  .btn-explore-glow {
     width: 100%;
-    text-align: center;
   }
 }
