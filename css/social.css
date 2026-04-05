@@ -405,3 +405,235 @@
     padding: 0 15px;
   }
 }
+/* ========================================= */
+/* TRUSTED PLATFORMS SECTION STYLES          */
+/* ========================================= */
+
+.trusted-platforms-section {
+  position: relative;
+  z-index: 1;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+/* Ambient Background Glow */
+.tp-glow-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70vw;
+  height: 400px;
+  background: radial-gradient(circle, rgba(29, 191, 115, 0.05) 0%, rgba(20, 168, 0, 0.03) 50%, transparent 70%);
+  filter: blur(60px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* 2-Column Grid Setup */
+.tp-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  max-width: 900px; /* Thoda chota rakha hai taaki text stretch na ho */
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Premium Clickable Glass Card */
+.tp-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 20px;
+  padding: 40px 35px;
+  text-decoration: none;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* The Trust Badge */
+.tp-badge {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  color: #cbd5e1;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  animation: pulseBlink 2s infinite;
+}
+
+@keyframes pulseBlink {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.2); }
+}
+
+/* Icon Setup */
+.tp-icon {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.4s ease;
+}
+
+.brand-text-icon {
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+/* Typography */
+.tp-card h3 {
+  color: #fff;
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+  transition: color 0.3s ease;
+}
+
+.tp-card p {
+  color: #a8b2d1;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.tp-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 25px;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #a8b2d1;
+  transition: all 0.3s ease;
+}
+
+.tp-cta .arrow {
+  transition: transform 0.3s ease;
+}
+
+/* --- BRAND SPECIFIC HOVER EFFECTS --- */
+
+/* Fiverr (Official Green: #1dbf73) */
+.fiverr-dot { background: #1dbf73; box-shadow: 0 0 8px #1dbf73; }
+.fiverr-text { color: #1dbf73; }
+
+.fiverr-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(29, 191, 115, 0.4);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3), 0 0 25px rgba(29, 191, 115, 0.15);
+  background: linear-gradient(145deg, rgba(29, 191, 115, 0.08), rgba(255, 255, 255, 0.01));
+}
+.fiverr-card:hover .tp-badge { border-color: #1dbf73; background: rgba(29, 191, 115, 0.1); }
+.fiverr-card:hover .tp-icon { background: #1dbf73; border-color: #1dbf73; }
+.fiverr-card:hover .fiverr-text { color: #fff; }
+.fiverr-card:hover .tp-cta { color: #1dbf73; }
+.fiverr-card:hover .tp-cta .arrow { transform: translateX(5px); }
+
+/* Upwork (Official Green: #14a800) */
+.upwork-dot { background: #14a800; box-shadow: 0 0 8px #14a800; }
+.upwork-text { color: #14a800; font-family: serif; font-style: italic; /* Mimics Upwork logo style */ }
+
+.upwork-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(20, 168, 0, 0.4);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3), 0 0 25px rgba(20, 168, 0, 0.15);
+  background: linear-gradient(145deg, rgba(20, 168, 0, 0.08), rgba(255, 255, 255, 0.01));
+}
+.upwork-card:hover .tp-badge { border-color: #14a800; background: rgba(20, 168, 0, 0.1); }
+.upwork-card:hover .tp-icon { background: #14a800; border-color: #14a800; }
+.upwork-card:hover .upwork-text { color: #fff; }
+.upwork-card:hover .tp-cta { color: #14a800; }
+.upwork-card:hover .tp-cta .arrow { transform: translateX(5px); }
+
+
+/* Trust Closing Line */
+.tp-closing {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.tp-trust-line {
+  display: inline-block;
+  padding: 12px 25px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  color: #DCD5FF;
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+/* ========================================= */
+/* 📱 PERFECT MOBILE OPTIMIZATION            */
+/* ========================================= */
+@media (max-width: 768px) {
+  .tp-grid {
+    grid-template-columns: 1fr; /* Stack dynamically on phone */
+    gap: 20px;
+  }
+  
+  .tp-card {
+    padding: 30px 20px;
+  }
+
+  .tp-badge {
+    top: 20px;
+    right: 20px;
+    font-size: 0.75rem;
+    padding: 5px 12px;
+  }
+
+  .tp-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 20px;
+  }
+  
+  .brand-text-icon {
+    font-size: 1.5rem;
+  }
+
+  .tp-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .tp-card p {
+    font-size: 0.95rem;
+  }
+
+  .tp-trust-line {
+    font-size: 0.95rem;
+    padding: 10px 20px;
+  }
+
+  /* Optimize touch scrolling */
+  .tp-card:hover {
+    transform: translateY(-2px);
+  }
+}
