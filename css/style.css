@@ -3176,3 +3176,62 @@ img{max-width:100%;display:block}
     font-size: 1.4rem;
   }
 }
+/* ========================================= */
+/* 🚀 MOBILE PERFORMANCE & SPEED BOOSTER     */
+/* ========================================= */
+
+/* 1. Force Hardware Acceleration (Shifts load from CPU to GPU) */
+.orb, 
+.bg-layer,
+.hero-glow-bg,
+.mockup,
+.glass-card,
+[data-reveal],
+.dropdown-content,
+.mockup::before {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  backface-visibility: hidden; /* Prevents flickering */
+  will-change: transform, opacity; /* Warns browser to prepare for changes */
+}
+
+/* 2. Optimize Scroll Performance */
+html, body {
+  overscroll-behavior-y: none; /* Stops the bouncy scrolling lag on iOS */
+}
+
+/* 3. Mobile Specific Downgrades (The Secret to Smoothness) */
+@media (max-width: 820px) {
+  
+  /* Kill infinite background animations on phone */
+  /* Mobile browsers struggle to calculate blur + movement 60 times a second */
+  .orb {
+    animation: none !important; 
+    /* Orbs will still be there but won't continuously move and drain battery/RAM */
+  }
+
+  .hero-glow-bg, 
+  .tph-glow-bg,
+  .idx-srv-glow,
+  .idx-faq-glow {
+    animation: none !important; 
+  }
+
+  /* Optimize Glassmorphism rendering for weak phones */
+  .mockup,
+  .feature-card,
+  .metric-card,
+  .price-card,
+  .dropdown-content,
+  .bb-letter-container {
+    /* Significantly reduces the blur intensity calculation on mobile */
+    backdrop-filter: blur(5px) !important;
+    -webkit-backdrop-filter: blur(5px) !important;
+  }
+
+  /* Remove tap highlight delay on Android/iOS */
+  a, button, .faq-question, .dropdown .arrow {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation; /* Removes the 300ms click delay on phones */
+  }
+}
