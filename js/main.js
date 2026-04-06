@@ -255,4 +255,12 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     });
   }
-  
+  const navLinks = document.querySelectorAll(".nav-link");
+const menu = document.querySelector(".menu");
+
+navLinks.forEach(link => {
+  link.addEventListener("click", () => {
+    menu.classList.remove("active");
+    document.body.style.overflow = "auto";
+  });
+});
