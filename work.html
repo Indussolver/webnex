@@ -643,38 +643,82 @@
   </footer>
   <script src="js/main.js"></script>
   <style>
-  /* Smooth sliding animation setup */
-  #fullTermsContent {
-    max-height: 0;
+  /* Basic setup for the wrappers to allow smooth expansion */
+  .tc-content-wrapper {
+    max-height: 250px; /* Initially dikhne wala height */
     overflow: hidden;
-    transition: max-height 0.5s ease-out;
+    position: relative;
+    transition: max-height 0.6s ease-in-out;
+  }
+  
+  /* Styling the gradient blur at the bottom of the text */
+  .tc-gradient-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    background: linear-gradient(to bottom, rgba(7, 11, 22, 0), rgba(7, 11, 22, 1));
+    transition: opacity 0.4s ease;
+    pointer-events: none;
   }
 </style>
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    const readTermsBtn = document.getElementById('readTermsBtn');
-    const fullTermsContent = document.getElementById('fullTermsContent');
+    
+    // ==========================================
+    // 1. TERMS AND CONDITIONS LOGIC
+    // ==========================================
+    const tcBtn = document.getElementById('tcBtn');
+    const tcWrapper = document.getElementById('tcWrapper');
+    const tcOverlay = document.getElementById('tcOverlay');
 
-    if (readTermsBtn && fullTermsContent) {
-      readTermsBtn.addEventListener('click', function(e) {
-        e.preventDefault(); // Page ko upar jump karne se rokta hai
+    if (tcBtn && tcWrapper) {
+      tcBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        const isOpen = tcWrapper.classList.toggle('is-open');
 
-        // Class toggle karo
-        fullTermsContent.classList.toggle('is-open');
-
-        // Smooth height calculation
-        if (fullTermsContent.classList.contains('is-open')) {
-          // Open state: Content ki actual height calculate karke open karo
-          fullTermsContent.style.maxHeight = fullTermsContent.scrollHeight + "px";
-          readTermsBtn.innerHTML = 'Hide Terms ▴';
+        if (isOpen) {
+          // Open state: Set height to actual content height
+          tcWrapper.style.maxHeight = tcWrapper.scrollHeight + "px";
+          tcBtn.innerHTML = 'Hide Terms <span class="arrow" style="display:inline-block; transform: rotate(-90deg); margin-left:8px; transition: transform 0.3s;">→</span>';
+          if(tcOverlay) tcOverlay.style.opacity = '0'; // Hide the blur
         } else {
-          // Close state: Height wapas 0 kardo
-          fullTermsContent.style.maxHeight = null;
-          readTermsBtn.innerHTML = 'Read Full Terms ▾';
+          // Close state: Back to 250px
+          tcWrapper.style.maxHeight = '250px';
+          tcBtn.innerHTML = 'Read Full Terms <span class="arrow" style="display:inline-block; transform: rotate(90deg); margin-left:8px; transition: transform 0.3s;">→</span>';
+          if(tcOverlay) tcOverlay.style.opacity = '1'; // Show the blur
         }
       });
     }
+
+    // ==========================================
+    // 2. PRIVACY POLICY LOGIC
+    // ==========================================
+    const ppBtn = document.getElementById('ppBtn');
+    const ppWrapper = document.getElementById('ppWrapper');
+    const ppOverlay = document.getElementById('ppOverlay');
+
+    if (ppBtn && ppWrapper) {
+      ppBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        const isOpen = ppWrapper.classList.toggle('is-open');
+
+        if (isOpen) {
+          // Open state
+          ppWrapper.style.maxHeight = ppWrapper.scrollHeight + "px";
+          ppBtn.innerHTML = 'Hide Policy <span class="arrow" style="display:inline-block; transform: rotate(-90deg); margin-left:8px; transition: transform 0.3s;">→</span>';
+          if(ppOverlay) ppOverlay.style.opacity = '0'; // Hide the blur
+        } else {
+          // Close state
+          ppWrapper.style.maxHeight = '250px';
+          ppBtn.innerHTML = 'Read Full Policy <span class="arrow" style="display:inline-block; transform: rotate(90deg); margin-left:8px; transition: transform 0.3s;">→</span>';
+          if(ppOverlay) ppOverlay.style.opacity = '1'; // Show the blur
+        }
+      });
+    }
+
   });
 </script>
 </body>
