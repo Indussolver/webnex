@@ -642,6 +642,40 @@
     </div>
   </footer>
   <script src="js/main.js"></script>
-  
+  <style>
+  /* Smooth sliding animation setup */
+  #fullTermsContent {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const readTermsBtn = document.getElementById('readTermsBtn');
+    const fullTermsContent = document.getElementById('fullTermsContent');
+
+    if (readTermsBtn && fullTermsContent) {
+      readTermsBtn.addEventListener('click', function(e) {
+        e.preventDefault(); // Page ko upar jump karne se rokta hai
+
+        // Class toggle karo
+        fullTermsContent.classList.toggle('is-open');
+
+        // Smooth height calculation
+        if (fullTermsContent.classList.contains('is-open')) {
+          // Open state: Content ki actual height calculate karke open karo
+          fullTermsContent.style.maxHeight = fullTermsContent.scrollHeight + "px";
+          readTermsBtn.innerHTML = 'Hide Terms ▴';
+        } else {
+          // Close state: Height wapas 0 kardo
+          fullTermsContent.style.maxHeight = null;
+          readTermsBtn.innerHTML = 'Read Full Terms ▾';
+        }
+      });
+    }
+  });
+</script>
 </body>
 </html>
