@@ -177,55 +177,30 @@ document.addEventListener("DOMContentLoaded", function() {
 
 });
 // ========================================= //
-  // 7. SMOOTH MOBILE DROPDOWN MENU FIX        //
+  // BULLETPROOF MOBILE DROPDOWN ARROW FIX     //
   // ========================================= //
-  const mobileDropdowns = document.querySelectorAll('.dropdown');
+  const dropdownArrows = document.querySelectorAll('.dropdown .arrow');
 
-  mobileDropdowns.forEach(dropdown => {
-    // Only select the link that opens the dropdown (e.g., Services, About)
-    const mainLink = dropdown.querySelector('.nav-link');
-    const dropdownContent = dropdown.querySelector('.dropdown-content');
-    
-    if (mainLink && dropdownContent) {
-      mainLink.addEventListener('click', function(e) {
-        // Run only on mobile sizes
-        if (window.innerWidth <= 820) {
-          e.preventDefault(); 
-          
-          // Close ALL other dropdowns first (Accordion style)
-          mobileDropdowns.forEach(otherDropdown => {
-            if (otherDropdown !== dropdown && otherDropdown.classList.contains('active')) {
-              otherDropdown.classList.remove('active');
-              const otherContent = otherDropdown.querySelector('.dropdown-content');
-              if (otherContent) {
-                otherContent.style.maxHeight = null;
-                otherContent.style.opacity = '0';
-              }
-            }
-          });
+  dropdownArrows.forEach(arrow => {
+    arrow.addEventListener('click', function(e) {
+      // Check if it's mobile view (width less than 992px)
+      if (window.innerWidth <= 992) {
+        e.preventDefault();  // Tries to stop link navigation
+        e.stopPropagation(); // Stops the click from bubbling up to the main <a> tag
 
-          // Toggle the clicked dropdown
-          dropdown.classList.toggle('active');
+        const parentDropdown = this.closest('.dropdown');
 
-          if (dropdown.classList.contains('active')) {
-            // OPEN: Calculate exact height needed
-            dropdownContent.style.display = 'block'; // Ensure it's block to measure height
-            dropdownContent.style.maxHeight = dropdownContent.scrollHeight + "px";
-            dropdownContent.style.opacity = '1';
-          } else {
-            // CLOSE: Slide up
-            dropdownContent.style.maxHeight = null;
-            dropdownContent.style.opacity = '0';
-            // Wait for transition before fully hiding
-            setTimeout(() => {
-              if(!dropdown.classList.contains('active')){
-                dropdownContent.style.display = 'none';
-              }
-            }, 300); // 300ms matches the CSS transition time
+        // Close other dropdowns
+        document.querySelectorAll('.dropdown').forEach(d => {
+          if (d !== parentDropdown) {
+            d.classList.remove('mobile-open');
           }
-        }
-      });
-    }
+        });
+
+        // Toggle this dropdown
+        parentDropdown.classList.toggle('mobile-open');
+      }
+    });
   });
   // ========================================= //
   // 8. FAQ LOAD MORE BUTTON LOGIC             //
