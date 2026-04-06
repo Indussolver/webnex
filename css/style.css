@@ -2702,9 +2702,15 @@ img{max-width:100%;display:block}
 }
 
 /* Closing Line */
+/* Closing Line */
 .why-closing {
   margin-top: 60px;
   padding: 0 20px;
+  display: flex;             /* Ye content ko flex container banayega */
+  justify-content: center;   /* Ye box ko horizontally center karega */
+  align-items: center;       /* Ye box ko vertically center karega */
+  text-align: center;        /* Ye text ko center karega */
+  width: 100%;
 }
 
 .why-closing p {
