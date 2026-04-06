@@ -255,3 +255,29 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     });
   }
+  document.addEventListener('DOMContentLoaded', function() {
+  // ========================================= //
+  // MOBILE DROPDOWN ARROW FIX                 //
+  // ========================================= //
+  const dropdownArrows = document.querySelectorAll('.dropdown .arrow');
+
+  dropdownArrows.forEach(arrow => {
+    arrow.addEventListener('click', function(e) {
+      // Check if it's mobile view (width less than 992px)
+      if (window.innerWidth <= 992) {
+        e.preventDefault(); // Naye page par jaane se rokna
+        e.stopPropagation(); // Link click trigger hone se rokna
+
+        const parentDropdown = this.closest('.dropdown');
+
+        // Optional: Ek open ho toh doosra band ho jaye
+        document.querySelectorAll('.dropdown').forEach(d => {
+          if (d !== parentDropdown) d.classList.remove('mobile-open');
+        });
+
+        // Dropdown open/close toggle karna
+        parentDropdown.classList.toggle('mobile-open');
+      }
+    });
+  });
+});
