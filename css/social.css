@@ -1380,13 +1380,34 @@
   background: #fff; /* Agar PNG logo ho toh background white dikhega */
 }
 
-/* Verified Blue Tick */
+/* Name, Handle, and Blue Tick Exact Alignment */
+.x-name {
+  display: flex;
+  flex-direction: column;
+  gap: 2px; /* Naam aur username ke beech halka sa gap */
+}
+
+.name-row {
+  display: flex;
+  align-items: center;
+  gap: 4px; /* Naam aur Blue Tick ke beech ka exact gap */
+}
+
+.name-row strong { 
+  color: #fff; 
+  font-size: 0.98rem; 
+  font-weight: 700;
+}
+
 .verified-badge {
-  width: 16px;
-  height: 16px;
-  display: inline-block;
-  vertical-align: middle;
-  margin-left: 4px;
+  width: 18px; /* Original X jaisa perfect size */
+  height: 18px;
+  display: flex;
+}
+
+.x-name span { 
+  color: #64748b; 
+  font-size: 0.88rem; 
 }
 
 /* Name and Handle Fix */
