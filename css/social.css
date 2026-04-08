@@ -1449,3 +1449,35 @@
 .x-feed:hover .x-actions span:nth-child(1) { color: #1DA1F2; } /* Reply Blue */
 .x-feed:hover .x-actions span:nth-child(2) { color: #00BA7C; } /* Retweet Green */
 .x-feed:hover .x-actions span:nth-child(3) { color: #F91880; } /* Like Pink */
+.sfeed-media {
+  position: relative;
+  background: #111;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+}
+
+.play-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  backdrop-filter: blur(4px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  pointer-events: none; /* User image par click karega toh link kaam karega */
+}
+
+.sfeed-card:hover .play-overlay {
+  background: var(--primary, #30D5FF); /* Aapka brand color */
+  transform: translate(-50%, -50%) scale(1.1);
+  box-shadow: 0 0 20px rgba(48, 213, 255, 0.4);
+}
